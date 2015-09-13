@@ -50,59 +50,63 @@ public class ucVolumeAtPrice : UserControl
 
 	private int _mode;
 
+	public ucVolumeAtPrice.ActivatedEventHandler _Activated;
 	public event ucVolumeAtPrice.ActivatedEventHandler Activated
 	{
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		add
 		{
-			this.Activated = (ucVolumeAtPrice.ActivatedEventHandler)Delegate.Combine(this.Activated, value);
+			this._Activated += value;
 		}
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		remove
 		{
-			this.Activated = (ucVolumeAtPrice.ActivatedEventHandler)Delegate.Remove(this.Activated, value);
+			this._Activated -= value;
 		}
 	}
 
+	public  ucVolumeAtPrice.DragEventHandler _Drag;
 	public event ucVolumeAtPrice.DragEventHandler Drag
 	{
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		add
 		{
-			this.Drag = (ucVolumeAtPrice.DragEventHandler)Delegate.Combine(this.Drag, value);
+			this._Drag += value;
 		}
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		remove
 		{
-			this.Drag = (ucVolumeAtPrice.DragEventHandler)Delegate.Remove(this.Drag, value);
+			this._Drag -= value;
 		}
 	}
 
+	public ucVolumeAtPrice.SendErrorMsgEventHandler _SendErrorMsg;
 	public event ucVolumeAtPrice.SendErrorMsgEventHandler SendErrorMsg
 	{
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		add
 		{
-			this.SendErrorMsg = (ucVolumeAtPrice.SendErrorMsgEventHandler)Delegate.Combine(this.SendErrorMsg, value);
+			this._SendErrorMsg += value;
 		}
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		remove
 		{
-			this.SendErrorMsg = (ucVolumeAtPrice.SendErrorMsgEventHandler)Delegate.Remove(this.SendErrorMsg, value);
+			this._SendErrorMsg -= value;
 		}
 	}
 
+    public ucVolumeAtPrice.OpenWithEventHandler _OpenWith;
 	public event ucVolumeAtPrice.OpenWithEventHandler OpenWith
 	{
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		add
 		{
-			this.OpenWith = (ucVolumeAtPrice.OpenWithEventHandler)Delegate.Combine(this.OpenWith, value);
+			this._OpenWith += value;
 		}
 		[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 		remove
 		{
-			this.OpenWith = (ucVolumeAtPrice.OpenWithEventHandler)Delegate.Remove(this.OpenWith, value);
+			this._OpenWith -= value;
 		}
 	}
 
@@ -521,9 +525,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub SetSymbolTypeSpecial ", ex.Message);
+				this._SendErrorMsg("Sub SetSymbolTypeSpecial ", ex.Message);
 			}
 		}
 	}
@@ -548,9 +552,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub SetSymbolType ", ex.Message);
+				this._SendErrorMsg("Sub SetSymbolType ", ex.Message);
 			}
 		}
 	}
@@ -565,9 +569,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub SetStartGraphWidth ", ex.Message);
+				this._SendErrorMsg("Sub SetStartGraphWidth ", ex.Message);
 			}
 		}
 	}
@@ -598,9 +602,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Function IsBetweenCurrentDay ", ex.Message);
+				this._SendErrorMsg("Function IsBetweenCurrentDay ", ex.Message);
 			}
 		}
 		return result;
@@ -620,9 +624,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub wcVolumeAtPrice_Load ", ex.Message);
+				this._SendErrorMsg("Sub wcVolumeAtPrice_Load ", ex.Message);
 			}
 		}
 	}
@@ -637,9 +641,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub SetBgColor", ex.Message);
+				this._SendErrorMsg("Sub SetBgColor", ex.Message);
 			}
 		}
 	}
@@ -668,9 +672,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub CanUseThisPermission ", ex.Message);
+				this._SendErrorMsg("Sub CanUseThisPermission ", ex.Message);
 			}
 		}
 		return flag;
@@ -770,9 +774,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub PictureBox1_Paint ", ex.Message);
+				this._SendErrorMsg("Sub PictureBox1_Paint ", ex.Message);
 			}
 		}
 	}
@@ -791,9 +795,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub PictureBox1_Resize ", ex.Message);
+				this._SendErrorMsg("Sub PictureBox1_Resize ", ex.Message);
 			}
 		}
 	}
@@ -803,9 +807,9 @@ public class ucVolumeAtPrice : UserControl
 	{
 		try
 		{
-			if (this.Activated != null)
+			if (this._Activated != null)
 			{
-				this.Activated();
+				this._Activated();
 			}
 			if (this.bLoaded)
 			{
@@ -813,14 +817,14 @@ public class ucVolumeAtPrice : UserControl
 				{
 					if (!string.IsNullOrEmpty(this.oGraphPanel.strSymbolList))
 					{
-						if (this.OpenWith != null)
+						if (this._OpenWith != null)
 						{
-							this.OpenWith(this.oGraphPanel.strSymbolList);
+							this._OpenWith(this.oGraphPanel.strSymbolList);
 						}
 					}
-					else if (this.OpenWith != null)
+					else if (this._OpenWith != null)
 					{
-						this.OpenWith("");
+						this._OpenWith("");
 					}
 				}
 				if (e.Button == MouseButtons.Left)
@@ -829,9 +833,9 @@ public class ucVolumeAtPrice : UserControl
 					{
 						Color color = default(Color);
 						color = this.oGraphPanel.GetCompareColor(this.oGraphPanel.Prior, this.oGraphPanel.Last);
-						if (this.Drag != null)
+						if (this._Drag != null)
 						{
-							this.Drag(this.oGraphPanel.strSymbolList, color);
+							this._Drag(this.oGraphPanel.strSymbolList, color);
 						}
 					}
 				}
@@ -839,9 +843,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub PictureBox1_MouseDown ", ex.Message);
+				this._SendErrorMsg("Sub PictureBox1_MouseDown ", ex.Message);
 			}
 		}
 	}
@@ -856,9 +860,9 @@ public class ucVolumeAtPrice : UserControl
 		}
 		catch (Exception ex)
 		{
-			if (this.SendErrorMsg != null)
+			if (this._SendErrorMsg != null)
 			{
-				this.SendErrorMsg("Sub New ", ex.Message);
+				this._SendErrorMsg("Sub New ", ex.Message);
 			}
 		}
 	}

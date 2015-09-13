@@ -114,10 +114,10 @@ namespace i2TradePlus
 							ApplicationInfo.Isi2infoLink2 = (array3[1] == "Y");
 							break;
 						}
-						IL_39F:
+						//IL_39F:
 						i++;
 						continue;
-						goto IL_39F;
+						//goto IL_39F;
 					}
 					if (ApplicationInfo.IsOpenFromWeb)
 					{
@@ -224,7 +224,7 @@ namespace i2TradePlus
 			FileSystemInfo fileSystemInfo = new FileInfo(location);
 			string name = fileSystemInfo.Name;
 			bool flag;
-			Program.mutex = new Mutex(true, "Global\\" + name, ref flag);
+			Program.mutex = new Mutex(true, "Global\\" + name, out flag);
 			if (flag)
 			{
 				Program.mutex.ReleaseMutex();

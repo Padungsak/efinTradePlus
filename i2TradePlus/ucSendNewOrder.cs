@@ -347,59 +347,63 @@ namespace i2TradePlus
 
 		private decimal _portEquity = 0m;
 
+        public ucSendNewOrder.OnAccountChangedHandler _OnAccountChanged;
 		public event ucSendNewOrder.OnAccountChangedHandler OnAccountChanged
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnAccountChanged = (ucSendNewOrder.OnAccountChangedHandler)Delegate.Combine(this.OnAccountChanged, value);
+				this._OnAccountChanged += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnAccountChanged = (ucSendNewOrder.OnAccountChangedHandler)Delegate.Remove(this.OnAccountChanged, value);
+				this._OnAccountChanged -= value;
 			}
 		}
 
+		public ucSendNewOrder.OnBoxStyleChangedHandler _OnBoxStyleChanged;
 		public event ucSendNewOrder.OnBoxStyleChangedHandler OnBoxStyleChanged
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnBoxStyleChanged = (ucSendNewOrder.OnBoxStyleChangedHandler)Delegate.Combine(this.OnBoxStyleChanged, value);
+				this._OnBoxStyleChanged += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnBoxStyleChanged = (ucSendNewOrder.OnBoxStyleChangedHandler)Delegate.Remove(this.OnBoxStyleChanged, value);
+				this._OnBoxStyleChanged -= value;
 			}
 		}
 
+		public ucSendNewOrder.OnResizedHandler _OnResized;
 		public event ucSendNewOrder.OnResizedHandler OnResized
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnResized = (ucSendNewOrder.OnResizedHandler)Delegate.Combine(this.OnResized, value);
+				this._OnResized += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnResized = (ucSendNewOrder.OnResizedHandler)Delegate.Remove(this.OnResized, value);
+				this._OnResized -= value;
 			}
 		}
 
+		public ucSendNewOrder.OnResizeUpDownHandler _OnResizeUpDown;
 		public event ucSendNewOrder.OnResizeUpDownHandler OnResizeUpDown
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnResizeUpDown = (ucSendNewOrder.OnResizeUpDownHandler)Delegate.Combine(this.OnResizeUpDown, value);
+				this._OnResizeUpDown += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnResizeUpDown = (ucSendNewOrder.OnResizeUpDownHandler)Delegate.Remove(this.OnResizeUpDown, value);
+				this._OnResizeUpDown -= value;
 			}
 		}
 
@@ -2418,9 +2422,9 @@ namespace i2TradePlus
 				if (base.Height != num5)
 				{
 					base.Height = num5;
-					if (this.OnResized != null)
+					if (this._OnResized != null)
 					{
-						this.OnResized();
+						this._OnResized();
 					}
 				}
 			}
@@ -3072,9 +3076,9 @@ namespace i2TradePlus
 					if (this._isActive)
 					{
 						this.SetResize();
-						if (this.OnBoxStyleChanged != null)
+						if (this._OnBoxStyleChanged != null)
 						{
-							this.OnBoxStyleChanged();
+							this._OnBoxStyleChanged();
 						}
 					}
 				}
@@ -5269,9 +5273,9 @@ namespace i2TradePlus
 					this.tbBuyLimit.Text = "Loading...";
 					this.tbOnHand.Text = "Loading...";
 					this.tbEquity.Text = "Loading...";
-					if (this.OnAccountChanged != null)
+					if (this._OnAccountChanged != null)
 					{
-						this.OnAccountChanged(ApplicationInfo.AccInfo.CurrentAccount);
+						this._OnAccountChanged(ApplicationInfo.AccInfo.CurrentAccount);
 					}
 					if (ApplicationInfo.IsEquityAccount)
 					{
@@ -5471,9 +5475,9 @@ namespace i2TradePlus
 						}
 					}
 					base.ResumeLayout();
-					if (this.OnBoxStyleChanged != null)
+					if (this._OnBoxStyleChanged != null)
 					{
-						this.OnBoxStyleChanged();
+						this._OnBoxStyleChanged();
 					}
 				}
 				catch (Exception ex)
@@ -5510,9 +5514,9 @@ namespace i2TradePlus
 				}
 				this.SetVisibleControlEquity();
 				this.SetColorBySide(this._showSide);
-				if (this.OnBoxStyleChanged != null)
+				if (this._OnBoxStyleChanged != null)
 				{
-					this.OnBoxStyleChanged();
+					this._OnBoxStyleChanged();
 				}
 				if (this._stockInfo != null && this._stockInfo.Number > 0)
 				{
@@ -6708,18 +6712,18 @@ namespace i2TradePlus
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void btnBResize_Up_Click(object sender, EventArgs e)
 		{
-			if (this.OnResizeUpDown != null)
+			if (this._OnResizeUpDown != null)
 			{
-				this.OnResizeUpDown(true);
+				this._OnResizeUpDown(true);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void btnBResize_Down_Click(object sender, EventArgs e)
 		{
-			if (this.OnResizeUpDown != null)
+			if (this._OnResizeUpDown != null)
 			{
-				this.OnResizeUpDown(false);
+				this._OnResizeUpDown(false);
 			}
 		}
 

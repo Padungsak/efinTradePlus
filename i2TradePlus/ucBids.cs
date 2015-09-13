@@ -53,31 +53,33 @@ namespace i2TradePlus
 
 		private bool isLoadingData = false;
 
+		public ucBids.OnNewStockEventHandler _OnNewStock;
 		public event ucBids.OnNewStockEventHandler OnNewStock
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnNewStock = (ucBids.OnNewStockEventHandler)Delegate.Combine(this.OnNewStock, value);
+				this._OnNewStock += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnNewStock = (ucBids.OnNewStockEventHandler)Delegate.Remove(this.OnNewStock, value);
+				this._OnNewStock -= value;
 			}
 		}
 
+        public ucBids.OnLinkEventHandler _OnLink;
 		public event ucBids.OnLinkEventHandler OnLink
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnLink = (ucBids.OnLinkEventHandler)Delegate.Combine(this.OnLink, value);
+				this.OnLink += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnLink = (ucBids.OnLinkEventHandler)Delegate.Remove(this.OnLink, value);
+				this.OnLink -= value;
 			}
 		}
 
@@ -1618,9 +1620,9 @@ namespace i2TradePlus
 					StockList.StockInformation stockInformation = ApplicationInfo.StockInfo[this.txtStock.Text.ToUpper()];
 					if (stockInformation.Number > 0)
 					{
-						if (this.OnNewStock != null)
+						if (this._OnNewStock != null)
 						{
-							this.OnNewStock(this, stockInformation.Symbol);
+							this._OnNewStock(this, stockInformation.Symbol);
 						}
 					}
 					else
@@ -1628,9 +1630,9 @@ namespace i2TradePlus
 						SeriesList.SeriesInformation seriesInformation = ApplicationInfo.SeriesInfo[this.txtStock.Text.ToUpper()];
 						if (seriesInformation.Symbol != string.Empty)
 						{
-							if (this.OnNewStock != null)
+							if (this._OnNewStock != null)
 							{
-								this.OnNewStock(this, seriesInformation.Symbol);
+								this._OnNewStock(this, seriesInformation.Symbol);
 							}
 						}
 						else
@@ -1640,9 +1642,9 @@ namespace i2TradePlus
 						}
 					}
 				}
-				else if (this.OnNewStock != null)
+				else if (this._OnNewStock != null)
 				{
-					this.OnNewStock(this, "");
+					this._OnNewStock(this, "");
 				}
 			}
 			catch (Exception ex)
@@ -1725,9 +1727,9 @@ namespace i2TradePlus
 					}
 					else if (e.Mouse.Button == MouseButtons.Right)
 					{
-						if (this.OnLink != null && !string.IsNullOrEmpty(e.Item.Text.ToString()))
+						if (this._OnLink != null && !string.IsNullOrEmpty(e.Item.Text.ToString()))
 						{
-							this.OnLink(this, e.Item.Text.ToString(), new Point(e.Position.X, e.Position.Y));
+							this._OnLink(this, e.Item.Text.ToString(), new Point(e.Position.X, e.Position.Y));
 						}
 					}
 				}

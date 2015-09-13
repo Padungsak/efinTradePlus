@@ -49,21 +49,21 @@ namespace i2TradePlus
 
 		public static int BrokerId = 0;
 
-		private static WebProxy proxy = null;
+        //private static WebProxy proxy = null;
 
-		public static WebProxy Proxy
-		{
-			[MethodImpl(MethodImplOptions.NoInlining)]
-			get
-			{
-				return i2InfoWS.proxy;
-			}
-			[MethodImpl(MethodImplOptions.NoInlining)]
-			set
-			{
-				i2InfoWS.proxy = value;
-			}
-		}
+        //public static WebProxy Proxy
+        //{
+        //    [MethodImpl(MethodImplOptions.NoInlining)]
+        //    get
+        //    {
+        //        return i2InfoWS.proxy;
+        //    }
+        //    [MethodImpl(MethodImplOptions.NoInlining)]
+        //    set
+        //    {
+        //        i2InfoWS.proxy = value;
+        //    }
+        //}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public static i2WSResult GetConnectionInfo(string host, string device)

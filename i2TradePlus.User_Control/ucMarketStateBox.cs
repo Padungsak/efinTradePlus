@@ -28,31 +28,33 @@ namespace i2TradePlus.User_Control
 
 		private SolidBrush _feedColor;
 
+        public ucMarketStateBox.SwitchMode _OnSitchMode;
 		public event ucMarketStateBox.SwitchMode OnSitchMode
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnSitchMode = (ucMarketStateBox.SwitchMode)Delegate.Combine(this.OnSitchMode, value);
+				this._OnSitchMode += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnSitchMode = (ucMarketStateBox.SwitchMode)Delegate.Remove(this.OnSitchMode, value);
+				this._OnSitchMode -= value;
 			}
 		}
 
+		public ucMarketStateBox.CallAlert _OnCallAlert;
 		public event ucMarketStateBox.CallAlert OnCallAlert
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnCallAlert = (ucMarketStateBox.CallAlert)Delegate.Combine(this.OnCallAlert, value);
+				this._OnCallAlert += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnCallAlert = (ucMarketStateBox.CallAlert)Delegate.Remove(this.OnCallAlert, value);
+				this._OnCallAlert -= value;
 			}
 		}
 
@@ -225,9 +227,9 @@ namespace i2TradePlus.User_Control
 					ApplicationInfo.IsPushMode = true;
 					ApplicationInfo.TunnelCounter = 0;
 				}
-				if (this.OnSitchMode != null)
+				if (this._OnSitchMode != null)
 				{
-					this.OnSitchMode();
+					this._OnSitchMode();
 				}
 			}
 			catch (Exception ex)
@@ -245,11 +247,11 @@ namespace i2TradePlus.User_Control
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void alertStockControl_AlertClick(object sender, EventArgs e)
 		{
-			if (this.OnCallAlert != null)
+			if (this._OnCallAlert != null)
 			{
 				this.alertStockControl.IsAllowBlink = false;
 				this.alertStockControl.AlterMessageCount = 0;
-				this.OnCallAlert();
+				this._OnCallAlert();
 			}
 		}
 

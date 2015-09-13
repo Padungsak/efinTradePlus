@@ -81,20 +81,20 @@ namespace i2TradePlus
 		private Queue<AlertManager.AlertBcItem> _bcMessages = new Queue<AlertManager.AlertBcItem>();
 
 		private bool isMonitoring = false;
-
-		internal event AlertManager.OnAlertHandler OnAlert
-		{
-			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
-			add
-			{
-				this.OnAlert = (AlertManager.OnAlertHandler)Delegate.Combine(this.OnAlert, value);
-			}
-			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
-			remove
-			{
-				this.OnAlert = (AlertManager.OnAlertHandler)Delegate.Remove(this.OnAlert, value);
-			}
-		}
+        internal AlertManager.OnAlertHandler _OnAlert;
+        internal event AlertManager.OnAlertHandler OnAlert
+        {
+            [MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
+            add
+            {
+                this._OnAlert += value;
+            }
+            [MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
+            remove
+            {
+                this._OnAlert -= value;
+            }
+        }
 
 		internal static AlertManager Instance
 		{
@@ -387,9 +387,9 @@ namespace i2TradePlus
 											current.AlertTime = DateTime.Now;
 											flag2 = true;
 										}
-										if (flag2 && this.OnAlert != null)
+                                        if (flag2 && this._OnAlert != null)
 										{
-											this.OnAlert(new AlertItem(current));
+                                            this._OnAlert(new AlertItem(current));
 										}
 									}
 								}

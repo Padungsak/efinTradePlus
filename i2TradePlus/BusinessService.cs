@@ -10,7 +10,7 @@ namespace i2TradePlus
 	{
 		private bool isFirstOpen = true;
 
-		private WebProxy proxy = null;
+		//private WebProxy proxy = null;
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		protected override WebRequest GetWebRequest(Uri uri)
@@ -30,12 +30,12 @@ namespace i2TradePlus
 			httpWebRequest.ProtocolVersion = HttpVersion.Version11;
 			if (ApplicationInfo.IsUseProxy)
 			{
-				if (this.proxy == null)
-				{
-					this.proxy = new WebProxy(Settings.Default.ProxyHost, Settings.Default.ProxyPort);
-					this.proxy.Credentials = new NetworkCredential(Settings.Default.ProxyUsername, ApplicationInfo.ProxyPassword);
-				}
-				httpWebRequest.Proxy = this.proxy;
+                //if (this.proxy == null)
+                //{
+                //    this.proxy = new WebProxy(Settings.Default.ProxyHost, Settings.Default.ProxyPort);
+                //    this.proxy.Credentials = new NetworkCredential(Settings.Default.ProxyUsername, ApplicationInfo.ProxyPassword);
+                //}
+                //httpWebRequest.Proxy = this.proxy;
 			}
 			this.isFirstOpen = false;
 			return httpWebRequest;

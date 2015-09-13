@@ -38,19 +38,20 @@ namespace i2TradePlus
 
 		private bool isAllowBlink = false;
 
-		public event EventHandler AlertClick
-		{
-			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
-			add
-			{
-				this.AlertClick = (EventHandler)Delegate.Combine(this.AlertClick, value);
-			}
-			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
-			remove
-			{
-				this.AlertClick = (EventHandler)Delegate.Remove(this.AlertClick, value);
-			}
-		}
+        public EventHandler _AlertClick;
+        public event EventHandler AlertClick
+        {
+            [MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
+            add
+            {
+                this._AlertClick += value;
+            }
+            [MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
+            remove
+            {
+                this._AlertClick -= value;
+            }
+        }
 
 		public Image DisplayImage
 		{
@@ -415,9 +416,9 @@ namespace i2TradePlus
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void pictureBoxAlert_Click(object sender, EventArgs e)
 		{
-			if (this.AlertClick != null)
+			if (this._AlertClick != null)
 			{
-				this.AlertClick(sender, e);
+				this._AlertClick(sender, e);
 			}
 		}
 	}

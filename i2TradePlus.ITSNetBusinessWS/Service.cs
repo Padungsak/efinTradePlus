@@ -274,1809 +274,1938 @@ namespace i2TradePlus.ITSNetBusinessWS
 
 		private bool useDefaultCredentialsSetExplicitly;
 
+		public ViewCustomerByStockForDumpCompletedEventHandler _ViewCustomerByStockForDumpCompleted;
 		public event ViewCustomerByStockForDumpCompletedEventHandler ViewCustomerByStockForDumpCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomerByStockForDumpCompleted = (ViewCustomerByStockForDumpCompletedEventHandler)Delegate.Combine(this.ViewCustomerByStockForDumpCompleted, value);
+				this._ViewCustomerByStockForDumpCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomerByStockForDumpCompleted = (ViewCustomerByStockForDumpCompletedEventHandler)Delegate.Remove(this.ViewCustomerByStockForDumpCompleted, value);
+				this._ViewCustomerByStockForDumpCompleted -= value;
 			}
 		}
 
+		public GetBrokerMarginVolumeCompletedEventHandler _GetBrokerMarginVolumeCompleted;
 		public event GetBrokerMarginVolumeCompletedEventHandler GetBrokerMarginVolumeCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetBrokerMarginVolumeCompleted = (GetBrokerMarginVolumeCompletedEventHandler)Delegate.Combine(this.GetBrokerMarginVolumeCompleted, value);
+				this._GetBrokerMarginVolumeCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetBrokerMarginVolumeCompleted = (GetBrokerMarginVolumeCompletedEventHandler)Delegate.Remove(this.GetBrokerMarginVolumeCompleted, value);
+				this._GetBrokerMarginVolumeCompleted -= value;
 			}
 		}
 
+		public VerifyPincode2CompletedEventHandler _VerifyPincode2Completed;
 		public event VerifyPincode2CompletedEventHandler VerifyPincode2Completed
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.VerifyPincode2Completed = (VerifyPincode2CompletedEventHandler)Delegate.Combine(this.VerifyPincode2Completed, value);
+				this._VerifyPincode2Completed += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.VerifyPincode2Completed = (VerifyPincode2CompletedEventHandler)Delegate.Remove(this.VerifyPincode2Completed, value);
+				this._VerifyPincode2Completed -= value;
 			}
 		}
 
+		public ViewBAMessageCompletedEventHandler _ViewBAMessageCompleted;
 		public event ViewBAMessageCompletedEventHandler ViewBAMessageCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewBAMessageCompleted = (ViewBAMessageCompletedEventHandler)Delegate.Combine(this.ViewBAMessageCompleted, value);
+				this._ViewBAMessageCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewBAMessageCompleted = (ViewBAMessageCompletedEventHandler)Delegate.Remove(this.ViewBAMessageCompleted, value);
+				this._ViewBAMessageCompleted -= value;
 			}
 		}
 
+		public StockHistoryCompletedEventHandler _StockHistoryCompleted;
 		public event StockHistoryCompletedEventHandler StockHistoryCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StockHistoryCompleted = (StockHistoryCompletedEventHandler)Delegate.Combine(this.StockHistoryCompleted, value);
+				this._StockHistoryCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StockHistoryCompleted = (StockHistoryCompletedEventHandler)Delegate.Remove(this.StockHistoryCompleted, value);
+				this._StockHistoryCompleted -= value;
 			}
 		}
 
+		public StockChartCompletedEventHandler _StockChartCompleted;
 		public event StockChartCompletedEventHandler StockChartCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StockChartCompleted = (StockChartCompletedEventHandler)Delegate.Combine(this.StockChartCompleted, value);
+				this._StockChartCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StockChartCompleted = (StockChartCompletedEventHandler)Delegate.Remove(this.StockChartCompleted, value);
+				this._StockChartCompleted -= value;
 			}
 		}
 
-		public event StockHistDataCompletedEventHandler StockHistDataCompleted
+		public StockHistDataCompletedEventHandler _StockHistDataCompleted;
+        public event StockHistDataCompletedEventHandler StockHistDataCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StockHistDataCompleted = (StockHistDataCompletedEventHandler)Delegate.Combine(this.StockHistDataCompleted, value);
+				this._StockHistDataCompleted +=  value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StockHistDataCompleted = (StockHistDataCompletedEventHandler)Delegate.Remove(this.StockHistDataCompleted, value);
+				this._StockHistDataCompleted -= value;
 			}
 		}
 
+		public LoadStockNicknameCompletedEventHandler _LoadStockNicknameCompleted;
 		public event LoadStockNicknameCompletedEventHandler LoadStockNicknameCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LoadStockNicknameCompleted = (LoadStockNicknameCompletedEventHandler)Delegate.Combine(this.LoadStockNicknameCompleted, value);
+				this._LoadStockNicknameCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LoadStockNicknameCompleted = (LoadStockNicknameCompletedEventHandler)Delegate.Remove(this.LoadStockNicknameCompleted, value);
+				this._LoadStockNicknameCompleted -= value;
 			}
 		}
 
+		public SaveStockNicknameCompletedEventHandler _SaveStockNicknameCompleted;
 		public event SaveStockNicknameCompletedEventHandler SaveStockNicknameCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveStockNicknameCompleted = (SaveStockNicknameCompletedEventHandler)Delegate.Combine(this.SaveStockNicknameCompleted, value);
+				this._SaveStockNicknameCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveStockNicknameCompleted = (SaveStockNicknameCompletedEventHandler)Delegate.Remove(this.SaveStockNicknameCompleted, value);
+				this._SaveStockNicknameCompleted -= value;
 			}
 		}
 
+		public DeleteStockNicknameCompletedEventHandler _DeleteStockNicknameCompleted;
 		public event DeleteStockNicknameCompletedEventHandler DeleteStockNicknameCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.DeleteStockNicknameCompleted = (DeleteStockNicknameCompletedEventHandler)Delegate.Combine(this.DeleteStockNicknameCompleted, value);
+				this._DeleteStockNicknameCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.DeleteStockNicknameCompleted = (DeleteStockNicknameCompletedEventHandler)Delegate.Remove(this.DeleteStockNicknameCompleted, value);
+				this._DeleteStockNicknameCompleted -= value;
 			}
 		}
 
+		public LoadStockNicknameExtraCompletedEventHandler _LoadStockNicknameExtraCompleted;
 		public event LoadStockNicknameExtraCompletedEventHandler LoadStockNicknameExtraCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LoadStockNicknameExtraCompleted = (LoadStockNicknameExtraCompletedEventHandler)Delegate.Combine(this.LoadStockNicknameExtraCompleted, value);
+				this._LoadStockNicknameExtraCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LoadStockNicknameExtraCompleted = (LoadStockNicknameExtraCompletedEventHandler)Delegate.Remove(this.LoadStockNicknameExtraCompleted, value);
+				this._LoadStockNicknameExtraCompleted -= value;
 			}
 		}
 
+		public SaveStockNicknameExtraCompletedEventHandler _SaveStockNicknameExtraCompleted;
 		public event SaveStockNicknameExtraCompletedEventHandler SaveStockNicknameExtraCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveStockNicknameExtraCompleted = (SaveStockNicknameExtraCompletedEventHandler)Delegate.Combine(this.SaveStockNicknameExtraCompleted, value);
+				this._SaveStockNicknameExtraCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveStockNicknameExtraCompleted = (SaveStockNicknameExtraCompletedEventHandler)Delegate.Remove(this.SaveStockNicknameExtraCompleted, value);
+				this._SaveStockNicknameExtraCompleted -= value;
 			}
 		}
 
+		public DeleteStockNicknameExtraCompletedEventHandler _DeleteStockNicknameExtraCompleted;
 		public event DeleteStockNicknameExtraCompletedEventHandler DeleteStockNicknameExtraCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.DeleteStockNicknameExtraCompleted = (DeleteStockNicknameExtraCompletedEventHandler)Delegate.Combine(this.DeleteStockNicknameExtraCompleted, value);
+				this._DeleteStockNicknameExtraCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.DeleteStockNicknameExtraCompleted = (DeleteStockNicknameExtraCompletedEventHandler)Delegate.Remove(this.DeleteStockNicknameExtraCompleted, value);
+				this._DeleteStockNicknameExtraCompleted -= value;
 			}
 		}
 
+		public IntradayChartCompletedEventHandler _IntradayChartCompleted;
 		public event IntradayChartCompletedEventHandler IntradayChartCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IntradayChartCompleted = (IntradayChartCompletedEventHandler)Delegate.Combine(this.IntradayChartCompleted, value);
+                this._IntradayChartCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IntradayChartCompleted = (IntradayChartCompletedEventHandler)Delegate.Remove(this.IntradayChartCompleted, value);
+                this._IntradayChartCompleted -= value;
 			}
 		}
 
+		public IntradayIndexChartCompletedEventHandler _IntradayIndexChartCompleted;
 		public event IntradayIndexChartCompletedEventHandler IntradayIndexChartCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IntradayIndexChartCompleted = (IntradayIndexChartCompletedEventHandler)Delegate.Combine(this.IntradayIndexChartCompleted, value);
+                this._IntradayIndexChartCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IntradayIndexChartCompleted = (IntradayIndexChartCompletedEventHandler)Delegate.Remove(this.IntradayIndexChartCompleted, value);
+                this._IntradayIndexChartCompleted -= value;
 			}
 		}
 
+		public GetChartImageCompletedEventHandler _GetChartImageCompleted;
 		public event GetChartImageCompletedEventHandler GetChartImageCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetChartImageCompleted = (GetChartImageCompletedEventHandler)Delegate.Combine(this.GetChartImageCompleted, value);
+				this._GetChartImageCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetChartImageCompleted = (GetChartImageCompletedEventHandler)Delegate.Remove(this.GetChartImageCompleted, value);
+				this._GetChartImageCompleted -= value;
 			}
 		}
 
+		public GetSetIndexChartImageCompletedEventHandler _GetSetIndexChartImageCompleted;
 		public event GetSetIndexChartImageCompletedEventHandler GetSetIndexChartImageCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetSetIndexChartImageCompleted = (GetSetIndexChartImageCompletedEventHandler)Delegate.Combine(this.GetSetIndexChartImageCompleted, value);
+				this._GetSetIndexChartImageCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetSetIndexChartImageCompleted = (GetSetIndexChartImageCompletedEventHandler)Delegate.Remove(this.GetSetIndexChartImageCompleted, value);
+				this._GetSetIndexChartImageCompleted -= value;
 			}
 		}
 
+		public GetPortfolioStatAllStockCompletedEventHandler _GetPortfolioStatAllStockCompleted;
 		public event GetPortfolioStatAllStockCompletedEventHandler GetPortfolioStatAllStockCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetPortfolioStatAllStockCompleted = (GetPortfolioStatAllStockCompletedEventHandler)Delegate.Combine(this.GetPortfolioStatAllStockCompleted, value);
+				this._GetPortfolioStatAllStockCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetPortfolioStatAllStockCompleted = (GetPortfolioStatAllStockCompletedEventHandler)Delegate.Remove(this.GetPortfolioStatAllStockCompleted, value);
+				this._GetPortfolioStatAllStockCompleted -= value;
 			}
 		}
 
+		public GetPortfolioStatByStockCompletedEventHandler _GetPortfolioStatByStockCompleted;
 		public event GetPortfolioStatByStockCompletedEventHandler GetPortfolioStatByStockCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetPortfolioStatByStockCompleted = (GetPortfolioStatByStockCompletedEventHandler)Delegate.Combine(this.GetPortfolioStatByStockCompleted, value);
+				this._GetPortfolioStatByStockCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetPortfolioStatByStockCompleted = (GetPortfolioStatByStockCompletedEventHandler)Delegate.Remove(this.GetPortfolioStatByStockCompleted, value);
+				this._GetPortfolioStatByStockCompleted -= value;
 			}
 		}
 
+		public SavePushAccountCompletedEventHandler _SavePushAccountCompleted;
 		public event SavePushAccountCompletedEventHandler SavePushAccountCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SavePushAccountCompleted = (SavePushAccountCompletedEventHandler)Delegate.Combine(this.SavePushAccountCompleted, value);
+				this._SavePushAccountCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SavePushAccountCompleted = (SavePushAccountCompletedEventHandler)Delegate.Remove(this.SavePushAccountCompleted, value);
+				this._SavePushAccountCompleted -= value;
 			}
 		}
 
+		public SaveStockAlertCompletedEventHandler _SaveStockAlertCompleted;
 		public event SaveStockAlertCompletedEventHandler SaveStockAlertCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveStockAlertCompleted = (SaveStockAlertCompletedEventHandler)Delegate.Combine(this.SaveStockAlertCompleted, value);
+				this._SaveStockAlertCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveStockAlertCompleted = (SaveStockAlertCompletedEventHandler)Delegate.Remove(this.SaveStockAlertCompleted, value);
+				this._SaveStockAlertCompleted -= value;
 			}
 		}
 
+		public SavePortAlertCompletedEventHandler _SavePortAlertCompleted;
 		public event SavePortAlertCompletedEventHandler SavePortAlertCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SavePortAlertCompleted = (SavePortAlertCompletedEventHandler)Delegate.Combine(this.SavePortAlertCompleted, value);
+				this._SavePortAlertCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SavePortAlertCompleted = (SavePortAlertCompletedEventHandler)Delegate.Remove(this.SavePortAlertCompleted, value);
+				this._SavePortAlertCompleted -= value;
 			}
 		}
 
+		public SendAutoTradeCompletedEventHandler _SendAutoTradeCompleted;
 		public event SendAutoTradeCompletedEventHandler SendAutoTradeCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SendAutoTradeCompleted = (SendAutoTradeCompletedEventHandler)Delegate.Combine(this.SendAutoTradeCompleted, value);
+				this._SendAutoTradeCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SendAutoTradeCompleted = (SendAutoTradeCompletedEventHandler)Delegate.Remove(this.SendAutoTradeCompleted, value);
+				this._SendAutoTradeCompleted -= value;
 			}
 		}
 
+		public StopOrderRegisterCompletedEventHandler _StopOrderRegisterCompleted;
 		public event StopOrderRegisterCompletedEventHandler StopOrderRegisterCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StopOrderRegisterCompleted = (StopOrderRegisterCompletedEventHandler)Delegate.Combine(this.StopOrderRegisterCompleted, value);
+				this._StopOrderRegisterCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StopOrderRegisterCompleted = (StopOrderRegisterCompletedEventHandler)Delegate.Remove(this.StopOrderRegisterCompleted, value);
+				this._StopOrderRegisterCompleted -= value;
 			}
 		}
 
+		public StopOrderCheckDisclaimerCompletedEventHandler _StopOrderCheckDisclaimerCompleted;
 		public event StopOrderCheckDisclaimerCompletedEventHandler StopOrderCheckDisclaimerCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StopOrderCheckDisclaimerCompleted = (StopOrderCheckDisclaimerCompletedEventHandler)Delegate.Combine(this.StopOrderCheckDisclaimerCompleted, value);
+				this._StopOrderCheckDisclaimerCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StopOrderCheckDisclaimerCompleted = (StopOrderCheckDisclaimerCompletedEventHandler)Delegate.Remove(this.StopOrderCheckDisclaimerCompleted, value);
+				this._StopOrderCheckDisclaimerCompleted -= value;
 			}
 		}
 
+		public ViewAutoTradeTransCompletedEventHandler _ViewAutoTradeTransCompleted;
 		public event ViewAutoTradeTransCompletedEventHandler ViewAutoTradeTransCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewAutoTradeTransCompleted = (ViewAutoTradeTransCompletedEventHandler)Delegate.Combine(this.ViewAutoTradeTransCompleted, value);
+				this._ViewAutoTradeTransCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewAutoTradeTransCompleted = (ViewAutoTradeTransCompletedEventHandler)Delegate.Remove(this.ViewAutoTradeTransCompleted, value);
+				this._ViewAutoTradeTransCompleted -= value;
 			}
 		}
 
+		public ViewAutoTradeDCAItemsCompletedEventHandler _ViewAutoTradeDCAItemsCompleted;
 		public event ViewAutoTradeDCAItemsCompletedEventHandler ViewAutoTradeDCAItemsCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewAutoTradeDCAItemsCompleted = (ViewAutoTradeDCAItemsCompletedEventHandler)Delegate.Combine(this.ViewAutoTradeDCAItemsCompleted, value);
+				this._ViewAutoTradeDCAItemsCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewAutoTradeDCAItemsCompleted = (ViewAutoTradeDCAItemsCompletedEventHandler)Delegate.Remove(this.ViewAutoTradeDCAItemsCompleted, value);
+				this._ViewAutoTradeDCAItemsCompleted -= value;
 			}
 		}
 
+		public ViewAutoTradePzItemsCompletedEventHandler _ViewAutoTradePzItemsCompleted;
 		public event ViewAutoTradePzItemsCompletedEventHandler ViewAutoTradePzItemsCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewAutoTradePzItemsCompleted = (ViewAutoTradePzItemsCompletedEventHandler)Delegate.Combine(this.ViewAutoTradePzItemsCompleted, value);
+				this._ViewAutoTradePzItemsCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewAutoTradePzItemsCompleted = (ViewAutoTradePzItemsCompletedEventHandler)Delegate.Remove(this.ViewAutoTradePzItemsCompleted, value);
+				this._ViewAutoTradePzItemsCompleted -= value;
 			}
 		}
 
+		public GetHolidayCompletedEventHandler _GetHolidayCompleted;
 		public event GetHolidayCompletedEventHandler GetHolidayCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetHolidayCompleted = (GetHolidayCompletedEventHandler)Delegate.Combine(this.GetHolidayCompleted, value);
+                this._GetHolidayCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetHolidayCompleted = (GetHolidayCompletedEventHandler)Delegate.Remove(this.GetHolidayCompleted, value);
+				this._GetHolidayCompleted -= value;
 			}
 		}
 
+		public SaveUserAlertCompletedEventHandler _SaveUserAlertCompleted;
 		public event SaveUserAlertCompletedEventHandler SaveUserAlertCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveUserAlertCompleted = (SaveUserAlertCompletedEventHandler)Delegate.Combine(this.SaveUserAlertCompleted, value);
+                this._SaveUserAlertCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveUserAlertCompleted = (SaveUserAlertCompletedEventHandler)Delegate.Remove(this.SaveUserAlertCompleted, value);
+				this._SaveUserAlertCompleted -= value;
 			}
 		}
 
+		public SaveUserAlert2CompletedEventHandler _SaveUserAlert2Completed;
 		public event SaveUserAlert2CompletedEventHandler SaveUserAlert2Completed
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveUserAlert2Completed = (SaveUserAlert2CompletedEventHandler)Delegate.Combine(this.SaveUserAlert2Completed, value);
+				this._SaveUserAlert2Completed += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveUserAlert2Completed = (SaveUserAlert2CompletedEventHandler)Delegate.Remove(this.SaveUserAlert2Completed, value);
+				this._SaveUserAlert2Completed -= value;
 			}
 		}
 
+		public GetAlertLogCompletedEventHandler _GetAlertLogCompleted;
 		public event GetAlertLogCompletedEventHandler GetAlertLogCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetAlertLogCompleted = (GetAlertLogCompletedEventHandler)Delegate.Combine(this.GetAlertLogCompleted, value);
+				this._GetAlertLogCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetAlertLogCompleted = (GetAlertLogCompletedEventHandler)Delegate.Remove(this.GetAlertLogCompleted, value);
+				this._GetAlertLogCompleted -= value;
 			}
 		}
 
+		public GetAlertLogByGroupCompletedEventHandler _GetAlertLogByGroupCompleted;
 		public event GetAlertLogByGroupCompletedEventHandler GetAlertLogByGroupCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetAlertLogByGroupCompleted = (GetAlertLogByGroupCompletedEventHandler)Delegate.Combine(this.GetAlertLogByGroupCompleted, value);
+				this._GetAlertLogByGroupCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetAlertLogByGroupCompleted = (GetAlertLogByGroupCompletedEventHandler)Delegate.Remove(this.GetAlertLogByGroupCompleted, value);
+				this._GetAlertLogByGroupCompleted -= value;
 			}
 		}
 
+		public VerifyAlertManagerCompletedEventHandler _VerifyAlertManagerCompleted;
 		public event VerifyAlertManagerCompletedEventHandler VerifyAlertManagerCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.VerifyAlertManagerCompleted = (VerifyAlertManagerCompletedEventHandler)Delegate.Combine(this.VerifyAlertManagerCompleted, value);
+				this._VerifyAlertManagerCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.VerifyAlertManagerCompleted = (VerifyAlertManagerCompletedEventHandler)Delegate.Remove(this.VerifyAlertManagerCompleted, value);
+				this._VerifyAlertManagerCompleted -= value;
 			}
 		}
 
+		public GetUserAlertCompletedEventHandler _GetUserAlertCompleted;
 		public event GetUserAlertCompletedEventHandler GetUserAlertCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetUserAlertCompleted = (GetUserAlertCompletedEventHandler)Delegate.Combine(this.GetUserAlertCompleted, value);
+				this._GetUserAlertCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetUserAlertCompleted = (GetUserAlertCompletedEventHandler)Delegate.Remove(this.GetUserAlertCompleted, value);
+				this._GetUserAlertCompleted -= value;
 			}
 		}
 
+		public GetStockAlertItemsCompletedEventHandler _GetStockAlertItemsCompleted;
 		public event GetStockAlertItemsCompletedEventHandler GetStockAlertItemsCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetStockAlertItemsCompleted = (GetStockAlertItemsCompletedEventHandler)Delegate.Combine(this.GetStockAlertItemsCompleted, value);
+				this._GetStockAlertItemsCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetStockAlertItemsCompleted = (GetStockAlertItemsCompletedEventHandler)Delegate.Remove(this.GetStockAlertItemsCompleted, value);
+				this._GetStockAlertItemsCompleted -= value;
 			}
 		}
 
+		public GetPortAlertItemsCompletedEventHandler _GetPortAlertItemsCompleted;
 		public event GetPortAlertItemsCompletedEventHandler GetPortAlertItemsCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetPortAlertItemsCompleted = (GetPortAlertItemsCompletedEventHandler)Delegate.Combine(this.GetPortAlertItemsCompleted, value);
+				this._GetPortAlertItemsCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetPortAlertItemsCompleted = (GetPortAlertItemsCompletedEventHandler)Delegate.Remove(this.GetPortAlertItemsCompleted, value);
+				this._GetPortAlertItemsCompleted -= value;
 			}
 		}
 
+		public NAVChartCompletedEventHandler _NAVChartCompleted;
 		public event NAVChartCompletedEventHandler NAVChartCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.NAVChartCompleted = (NAVChartCompletedEventHandler)Delegate.Combine(this.NAVChartCompleted, value);
+				this._NAVChartCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.NAVChartCompleted = (NAVChartCompletedEventHandler)Delegate.Remove(this.NAVChartCompleted, value);
+				this._NAVChartCompleted -= value;
 			}
 		}
 
+		public GetDataForSmartClickCompletedEventHandler _GetDataForSmartClickCompleted;
 		public event GetDataForSmartClickCompletedEventHandler GetDataForSmartClickCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetDataForSmartClickCompleted = (GetDataForSmartClickCompletedEventHandler)Delegate.Combine(this.GetDataForSmartClickCompleted, value);
+				this._GetDataForSmartClickCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetDataForSmartClickCompleted = (GetDataForSmartClickCompletedEventHandler)Delegate.Remove(this.GetDataForSmartClickCompleted, value);
+				this._GetDataForSmartClickCompleted -= value;
 			}
 		}
 
+		public GetOrderFor1ClickCompletedEventHandler _GetOrderFor1ClickCompleted;
 		public event GetOrderFor1ClickCompletedEventHandler GetOrderFor1ClickCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetOrderFor1ClickCompleted = (GetOrderFor1ClickCompletedEventHandler)Delegate.Combine(this.GetOrderFor1ClickCompleted, value);
+				this._GetOrderFor1ClickCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetOrderFor1ClickCompleted = (GetOrderFor1ClickCompletedEventHandler)Delegate.Remove(this.GetOrderFor1ClickCompleted, value);
+				this._GetOrderFor1ClickCompleted -= value;
 			}
 		}
 
+		public SaveSummaryMarketDataCompletedEventHandler _SaveSummaryMarketDataCompleted;
 		public event SaveSummaryMarketDataCompletedEventHandler SaveSummaryMarketDataCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveSummaryMarketDataCompleted = (SaveSummaryMarketDataCompletedEventHandler)Delegate.Combine(this.SaveSummaryMarketDataCompleted, value);
+				this._SaveSummaryMarketDataCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveSummaryMarketDataCompleted = (SaveSummaryMarketDataCompletedEventHandler)Delegate.Remove(this.SaveSummaryMarketDataCompleted, value);
+				this._SaveSummaryMarketDataCompleted -= value;
 			}
 		}
 
+		public GetStockSMACompletedEventHandler _GetStockSMACompleted;
 		public event GetStockSMACompletedEventHandler GetStockSMACompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetStockSMACompleted = (GetStockSMACompletedEventHandler)Delegate.Combine(this.GetStockSMACompleted, value);
+				this._GetStockSMACompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetStockSMACompleted = (GetStockSMACompletedEventHandler)Delegate.Remove(this.GetStockSMACompleted, value);
+				this._GetStockSMACompleted -= value;
 			}
 		}
 
+		public SaveUserConfigCompletedEventHandler _SaveUserConfigCompleted;
 		public event SaveUserConfigCompletedEventHandler SaveUserConfigCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveUserConfigCompleted = (SaveUserConfigCompletedEventHandler)Delegate.Combine(this.SaveUserConfigCompleted, value);
+				this._SaveUserConfigCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveUserConfigCompleted = (SaveUserConfigCompletedEventHandler)Delegate.Remove(this.SaveUserConfigCompleted, value);
+				this._SaveUserConfigCompleted -= value;
 			}
 		}
 
+		public SaveUserConfigAllCompletedEventHandler _SaveUserConfigAllCompleted;
 		public event SaveUserConfigAllCompletedEventHandler SaveUserConfigAllCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveUserConfigAllCompleted = (SaveUserConfigAllCompletedEventHandler)Delegate.Combine(this.SaveUserConfigAllCompleted, value);
+				this._SaveUserConfigAllCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveUserConfigAllCompleted = (SaveUserConfigAllCompletedEventHandler)Delegate.Remove(this.SaveUserConfigAllCompleted, value);
+				this._SaveUserConfigAllCompleted -= value;
 			}
 		}
 
+		public GetPortEquityCompletedEventHandler _GetPortEquityCompleted;
 		public event GetPortEquityCompletedEventHandler GetPortEquityCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetPortEquityCompleted = (GetPortEquityCompletedEventHandler)Delegate.Combine(this.GetPortEquityCompleted, value);
+				this._GetPortEquityCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetPortEquityCompleted = (GetPortEquityCompletedEventHandler)Delegate.Remove(this.GetPortEquityCompleted, value);
+				this._GetPortEquityCompleted -= value;
 			}
 		}
 
+		public SendHeartBeat2CompletedEventHandler _SendHeartBeat2Completed;
 		public event SendHeartBeat2CompletedEventHandler SendHeartBeat2Completed
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SendHeartBeat2Completed = (SendHeartBeat2CompletedEventHandler)Delegate.Combine(this.SendHeartBeat2Completed, value);
+				this._SendHeartBeat2Completed += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SendHeartBeat2Completed = (SendHeartBeat2CompletedEventHandler)Delegate.Remove(this.SendHeartBeat2Completed, value);
+				this._SendHeartBeat2Completed -= value;
 			}
 		}
 
+		public SaveUserEfinForwardCompletedEventHandler _SaveUserEfinForwardCompleted;
 		public event SaveUserEfinForwardCompletedEventHandler SaveUserEfinForwardCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveUserEfinForwardCompleted = (SaveUserEfinForwardCompletedEventHandler)Delegate.Combine(this.SaveUserEfinForwardCompleted, value);
+				this._SaveUserEfinForwardCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveUserEfinForwardCompleted = (SaveUserEfinForwardCompletedEventHandler)Delegate.Remove(this.SaveUserEfinForwardCompleted, value);
+				this._SaveUserEfinForwardCompleted -= value;
 			}
 		}
 
+		public LoadAllInformationCompletedEventHandler _LoadAllInformationCompleted;
 		public event LoadAllInformationCompletedEventHandler LoadAllInformationCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LoadAllInformationCompleted = (LoadAllInformationCompletedEventHandler)Delegate.Combine(this.LoadAllInformationCompleted, value);
+				this._LoadAllInformationCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LoadAllInformationCompleted = (LoadAllInformationCompletedEventHandler)Delegate.Remove(this.LoadAllInformationCompleted, value);
+				this._LoadAllInformationCompleted -= value;
 			}
 		}
 
+		public LoadAllInformationIsoddCompletedEventHandler _LoadAllInformationIsoddCompleted;
 		public event LoadAllInformationIsoddCompletedEventHandler LoadAllInformationIsoddCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LoadAllInformationIsoddCompleted = (LoadAllInformationIsoddCompletedEventHandler)Delegate.Combine(this.LoadAllInformationIsoddCompleted, value);
+				this._LoadAllInformationIsoddCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LoadAllInformationIsoddCompleted = (LoadAllInformationIsoddCompletedEventHandler)Delegate.Remove(this.LoadAllInformationIsoddCompleted, value);
+				this._LoadAllInformationIsoddCompleted -= value;
 			}
 		}
 
+		public LoadStockInformationCompletedEventHandler _LoadStockInformationCompleted;
 		public event LoadStockInformationCompletedEventHandler LoadStockInformationCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LoadStockInformationCompleted = (LoadStockInformationCompletedEventHandler)Delegate.Combine(this.LoadStockInformationCompleted, value);
+				this._LoadStockInformationCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LoadStockInformationCompleted = (LoadStockInformationCompletedEventHandler)Delegate.Remove(this.LoadStockInformationCompleted, value);
+				this._LoadStockInformationCompleted -= value;
 			}
 		}
 
+		public LoadMarketInformationCompletedEventHandler _LoadMarketInformationCompleted;
 		public event LoadMarketInformationCompletedEventHandler LoadMarketInformationCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LoadMarketInformationCompleted = (LoadMarketInformationCompletedEventHandler)Delegate.Combine(this.LoadMarketInformationCompleted, value);
+				this._LoadMarketInformationCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LoadMarketInformationCompleted = (LoadMarketInformationCompletedEventHandler)Delegate.Remove(this.LoadMarketInformationCompleted, value);
+				this._LoadMarketInformationCompleted -= value;
 			}
 		}
 
+		public LoadOddLotInformationCompletedEventHandler _LoadOddLotInformationCompleted;
 		public event LoadOddLotInformationCompletedEventHandler LoadOddLotInformationCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LoadOddLotInformationCompleted = (LoadOddLotInformationCompletedEventHandler)Delegate.Combine(this.LoadOddLotInformationCompleted, value);
+				this._LoadOddLotInformationCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LoadOddLotInformationCompleted = (LoadOddLotInformationCompletedEventHandler)Delegate.Remove(this.LoadOddLotInformationCompleted, value);
+				this._LoadOddLotInformationCompleted -= value;
 			}
 		}
 
+		public BoardcastMessageCompletedEventHandler _BoardcastMessageCompleted;
 		public event BoardcastMessageCompletedEventHandler BoardcastMessageCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.BoardcastMessageCompleted = (BoardcastMessageCompletedEventHandler)Delegate.Combine(this.BoardcastMessageCompleted, value);
+				this._BoardcastMessageCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.BoardcastMessageCompleted = (BoardcastMessageCompletedEventHandler)Delegate.Remove(this.BoardcastMessageCompleted, value);
+				this._BoardcastMessageCompleted -= value;
 			}
 		}
 
+		public SendPushMessageCompletedEventHandler _SendPushMessageCompleted;
 		public event SendPushMessageCompletedEventHandler SendPushMessageCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SendPushMessageCompleted = (SendPushMessageCompletedEventHandler)Delegate.Combine(this.SendPushMessageCompleted, value);
+				this._SendPushMessageCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SendPushMessageCompleted = (SendPushMessageCompletedEventHandler)Delegate.Remove(this.SendPushMessageCompleted, value);
+				this._SendPushMessageCompleted -= value;
 			}
 		}
 
+		public BestBidOfferCompletedEventHandler _BestBidOfferCompleted;
 		public event BestBidOfferCompletedEventHandler BestBidOfferCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.BestBidOfferCompleted = (BestBidOfferCompletedEventHandler)Delegate.Combine(this.BestBidOfferCompleted, value);
+				this._BestBidOfferCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.BestBidOfferCompleted = (BestBidOfferCompletedEventHandler)Delegate.Remove(this.BestBidOfferCompleted, value);
+				this._BestBidOfferCompleted -= value;
 			}
 		}
 
+		public BestOpenPriceCompletedEventHandler _BestOpenPriceCompleted;
 		public event BestOpenPriceCompletedEventHandler BestOpenPriceCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.BestOpenPriceCompleted = (BestOpenPriceCompletedEventHandler)Delegate.Combine(this.BestOpenPriceCompleted, value);
+				this._BestOpenPriceCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.BestOpenPriceCompleted = (BestOpenPriceCompletedEventHandler)Delegate.Remove(this.BestOpenPriceCompleted, value);
+				this._BestOpenPriceCompleted -= value;
 			}
 		}
 
+		public BestProjectedCompletedEventHandler _BestProjectedCompleted;
 		public event BestProjectedCompletedEventHandler BestProjectedCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.BestProjectedCompleted = (BestProjectedCompletedEventHandler)Delegate.Combine(this.BestProjectedCompleted, value);
+				this._BestProjectedCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.BestProjectedCompleted = (BestProjectedCompletedEventHandler)Delegate.Remove(this.BestProjectedCompleted, value);
+				this._BestProjectedCompleted -= value;
 			}
 		}
 
+		public IndustryStatCompletedEventHandler _IndustryStatCompleted;
 		public event IndustryStatCompletedEventHandler IndustryStatCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IndustryStatCompleted = (IndustryStatCompletedEventHandler)Delegate.Combine(this.IndustryStatCompleted, value);
+				this._IndustryStatCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IndustryStatCompleted = (IndustryStatCompletedEventHandler)Delegate.Remove(this.IndustryStatCompleted, value);
+				this._IndustryStatCompleted -= value;
 			}
 		}
 
+		public TopActiveCompletedEventHandler _TopActiveCompleted;
 		public event TopActiveCompletedEventHandler TopActiveCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveCompleted = (TopActiveCompletedEventHandler)Delegate.Combine(this.TopActiveCompleted, value);
+				this._TopActiveCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveCompleted = (TopActiveCompletedEventHandler)Delegate.Remove(this.TopActiveCompleted, value);
+				this._TopActiveCompleted -= value;
 			}
 		}
 
+		public TopActiveBBOCompletedEventHandler _TopActiveBBOCompleted;
 		public event TopActiveBBOCompletedEventHandler TopActiveBBOCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBOCompleted = (TopActiveBBOCompletedEventHandler)Delegate.Combine(this.TopActiveBBOCompleted, value);
+				this._TopActiveBBOCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBOCompleted = (TopActiveBBOCompletedEventHandler)Delegate.Remove(this.TopActiveBBOCompleted, value);
+				this._TopActiveBBOCompleted -= value;
 			}
 		}
 
+		public TopActiveBBO_BenefitCompletedEventHandler _TopActiveBBO_BenefitCompleted;
 		public event TopActiveBBO_BenefitCompletedEventHandler TopActiveBBO_BenefitCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_BenefitCompleted = (TopActiveBBO_BenefitCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_BenefitCompleted, value);
+				this._TopActiveBBO_BenefitCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_BenefitCompleted = (TopActiveBBO_BenefitCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_BenefitCompleted, value);
+				this._TopActiveBBO_BenefitCompleted -= value;
 			}
 		}
 
+		public TopActiveBBO_WarrantCompletedEventHandler _TopActiveBBO_WarrantCompleted;
 		public event TopActiveBBO_WarrantCompletedEventHandler TopActiveBBO_WarrantCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_WarrantCompleted = (TopActiveBBO_WarrantCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_WarrantCompleted, value);
+				this._TopActiveBBO_WarrantCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_WarrantCompleted = (TopActiveBBO_WarrantCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_WarrantCompleted, value);
+				this._TopActiveBBO_WarrantCompleted -= value;
 			}
 		}
 
+		public TopActiveBBO_CMPRCompletedEventHandler _TopActiveBBO_CMPRCompleted;
 		public event TopActiveBBO_CMPRCompletedEventHandler TopActiveBBO_CMPRCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_CMPRCompleted = (TopActiveBBO_CMPRCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_CMPRCompleted, value);
+				this._TopActiveBBO_CMPRCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_CMPRCompleted = (TopActiveBBO_CMPRCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_CMPRCompleted, value);
+				this._TopActiveBBO_CMPRCompleted -= value;
 			}
 		}
 
+		public TopActiveBBO_MyPortCompletedEventHandler _TopActiveBBO_MyPortCompleted;
 		public event TopActiveBBO_MyPortCompletedEventHandler TopActiveBBO_MyPortCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_MyPortCompleted = (TopActiveBBO_MyPortCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_MyPortCompleted, value);
+				this._TopActiveBBO_MyPortCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_MyPortCompleted = (TopActiveBBO_MyPortCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_MyPortCompleted, value);
+				this._TopActiveBBO_MyPortCompleted -= value;
 			}
 		}
 
+		public GetMyPortSymbolListCompletedEventHandler _GetMyPortSymbolListCompleted;
 		public event GetMyPortSymbolListCompletedEventHandler GetMyPortSymbolListCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetMyPortSymbolListCompleted = (GetMyPortSymbolListCompletedEventHandler)Delegate.Combine(this.GetMyPortSymbolListCompleted, value);
+				this._GetMyPortSymbolListCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetMyPortSymbolListCompleted = (GetMyPortSymbolListCompletedEventHandler)Delegate.Remove(this.GetMyPortSymbolListCompleted, value);
+				this._GetMyPortSymbolListCompleted -= value;
 			}
 		}
 
+		public event TopActiveBBO_DWCompletedEventHandler _TopActiveBBO_DWCompleted;
 		public event TopActiveBBO_DWCompletedEventHandler TopActiveBBO_DWCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_DWCompleted = (TopActiveBBO_DWCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_DWCompleted, value);
+				this._TopActiveBBO_DWCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_DWCompleted = (TopActiveBBO_DWCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_DWCompleted, value);
+				this._TopActiveBBO_DWCompleted -= value;
 			}
 		}
 
+		public TopActiveBBO_NewsCompletedEventHandler _TopActiveBBO_NewsCompleted;
 		public event TopActiveBBO_NewsCompletedEventHandler TopActiveBBO_NewsCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_NewsCompleted = (TopActiveBBO_NewsCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_NewsCompleted, value);
+				this._TopActiveBBO_NewsCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_NewsCompleted = (TopActiveBBO_NewsCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_NewsCompleted, value);
+				this._TopActiveBBO_NewsCompleted -= value;
 			}
 		}
 
+		public TopActiveBBO_TurnOverCompletedEventHandler _TopActiveBBO_TurnOverCompleted;
 		public event TopActiveBBO_TurnOverCompletedEventHandler TopActiveBBO_TurnOverCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_TurnOverCompleted = (TopActiveBBO_TurnOverCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_TurnOverCompleted, value);
+				this._TopActiveBBO_TurnOverCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_TurnOverCompleted = (TopActiveBBO_TurnOverCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_TurnOverCompleted, value);
+				this._TopActiveBBO_TurnOverCompleted -= value;
 			}
 		}
 
+		public TopActiveBBO_SectorCompletedEventHandler _TopActiveBBO_SectorCompleted;
 		public event TopActiveBBO_SectorCompletedEventHandler TopActiveBBO_SectorCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopActiveBBO_SectorCompleted = (TopActiveBBO_SectorCompletedEventHandler)Delegate.Combine(this.TopActiveBBO_SectorCompleted, value);
+				this._TopActiveBBO_SectorCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopActiveBBO_SectorCompleted = (TopActiveBBO_SectorCompletedEventHandler)Delegate.Remove(this.TopActiveBBO_SectorCompleted, value);
+				this._TopActiveBBO_SectorCompleted -= value;
 			}
 		}
 
+		public InvestorTypeCompletedEventHandler _InvestorTypeCompleted;
 		public event InvestorTypeCompletedEventHandler InvestorTypeCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.InvestorTypeCompleted = (InvestorTypeCompletedEventHandler)Delegate.Combine(this.InvestorTypeCompleted, value);
+				this._InvestorTypeCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.InvestorTypeCompleted = (InvestorTypeCompletedEventHandler)Delegate.Remove(this.InvestorTypeCompleted, value);
+				this._InvestorTypeCompleted -= value;
 			}
 		}
 
+		public MarketIndicatorCompletedEventHandler _MarketIndicatorCompleted;
 		public event MarketIndicatorCompletedEventHandler MarketIndicatorCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.MarketIndicatorCompleted = (MarketIndicatorCompletedEventHandler)Delegate.Combine(this.MarketIndicatorCompleted, value);
+				this._MarketIndicatorCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.MarketIndicatorCompleted = (MarketIndicatorCompletedEventHandler)Delegate.Remove(this.MarketIndicatorCompleted, value);
+				this._MarketIndicatorCompleted -= value;
 			}
 		}
 
+		public SaleByPriceCompletedEventHandler _SaleByPriceCompleted;
 		public event SaleByPriceCompletedEventHandler SaleByPriceCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaleByPriceCompleted = (SaleByPriceCompletedEventHandler)Delegate.Combine(this.SaleByPriceCompleted, value);
+				this._SaleByPriceCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaleByPriceCompleted = (SaleByPriceCompletedEventHandler)Delegate.Remove(this.SaleByPriceCompleted, value);
+				this._SaleByPriceCompleted -= value;
 			}
 		}
 
+		public SectorStatCompletedEventHandler _SectorStatCompleted;
 		public event SectorStatCompletedEventHandler SectorStatCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SectorStatCompleted = (SectorStatCompletedEventHandler)Delegate.Combine(this.SectorStatCompleted, value);
+				this._SectorStatCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SectorStatCompleted = (SectorStatCompletedEventHandler)Delegate.Remove(this.SectorStatCompleted, value);
+				this._SectorStatCompleted -= value;
 			}
 		}
 
+		public SectorStatForDumpCompletedEventHandler _SectorStatForDumpCompleted;
 		public event SectorStatForDumpCompletedEventHandler SectorStatForDumpCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SectorStatForDumpCompleted = (SectorStatForDumpCompletedEventHandler)Delegate.Combine(this.SectorStatForDumpCompleted, value);
+				this._SectorStatForDumpCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SectorStatForDumpCompleted = (SectorStatForDumpCompletedEventHandler)Delegate.Remove(this.SectorStatForDumpCompleted, value);
+				this._SectorStatForDumpCompleted -= value;
 			}
 		}
 
+		public StockStatForDumpCompletedEventHandler _StockStatForDumpCompleted;
 		public event StockStatForDumpCompletedEventHandler StockStatForDumpCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StockStatForDumpCompleted = (StockStatForDumpCompletedEventHandler)Delegate.Combine(this.StockStatForDumpCompleted, value);
+				this._StockStatForDumpCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StockStatForDumpCompleted = (StockStatForDumpCompletedEventHandler)Delegate.Remove(this.StockStatForDumpCompleted, value);
+				this._StockStatForDumpCompleted -= value;
 			}
 		}
 
+		public  GetUserConfigForDumpCompletedEventHandler _GetUserConfigForDumpCompleted;
 		public event GetUserConfigForDumpCompletedEventHandler GetUserConfigForDumpCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetUserConfigForDumpCompleted = (GetUserConfigForDumpCompletedEventHandler)Delegate.Combine(this.GetUserConfigForDumpCompleted, value);
+				this._GetUserConfigForDumpCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetUserConfigForDumpCompleted = (GetUserConfigForDumpCompletedEventHandler)Delegate.Remove(this.GetUserConfigForDumpCompleted, value);
+				this._GetUserConfigForDumpCompleted -= value;
 			}
 		}
 
+		public SaveUserConfigForDumpCompletedEventHandler _SaveUserConfigForDumpCompleted;
 		public event SaveUserConfigForDumpCompletedEventHandler SaveUserConfigForDumpCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveUserConfigForDumpCompleted = (SaveUserConfigForDumpCompletedEventHandler)Delegate.Combine(this.SaveUserConfigForDumpCompleted, value);
+				this._SaveUserConfigForDumpCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveUserConfigForDumpCompleted = (SaveUserConfigForDumpCompletedEventHandler)Delegate.Remove(this.SaveUserConfigForDumpCompleted, value);
+				this._SaveUserConfigForDumpCompleted -= value;
 			}
 		}
 
+		public SaleByTime2CompletedEventHandler _SaleByTime2Completed;
 		public event SaleByTime2CompletedEventHandler SaleByTime2Completed
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaleByTime2Completed = (SaleByTime2CompletedEventHandler)Delegate.Combine(this.SaleByTime2Completed, value);
+				this._SaleByTime2Completed += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaleByTime2Completed = (SaleByTime2CompletedEventHandler)Delegate.Remove(this.SaleByTime2Completed, value);
+				this._SaleByTime2Completed -= value;
 			}
 		}
 
+		public StockInPlayCompletedEventHandler _StockInPlayCompleted;
 		public event StockInPlayCompletedEventHandler StockInPlayCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StockInPlayCompleted = (StockInPlayCompletedEventHandler)Delegate.Combine(this.StockInPlayCompleted, value);
+				this._StockInPlayCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StockInPlayCompleted = (StockInPlayCompletedEventHandler)Delegate.Remove(this.StockInPlayCompleted, value);
+				this._StockInPlayCompleted -= value;
 			}
 		}
 
+		public StockByPricePageCompletedEventHandler _StockByPricePageCompleted;
 		public event StockByPricePageCompletedEventHandler StockByPricePageCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StockByPricePageCompleted = (StockByPricePageCompletedEventHandler)Delegate.Combine(this.StockByPricePageCompleted, value);
+				this._StockByPricePageCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StockByPricePageCompleted = (StockByPricePageCompletedEventHandler)Delegate.Remove(this.StockByPricePageCompleted, value);
+				this._StockByPricePageCompleted -= value;
 			}
 		}
 
+		public MarketStatusCompletedEventHandler _MarketStatusCompleted;
 		public event MarketStatusCompletedEventHandler MarketStatusCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.MarketStatusCompleted = (MarketStatusCompletedEventHandler)Delegate.Combine(this.MarketStatusCompleted, value);
+				this._MarketStatusCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.MarketStatusCompleted = (MarketStatusCompletedEventHandler)Delegate.Remove(this.MarketStatusCompleted, value);
+				this._MarketStatusCompleted -= value;
 			}
 		}
 
+		public TopBBOCompletedEventHandler _TopBBOCompleted;
 		public event TopBBOCompletedEventHandler TopBBOCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopBBOCompleted = (TopBBOCompletedEventHandler)Delegate.Combine(this.TopBBOCompleted, value);
+				this._TopBBOCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopBBOCompleted = (TopBBOCompletedEventHandler)Delegate.Remove(this.TopBBOCompleted, value);
+				this._TopBBOCompleted -= value;
 			}
 		}
 
+		public TopBBOadCompletedEventHandler _TopBBOadCompleted;
 		public event TopBBOadCompletedEventHandler TopBBOadCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.TopBBOadCompleted = (TopBBOadCompletedEventHandler)Delegate.Combine(this.TopBBOadCompleted, value);
+				this._TopBBOadCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.TopBBOadCompleted = (TopBBOadCompletedEventHandler)Delegate.Remove(this.TopBBOadCompleted, value);
+				this._TopBBOadCompleted -= value;
 			}
 		}
 
+		public ViewOddlotCompletedEventHandler _ViewOddlotCompleted;
 		public event ViewOddlotCompletedEventHandler ViewOddlotCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOddlotCompleted = (ViewOddlotCompletedEventHandler)Delegate.Combine(this.ViewOddlotCompleted, value);
+				this._ViewOddlotCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOddlotCompleted = (ViewOddlotCompletedEventHandler)Delegate.Remove(this.ViewOddlotCompleted, value);
+				this._ViewOddlotCompleted -= value;
 			}
 		}
 
+		public Get5BidOfferCompletedEventHandler _Get5BidOfferCompleted;
 		public event Get5BidOfferCompletedEventHandler Get5BidOfferCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.Get5BidOfferCompleted = (Get5BidOfferCompletedEventHandler)Delegate.Combine(this.Get5BidOfferCompleted, value);
+				this._Get5BidOfferCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.Get5BidOfferCompleted = (Get5BidOfferCompletedEventHandler)Delegate.Remove(this.Get5BidOfferCompleted, value);
+				this._Get5BidOfferCompleted -= value;
 			}
 		}
 
+		public ViewOrderTransactionCompletedEventHandler _ViewOrderTransactionCompleted;
 		public event ViewOrderTransactionCompletedEventHandler ViewOrderTransactionCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOrderTransactionCompleted = (ViewOrderTransactionCompletedEventHandler)Delegate.Combine(this.ViewOrderTransactionCompleted, value);
+				this._ViewOrderTransactionCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOrderTransactionCompleted = (ViewOrderTransactionCompletedEventHandler)Delegate.Remove(this.ViewOrderTransactionCompleted, value);
+				this._ViewOrderTransactionCompleted -= value;
 			}
 		}
 
+		public ViewOrderHistoryCompletedEventHandler _ViewOrderHistoryCompleted;
 		public event ViewOrderHistoryCompletedEventHandler ViewOrderHistoryCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOrderHistoryCompleted = (ViewOrderHistoryCompletedEventHandler)Delegate.Combine(this.ViewOrderHistoryCompleted, value);
+				this._ViewOrderHistoryCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOrderHistoryCompleted = (ViewOrderHistoryCompletedEventHandler)Delegate.Remove(this.ViewOrderHistoryCompleted, value);
+				this._ViewOrderHistoryCompleted -= value;
 			}
 		}
 
+		public ViewOrdersForDumpCompletedEventHandler _ViewOrdersForDumpCompleted;
 		public event ViewOrdersForDumpCompletedEventHandler ViewOrdersForDumpCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOrdersForDumpCompleted = (ViewOrdersForDumpCompletedEventHandler)Delegate.Combine(this.ViewOrdersForDumpCompleted, value);
+				this._ViewOrdersForDumpCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOrdersForDumpCompleted = (ViewOrdersForDumpCompletedEventHandler)Delegate.Remove(this.ViewOrdersForDumpCompleted, value);
+				this._ViewOrdersForDumpCompleted -= value;
 			}
 		}
 
+		public ViewOrderByOrderNoCompletedEventHandler _ViewOrderByOrderNoCompleted;
 		public event ViewOrderByOrderNoCompletedEventHandler ViewOrderByOrderNoCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOrderByOrderNoCompleted = (ViewOrderByOrderNoCompletedEventHandler)Delegate.Combine(this.ViewOrderByOrderNoCompleted, value);
+				this._ViewOrderByOrderNoCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOrderByOrderNoCompleted = (ViewOrderByOrderNoCompletedEventHandler)Delegate.Remove(this.ViewOrderByOrderNoCompleted, value);
+				this._ViewOrderByOrderNoCompleted -= value;
 			}
 		}
 
+		public ViewNewsHeaderCompletedEventHandler _ViewNewsHeaderCompleted;
 		public event ViewNewsHeaderCompletedEventHandler ViewNewsHeaderCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewNewsHeaderCompleted = (ViewNewsHeaderCompletedEventHandler)Delegate.Combine(this.ViewNewsHeaderCompleted, value);
+				this._ViewNewsHeaderCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewNewsHeaderCompleted = (ViewNewsHeaderCompletedEventHandler)Delegate.Remove(this.ViewNewsHeaderCompleted, value);
+				this._ViewNewsHeaderCompleted -= value;
 			}
 		}
 
+		public ViewNewsStoryCompletedEventHandler _ViewNewsStoryCompleted;
 		public event ViewNewsStoryCompletedEventHandler ViewNewsStoryCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewNewsStoryCompleted = (ViewNewsStoryCompletedEventHandler)Delegate.Combine(this.ViewNewsStoryCompleted, value);
+				this._ViewNewsStoryCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewNewsStoryCompleted = (ViewNewsStoryCompletedEventHandler)Delegate.Remove(this.ViewNewsStoryCompleted, value);
+				this._ViewNewsStoryCompleted -= value;
 			}
 		}
 
+		public ViewCustomersInfoCompletedEventHandler _ViewCustomersInfoCompleted;
 		public event ViewCustomersInfoCompletedEventHandler ViewCustomersInfoCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomersInfoCompleted = (ViewCustomersInfoCompletedEventHandler)Delegate.Combine(this.ViewCustomersInfoCompleted, value);
+				this._ViewCustomersInfoCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomersInfoCompleted = (ViewCustomersInfoCompletedEventHandler)Delegate.Remove(this.ViewCustomersInfoCompleted, value);
+				this._ViewCustomersInfoCompleted -= value;
 			}
 		}
 
+		public ViewCustomerCreditOnSendBox_FreewillCompletedEventHandler _ViewCustomerCreditOnSendBox_FreewillCompleted;
 		public event ViewCustomerCreditOnSendBox_FreewillCompletedEventHandler ViewCustomerCreditOnSendBox_FreewillCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomerCreditOnSendBox_FreewillCompleted = (ViewCustomerCreditOnSendBox_FreewillCompletedEventHandler)Delegate.Combine(this.ViewCustomerCreditOnSendBox_FreewillCompleted, value);
+				this._ViewCustomerCreditOnSendBox_FreewillCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomerCreditOnSendBox_FreewillCompleted = (ViewCustomerCreditOnSendBox_FreewillCompletedEventHandler)Delegate.Remove(this.ViewCustomerCreditOnSendBox_FreewillCompleted, value);
+				this._ViewCustomerCreditOnSendBox_FreewillCompleted -= value;
 			}
 		}
 
+		public ViewCustomerCreditOnSendBoxCompletedEventHandler _ViewCustomerCreditOnSendBoxCompleted;
 		public event ViewCustomerCreditOnSendBoxCompletedEventHandler ViewCustomerCreditOnSendBoxCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomerCreditOnSendBoxCompleted = (ViewCustomerCreditOnSendBoxCompletedEventHandler)Delegate.Combine(this.ViewCustomerCreditOnSendBoxCompleted, value);
+				this._ViewCustomerCreditOnSendBoxCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomerCreditOnSendBoxCompleted = (ViewCustomerCreditOnSendBoxCompletedEventHandler)Delegate.Remove(this.ViewCustomerCreditOnSendBoxCompleted, value);
+				this._ViewCustomerCreditOnSendBoxCompleted -= value;
 			}
 		}
 
+		public GetSwitchAccountInfoCompletedEventHandler _GetSwitchAccountInfoCompleted;
 		public event GetSwitchAccountInfoCompletedEventHandler GetSwitchAccountInfoCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetSwitchAccountInfoCompleted = (GetSwitchAccountInfoCompletedEventHandler)Delegate.Combine(this.GetSwitchAccountInfoCompleted, value);
+				this._GetSwitchAccountInfoCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetSwitchAccountInfoCompleted = (GetSwitchAccountInfoCompletedEventHandler)Delegate.Remove(this.GetSwitchAccountInfoCompleted, value);
+				this._GetSwitchAccountInfoCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_MobileReportAllCompletedEventHandler _ViewCustomer_MobileReportAllCompleted;
 		public event ViewCustomer_MobileReportAllCompletedEventHandler ViewCustomer_MobileReportAllCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_MobileReportAllCompleted = (ViewCustomer_MobileReportAllCompletedEventHandler)Delegate.Combine(this.ViewCustomer_MobileReportAllCompleted, value);
+				this._ViewCustomer_MobileReportAllCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_MobileReportAllCompleted = (ViewCustomer_MobileReportAllCompletedEventHandler)Delegate.Remove(this.ViewCustomer_MobileReportAllCompleted, value);
+				this._ViewCustomer_MobileReportAllCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_OrdersConfirmsCompletedEventHandler _ViewCustomer_OrdersConfirmsCompleted;
 		public event ViewCustomer_OrdersConfirmsCompletedEventHandler ViewCustomer_OrdersConfirmsCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_OrdersConfirmsCompleted = (ViewCustomer_OrdersConfirmsCompletedEventHandler)Delegate.Combine(this.ViewCustomer_OrdersConfirmsCompleted, value);
+				this._ViewCustomer_OrdersConfirmsCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_OrdersConfirmsCompleted = (ViewCustomer_OrdersConfirmsCompletedEventHandler)Delegate.Remove(this.ViewCustomer_OrdersConfirmsCompleted, value);
+				this._ViewCustomer_OrdersConfirmsCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_CreditPositionCompletedEventHandler _ViewCustomer_CreditPositionCompleted;
 		public event ViewCustomer_CreditPositionCompletedEventHandler ViewCustomer_CreditPositionCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_CreditPositionCompleted = (ViewCustomer_CreditPositionCompletedEventHandler)Delegate.Combine(this.ViewCustomer_CreditPositionCompleted, value);
+				this._ViewCustomer_CreditPositionCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_CreditPositionCompleted = (ViewCustomer_CreditPositionCompletedEventHandler)Delegate.Remove(this.ViewCustomer_CreditPositionCompleted, value);
+				this._ViewCustomer_CreditPositionCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_ProjectedProfitLossCompletedEventHandler _ViewCustomer_ProjectedProfitLossCompleted;
 		public event ViewCustomer_ProjectedProfitLossCompletedEventHandler ViewCustomer_ProjectedProfitLossCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_ProjectedProfitLossCompleted = (ViewCustomer_ProjectedProfitLossCompletedEventHandler)Delegate.Combine(this.ViewCustomer_ProjectedProfitLossCompleted, value);
+				this._ViewCustomer_ProjectedProfitLossCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_ProjectedProfitLossCompleted = (ViewCustomer_ProjectedProfitLossCompletedEventHandler)Delegate.Remove(this.ViewCustomer_ProjectedProfitLossCompleted, value);
+				this._ViewCustomer_ProjectedProfitLossCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_RealizeProfitLossCompletedEventHandler _ViewCustomer_RealizeProfitLossCompleted;
 		public event ViewCustomer_RealizeProfitLossCompletedEventHandler ViewCustomer_RealizeProfitLossCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_RealizeProfitLossCompleted = (ViewCustomer_RealizeProfitLossCompletedEventHandler)Delegate.Combine(this.ViewCustomer_RealizeProfitLossCompleted, value);
+				this._ViewCustomer_RealizeProfitLossCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_RealizeProfitLossCompleted = (ViewCustomer_RealizeProfitLossCompletedEventHandler)Delegate.Remove(this.ViewCustomer_RealizeProfitLossCompleted, value);
+				this._ViewCustomer_RealizeProfitLossCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_SummaryCompletedEventHandler _ViewCustomer_SummaryCompleted;
 		public event ViewCustomer_SummaryCompletedEventHandler ViewCustomer_SummaryCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_SummaryCompleted = (ViewCustomer_SummaryCompletedEventHandler)Delegate.Combine(this.ViewCustomer_SummaryCompleted, value);
+				this._ViewCustomer_SummaryCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_SummaryCompleted = (ViewCustomer_SummaryCompletedEventHandler)Delegate.Remove(this.ViewCustomer_SummaryCompleted, value);
+				this._ViewCustomer_SummaryCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_ConfirmSummaryCompletedEventHandler _ViewCustomer_ConfirmSummaryCompleted;
 		public event ViewCustomer_ConfirmSummaryCompletedEventHandler ViewCustomer_ConfirmSummaryCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_ConfirmSummaryCompleted = (ViewCustomer_ConfirmSummaryCompletedEventHandler)Delegate.Combine(this.ViewCustomer_ConfirmSummaryCompleted, value);
+				this._ViewCustomer_ConfirmSummaryCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_ConfirmSummaryCompleted = (ViewCustomer_ConfirmSummaryCompletedEventHandler)Delegate.Remove(this.ViewCustomer_ConfirmSummaryCompleted, value);
+				this._ViewCustomer_ConfirmSummaryCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_ConfirmCompletedEventHandler _ViewCustomer_ConfirmCompleted;
 		public event ViewCustomer_ConfirmCompletedEventHandler ViewCustomer_ConfirmCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_ConfirmCompleted = (ViewCustomer_ConfirmCompletedEventHandler)Delegate.Combine(this.ViewCustomer_ConfirmCompleted, value);
+				this._ViewCustomer_ConfirmCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_ConfirmCompleted = (ViewCustomer_ConfirmCompletedEventHandler)Delegate.Remove(this.ViewCustomer_ConfirmCompleted, value);
+				this._ViewCustomer_ConfirmCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_ConfirmByDealIDCompletedEventHandler _ViewCustomer_ConfirmByDealIDCompleted;
 		public event ViewCustomer_ConfirmByDealIDCompletedEventHandler ViewCustomer_ConfirmByDealIDCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_ConfirmByDealIDCompleted = (ViewCustomer_ConfirmByDealIDCompletedEventHandler)Delegate.Combine(this.ViewCustomer_ConfirmByDealIDCompleted, value);
+				this._ViewCustomer_ConfirmByDealIDCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_ConfirmByDealIDCompleted = (ViewCustomer_ConfirmByDealIDCompletedEventHandler)Delegate.Remove(this.ViewCustomer_ConfirmByDealIDCompleted, value);
+				this._ViewCustomer_ConfirmByDealIDCompleted -= value;
 			}
 		}
 
+		public ViewCustomer_ConfirmByStockCompletedEventHandler _ViewCustomer_ConfirmByStockCompleted;
 		public event ViewCustomer_ConfirmByStockCompletedEventHandler ViewCustomer_ConfirmByStockCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewCustomer_ConfirmByStockCompleted = (ViewCustomer_ConfirmByStockCompletedEventHandler)Delegate.Combine(this.ViewCustomer_ConfirmByStockCompleted, value);
+				this._ViewCustomer_ConfirmByStockCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewCustomer_ConfirmByStockCompleted = (ViewCustomer_ConfirmByStockCompletedEventHandler)Delegate.Remove(this.ViewCustomer_ConfirmByStockCompleted, value);
+				this._ViewCustomer_ConfirmByStockCompleted -= value;
 			}
 		}
 
+		public ViewOrderInfo_AfterCloseFwCompletedEventHandler _ViewOrderInfo_AfterCloseFwCompleted;
 		public event ViewOrderInfo_AfterCloseFwCompletedEventHandler ViewOrderInfo_AfterCloseFwCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOrderInfo_AfterCloseFwCompleted = (ViewOrderInfo_AfterCloseFwCompletedEventHandler)Delegate.Combine(this.ViewOrderInfo_AfterCloseFwCompleted, value);
+				this._ViewOrderInfo_AfterCloseFwCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOrderInfo_AfterCloseFwCompleted = (ViewOrderInfo_AfterCloseFwCompletedEventHandler)Delegate.Remove(this.ViewOrderInfo_AfterCloseFwCompleted, value);
+				this._ViewOrderInfo_AfterCloseFwCompleted -= value;
 			}
 		}
 
+		public ViewOrderDealDataCompletedEventHandler _ViewOrderDealDataCompleted;
 		public event ViewOrderDealDataCompletedEventHandler ViewOrderDealDataCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOrderDealDataCompleted = (ViewOrderDealDataCompletedEventHandler)Delegate.Combine(this.ViewOrderDealDataCompleted, value);
+				this._ViewOrderDealDataCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOrderDealDataCompleted = (ViewOrderDealDataCompletedEventHandler)Delegate.Remove(this.ViewOrderDealDataCompleted, value);
+				this._ViewOrderDealDataCompleted -= value;
 			}
 		}
 
+		public ViewOrderDealDataHistoryCompletedEventHandler _ViewOrderDealDataHistoryCompleted;
 		public event ViewOrderDealDataHistoryCompletedEventHandler ViewOrderDealDataHistoryCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ViewOrderDealDataHistoryCompleted = (ViewOrderDealDataHistoryCompletedEventHandler)Delegate.Combine(this.ViewOrderDealDataHistoryCompleted, value);
+				this._ViewOrderDealDataHistoryCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ViewOrderDealDataHistoryCompleted = (ViewOrderDealDataHistoryCompletedEventHandler)Delegate.Remove(this.ViewOrderDealDataHistoryCompleted, value);
+				this._ViewOrderDealDataHistoryCompleted -= value;
 			}
 		}
 
+		public GetCometInfoCompletedEventHandler _GetCometInfoCompleted;
 		public event GetCometInfoCompletedEventHandler GetCometInfoCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetCometInfoCompleted = (GetCometInfoCompletedEventHandler)Delegate.Combine(this.GetCometInfoCompleted, value);
+				this._GetCometInfoCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetCometInfoCompleted = (GetCometInfoCompletedEventHandler)Delegate.Remove(this.GetCometInfoCompleted, value);
+				this._GetCometInfoCompleted -= value;
 			}
 		}
 
+		public GetTunnelConfigCompletedEventHandler _GetTunnelConfigCompleted;
 		public event GetTunnelConfigCompletedEventHandler GetTunnelConfigCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetTunnelConfigCompleted = (GetTunnelConfigCompletedEventHandler)Delegate.Combine(this.GetTunnelConfigCompleted, value);
+				this._GetTunnelConfigCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetTunnelConfigCompleted = (GetTunnelConfigCompletedEventHandler)Delegate.Remove(this.GetTunnelConfigCompleted, value);
+				this._GetTunnelConfigCompleted -= value;
 			}
 		}
 
+		public GetTunnelCompletedEventHandler _GetTunnelCompleted;
 		public event GetTunnelCompletedEventHandler GetTunnelCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetTunnelCompleted = (GetTunnelCompletedEventHandler)Delegate.Combine(this.GetTunnelCompleted, value);
+				this._GetTunnelCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetTunnelCompleted = (GetTunnelCompletedEventHandler)Delegate.Remove(this.GetTunnelCompleted, value);
+				this._GetTunnelCompleted -= value;
 			}
 		}
 
+		public VerifyOrderCompletedEventHandler _VerifyOrderCompleted;
 		public event VerifyOrderCompletedEventHandler VerifyOrderCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.VerifyOrderCompleted = (VerifyOrderCompletedEventHandler)Delegate.Combine(this.VerifyOrderCompleted, value);
+				this._VerifyOrderCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.VerifyOrderCompleted = (VerifyOrderCompletedEventHandler)Delegate.Remove(this.VerifyOrderCompleted, value);
+				this._VerifyOrderCompleted -= value;
 			}
 		}
 
+		public VerifyOrderFwCompletedEventHandler _VerifyOrderFwCompleted;
 		public event VerifyOrderFwCompletedEventHandler VerifyOrderFwCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.VerifyOrderFwCompleted = (VerifyOrderFwCompletedEventHandler)Delegate.Combine(this.VerifyOrderFwCompleted, value);
+				this._VerifyOrderFwCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.VerifyOrderFwCompleted = (VerifyOrderFwCompletedEventHandler)Delegate.Remove(this.VerifyOrderFwCompleted, value);
+				this._VerifyOrderFwCompleted -= value;
 			}
 		}
 
+		public VerifyOrderMktCompletedEventHandler _VerifyOrderMktCompleted;
 		public event VerifyOrderMktCompletedEventHandler VerifyOrderMktCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.VerifyOrderMktCompleted = (VerifyOrderMktCompletedEventHandler)Delegate.Combine(this.VerifyOrderMktCompleted, value);
+				this._VerifyOrderMktCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.VerifyOrderMktCompleted = (VerifyOrderMktCompletedEventHandler)Delegate.Remove(this.VerifyOrderMktCompleted, value);
+				this._VerifyOrderMktCompleted -= value;
 			}
 		}
 
+		public GetMainInfoCompletedEventHandler _GetMainInfoCompleted;
 		public event GetMainInfoCompletedEventHandler GetMainInfoCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetMainInfoCompleted = (GetMainInfoCompletedEventHandler)Delegate.Combine(this.GetMainInfoCompleted, value);
+				this._GetMainInfoCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetMainInfoCompleted = (GetMainInfoCompletedEventHandler)Delegate.Remove(this.GetMainInfoCompleted, value);
+				this._GetMainInfoCompleted -= value;
 			}
 		}
 
+		public UserAuthenCompletedEventHandler _UserAuthenCompleted;
 		public event UserAuthenCompletedEventHandler UserAuthenCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.UserAuthenCompleted = (UserAuthenCompletedEventHandler)Delegate.Combine(this.UserAuthenCompleted, value);
+				this._UserAuthenCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.UserAuthenCompleted = (UserAuthenCompletedEventHandler)Delegate.Remove(this.UserAuthenCompleted, value);
+				this._UserAuthenCompleted -= value;
 			}
 		}
 
+		public ClearEfinSessionCompletedEventHandler _ClearEfinSessionCompleted;
 		public event ClearEfinSessionCompletedEventHandler ClearEfinSessionCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ClearEfinSessionCompleted = (ClearEfinSessionCompletedEventHandler)Delegate.Combine(this.ClearEfinSessionCompleted, value);
+				this._ClearEfinSessionCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ClearEfinSessionCompleted = (ClearEfinSessionCompletedEventHandler)Delegate.Remove(this.ClearEfinSessionCompleted, value);
+				this._ClearEfinSessionCompleted -= value;
 			}
 		}
 
+		public GetUrlClientCompletedEventHandler _GetUrlClientCompleted;
 		public event GetUrlClientCompletedEventHandler GetUrlClientCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.GetUrlClientCompleted = (GetUrlClientCompletedEventHandler)Delegate.Combine(this.GetUrlClientCompleted, value);
+				this._GetUrlClientCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.GetUrlClientCompleted = (GetUrlClientCompletedEventHandler)Delegate.Remove(this.GetUrlClientCompleted, value);
+				this._GetUrlClientCompleted -= value;
 			}
 		}
 
+		public LogoutCompletedEventHandler _LogoutCompleted;
 		public event LogoutCompletedEventHandler LogoutCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LogoutCompleted = (LogoutCompletedEventHandler)Delegate.Combine(this.LogoutCompleted, value);
+				this._LogoutCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LogoutCompleted = (LogoutCompletedEventHandler)Delegate.Remove(this.LogoutCompleted, value);
+				this._LogoutCompleted -= value;
 			}
 		}
 
+		public LogoutADCompletedEventHandler _LogoutADCompleted;
 		public event LogoutADCompletedEventHandler LogoutADCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.LogoutADCompleted = (LogoutADCompletedEventHandler)Delegate.Combine(this.LogoutADCompleted, value);
+				this._LogoutADCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.LogoutADCompleted = (LogoutADCompletedEventHandler)Delegate.Remove(this.LogoutADCompleted, value);
+				this._LogoutADCompleted -= value;
 			}
 		}
 
+		public ChangeCustomerPasswordCompletedEventHandler _ChangeCustomerPasswordCompleted;
 		public event ChangeCustomerPasswordCompletedEventHandler ChangeCustomerPasswordCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ChangeCustomerPasswordCompleted = (ChangeCustomerPasswordCompletedEventHandler)Delegate.Combine(this.ChangeCustomerPasswordCompleted, value);
+				this._ChangeCustomerPasswordCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ChangeCustomerPasswordCompleted = (ChangeCustomerPasswordCompletedEventHandler)Delegate.Remove(this.ChangeCustomerPasswordCompleted, value);
+				this._ChangeCustomerPasswordCompleted -= value;
 			}
 		}
 
+		public ChangeTraderPasswordCompletedEventHandler _ChangeTraderPasswordCompleted;
 		public event ChangeTraderPasswordCompletedEventHandler ChangeTraderPasswordCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.ChangeTraderPasswordCompleted = (ChangeTraderPasswordCompletedEventHandler)Delegate.Combine(this.ChangeTraderPasswordCompleted, value);
+				this._ChangeTraderPasswordCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.ChangeTraderPasswordCompleted = (ChangeTraderPasswordCompletedEventHandler)Delegate.Remove(this.ChangeTraderPasswordCompleted, value);
+				this._ChangeTraderPasswordCompleted -= value;
 			}
 		}
 
+		public StockThresholdInformationCompletedEventHandler _StockThresholdInformationCompleted;
 		public event StockThresholdInformationCompletedEventHandler StockThresholdInformationCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.StockThresholdInformationCompleted = (StockThresholdInformationCompletedEventHandler)Delegate.Combine(this.StockThresholdInformationCompleted, value);
+				this._StockThresholdInformationCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.StockThresholdInformationCompleted = (StockThresholdInformationCompletedEventHandler)Delegate.Remove(this.StockThresholdInformationCompleted, value);
+				this._StockThresholdInformationCompleted -= value;
 			}
 		}
 
+		public SaveStockThresholdCompletedEventHandler _SaveStockThresholdCompleted;
 		public event SaveStockThresholdCompletedEventHandler SaveStockThresholdCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SaveStockThresholdCompleted = (SaveStockThresholdCompletedEventHandler)Delegate.Combine(this.SaveStockThresholdCompleted, value);
+				this._SaveStockThresholdCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SaveStockThresholdCompleted = (SaveStockThresholdCompletedEventHandler)Delegate.Remove(this.SaveStockThresholdCompleted, value);
+				this._SaveStockThresholdCompleted -= value;
 			}
 		}
 
+		public SendNewOrderCompletedEventHandler _SendNewOrderCompleted;
 		public event SendNewOrderCompletedEventHandler SendNewOrderCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SendNewOrderCompleted = (SendNewOrderCompletedEventHandler)Delegate.Combine(this.SendNewOrderCompleted, value);
+				this._SendNewOrderCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SendNewOrderCompleted = (SendNewOrderCompletedEventHandler)Delegate.Remove(this.SendNewOrderCompleted, value);
+				this._SendNewOrderCompleted -= value;
 			}
 		}
 
+		public SendCancelOrder_AfterCloseFwCompletedEventHandler _SendCancelOrder_AfterCloseFwCompleted;
 		public event SendCancelOrder_AfterCloseFwCompletedEventHandler SendCancelOrder_AfterCloseFwCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SendCancelOrder_AfterCloseFwCompleted = (SendCancelOrder_AfterCloseFwCompletedEventHandler)Delegate.Combine(this.SendCancelOrder_AfterCloseFwCompleted, value);
+				this._SendCancelOrder_AfterCloseFwCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SendCancelOrder_AfterCloseFwCompleted = (SendCancelOrder_AfterCloseFwCompletedEventHandler)Delegate.Remove(this.SendCancelOrder_AfterCloseFwCompleted, value);
+				this._SendCancelOrder_AfterCloseFwCompleted -= value;
 			}
 		}
 
+		public SendCancelOrderCompletedEventHandler _SendCancelOrderCompleted;
 		public event SendCancelOrderCompletedEventHandler SendCancelOrderCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SendCancelOrderCompleted = (SendCancelOrderCompletedEventHandler)Delegate.Combine(this.SendCancelOrderCompleted, value);
+				this._SendCancelOrderCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SendCancelOrderCompleted = (SendCancelOrderCompletedEventHandler)Delegate.Remove(this.SendCancelOrderCompleted, value);
+				this._SendCancelOrderCompleted -= value;
 			}
 		}
 
+		public SendEditOrderCompletedEventHandler _SendEditOrderCompleted;
 		public event SendEditOrderCompletedEventHandler SendEditOrderCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.SendEditOrderCompleted = (SendEditOrderCompletedEventHandler)Delegate.Combine(this.SendEditOrderCompleted, value);
+				this._SendEditOrderCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.SendEditOrderCompleted = (SendEditOrderCompletedEventHandler)Delegate.Remove(this.SendEditOrderCompleted, value);
+				this._SendEditOrderCompleted -= value;
 			}
 		}
 
+		public CountOrderCancelForDumpCompletedEventHandler _CountOrderCancelForDumpCompleted;
 		public event CountOrderCancelForDumpCompletedEventHandler CountOrderCancelForDumpCompleted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.CountOrderCancelForDumpCompleted = (CountOrderCancelForDumpCompletedEventHandler)Delegate.Combine(this.CountOrderCancelForDumpCompleted, value);
+				this._CountOrderCancelForDumpCompleted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.CountOrderCancelForDumpCompleted = (CountOrderCancelForDumpCompletedEventHandler)Delegate.Remove(this.CountOrderCancelForDumpCompleted, value);
+				this._CountOrderCancelForDumpCompleted -= value;
 			}
 		}
 
@@ -2165,10 +2294,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomerByStockForDumpOperationCompleted(object arg)
 		{
-			if (this.ViewCustomerByStockForDumpCompleted != null)
+			if (this._ViewCustomerByStockForDumpCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomerByStockForDumpCompleted(this, new ViewCustomerByStockForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomerByStockForDumpCompleted(this, new ViewCustomerByStockForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2205,10 +2334,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetBrokerMarginVolumeOperationCompleted(object arg)
 		{
-			if (this.GetBrokerMarginVolumeCompleted != null)
+			if (this._GetBrokerMarginVolumeCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetBrokerMarginVolumeCompleted(this, new GetBrokerMarginVolumeCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetBrokerMarginVolumeCompleted(this, new GetBrokerMarginVolumeCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2251,10 +2380,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnVerifyPincode2OperationCompleted(object arg)
 		{
-			if (this.VerifyPincode2Completed != null)
+			if (this._VerifyPincode2Completed != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.VerifyPincode2Completed(this, new VerifyPincode2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._VerifyPincode2Completed(this, new VerifyPincode2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2285,10 +2414,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewBAMessageOperationCompleted(object arg)
 		{
-			if (this.ViewBAMessageCompleted != null)
+			if (this._ViewBAMessageCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewBAMessageCompleted(this, new ViewBAMessageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewBAMessageCompleted(this, new ViewBAMessageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2331,10 +2460,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStockHistoryOperationCompleted(object arg)
 		{
-			if (this.StockHistoryCompleted != null)
+			if (this._StockHistoryCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StockHistoryCompleted(this, new StockHistoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StockHistoryCompleted(this, new StockHistoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2373,10 +2502,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStockChartOperationCompleted(object arg)
 		{
-			if (this.StockChartCompleted != null)
+			if (this._StockChartCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StockChartCompleted(this, new StockChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StockChartCompleted(this, new StockChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2417,10 +2546,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStockHistDataOperationCompleted(object arg)
 		{
-			if (this.StockHistDataCompleted != null)
+			if (this._StockHistDataCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StockHistDataCompleted(this, new StockHistDataCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StockHistDataCompleted(this, new StockHistDataCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2457,10 +2586,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLoadStockNicknameOperationCompleted(object arg)
 		{
-			if (this.LoadStockNicknameCompleted != null)
+			if (this._LoadStockNicknameCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LoadStockNicknameCompleted(this, new LoadStockNicknameCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LoadStockNicknameCompleted(this, new LoadStockNicknameCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2503,10 +2632,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveStockNicknameOperationCompleted(object arg)
 		{
-			if (this.SaveStockNicknameCompleted != null)
+			if (this._SaveStockNicknameCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveStockNicknameCompleted(this, new SaveStockNicknameCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveStockNicknameCompleted(this, new SaveStockNicknameCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2545,10 +2674,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnDeleteStockNicknameOperationCompleted(object arg)
 		{
-			if (this.DeleteStockNicknameCompleted != null)
+			if (this._DeleteStockNicknameCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.DeleteStockNicknameCompleted(this, new DeleteStockNicknameCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._DeleteStockNicknameCompleted(this, new DeleteStockNicknameCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2585,10 +2714,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLoadStockNicknameExtraOperationCompleted(object arg)
 		{
-			if (this.LoadStockNicknameExtraCompleted != null)
+			if (this._LoadStockNicknameExtraCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LoadStockNicknameExtraCompleted(this, new LoadStockNicknameExtraCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LoadStockNicknameExtraCompleted(this, new LoadStockNicknameExtraCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2633,10 +2762,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveStockNicknameExtraOperationCompleted(object arg)
 		{
-			if (this.SaveStockNicknameExtraCompleted != null)
+			if (this._SaveStockNicknameExtraCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveStockNicknameExtraCompleted(this, new SaveStockNicknameExtraCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveStockNicknameExtraCompleted(this, new SaveStockNicknameExtraCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2675,10 +2804,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnDeleteStockNicknameExtraOperationCompleted(object arg)
 		{
-			if (this.DeleteStockNicknameExtraCompleted != null)
+			if (this._DeleteStockNicknameExtraCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.DeleteStockNicknameExtraCompleted(this, new DeleteStockNicknameExtraCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._DeleteStockNicknameExtraCompleted(this, new DeleteStockNicknameExtraCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2717,10 +2846,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnIntradayChartOperationCompleted(object arg)
 		{
-			if (this.IntradayChartCompleted != null)
+			if (this._IntradayChartCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.IntradayChartCompleted(this, new IntradayChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._IntradayChartCompleted(this, new IntradayChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2759,10 +2888,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnIntradayIndexChartOperationCompleted(object arg)
 		{
-			if (this.IntradayIndexChartCompleted != null)
+			if (this._IntradayIndexChartCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.IntradayIndexChartCompleted(this, new IntradayIndexChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._IntradayIndexChartCompleted(this, new IntradayIndexChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2805,10 +2934,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetChartImageOperationCompleted(object arg)
 		{
-			if (this.GetChartImageCompleted != null)
+			if (this._GetChartImageCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetChartImageCompleted(this, new GetChartImageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetChartImageCompleted(this, new GetChartImageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2851,10 +2980,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetSetIndexChartImageOperationCompleted(object arg)
 		{
-			if (this.GetSetIndexChartImageCompleted != null)
+			if (this._GetSetIndexChartImageCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetSetIndexChartImageCompleted(this, new GetSetIndexChartImageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetSetIndexChartImageCompleted(this, new GetSetIndexChartImageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2895,10 +3024,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetPortfolioStatAllStockOperationCompleted(object arg)
 		{
-			if (this.GetPortfolioStatAllStockCompleted != null)
+			if (this._GetPortfolioStatAllStockCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetPortfolioStatAllStockCompleted(this, new GetPortfolioStatAllStockCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetPortfolioStatAllStockCompleted(this, new GetPortfolioStatAllStockCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2941,10 +3070,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetPortfolioStatByStockOperationCompleted(object arg)
 		{
-			if (this.GetPortfolioStatByStockCompleted != null)
+			if (this._GetPortfolioStatByStockCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetPortfolioStatByStockCompleted(this, new GetPortfolioStatByStockCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetPortfolioStatByStockCompleted(this, new GetPortfolioStatByStockCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -2987,10 +3116,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSavePushAccountOperationCompleted(object arg)
 		{
-			if (this.SavePushAccountCompleted != null)
+			if (this._SavePushAccountCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SavePushAccountCompleted(this, new SavePushAccountCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SavePushAccountCompleted(this, new SavePushAccountCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3041,10 +3170,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveStockAlertOperationCompleted(object arg)
 		{
-			if (this.SaveStockAlertCompleted != null)
+			if (this._SaveStockAlertCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveStockAlertCompleted(this, new SaveStockAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveStockAlertCompleted(this, new SaveStockAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3095,10 +3224,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSavePortAlertOperationCompleted(object arg)
 		{
-			if (this.SavePortAlertCompleted != null)
+			if (this._SavePortAlertCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SavePortAlertCompleted(this, new SavePortAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SavePortAlertCompleted(this, new SavePortAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3135,10 +3264,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSendAutoTradeOperationCompleted(object arg)
 		{
-			if (this.SendAutoTradeCompleted != null)
+			if (this._SendAutoTradeCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SendAutoTradeCompleted(this, new SendAutoTradeCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SendAutoTradeCompleted(this, new SendAutoTradeCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3177,10 +3306,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStopOrderRegisterOperationCompleted(object arg)
 		{
-			if (this.StopOrderRegisterCompleted != null)
+			if (this._StopOrderRegisterCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StopOrderRegisterCompleted(this, new StopOrderRegisterCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StopOrderRegisterCompleted(this, new StopOrderRegisterCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3217,10 +3346,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStopOrderCheckDisclaimerOperationCompleted(object arg)
 		{
-			if (this.StopOrderCheckDisclaimerCompleted != null)
+			if (this._StopOrderCheckDisclaimerCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StopOrderCheckDisclaimerCompleted(this, new StopOrderCheckDisclaimerCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StopOrderCheckDisclaimerCompleted(this, new StopOrderCheckDisclaimerCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3267,10 +3396,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewAutoTradeTransOperationCompleted(object arg)
 		{
-			if (this.ViewAutoTradeTransCompleted != null)
+			if (this._ViewAutoTradeTransCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewAutoTradeTransCompleted(this, new ViewAutoTradeTransCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewAutoTradeTransCompleted(this, new ViewAutoTradeTransCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3307,10 +3436,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewAutoTradeDCAItemsOperationCompleted(object arg)
 		{
-			if (this.ViewAutoTradeDCAItemsCompleted != null)
+			if (this._ViewAutoTradeDCAItemsCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewAutoTradeDCAItemsCompleted(this, new ViewAutoTradeDCAItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewAutoTradeDCAItemsCompleted(this, new ViewAutoTradeDCAItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3347,10 +3476,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewAutoTradePzItemsOperationCompleted(object arg)
 		{
-			if (this.ViewAutoTradePzItemsCompleted != null)
+			if (this._ViewAutoTradePzItemsCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewAutoTradePzItemsCompleted(this, new ViewAutoTradePzItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewAutoTradePzItemsCompleted(this, new ViewAutoTradePzItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3381,10 +3510,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetHolidayOperationCompleted(object arg)
 		{
-			if (this.GetHolidayCompleted != null)
+			if (this._GetHolidayCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetHolidayCompleted(this, new GetHolidayCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetHolidayCompleted(this, new GetHolidayCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3431,10 +3560,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveUserAlertOperationCompleted(object arg)
 		{
-			if (this.SaveUserAlertCompleted != null)
+			if (this._SaveUserAlertCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveUserAlertCompleted(this, new SaveUserAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveUserAlertCompleted(this, new SaveUserAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3479,10 +3608,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveUserAlert2OperationCompleted(object arg)
 		{
-			if (this.SaveUserAlert2Completed != null)
+			if (this._SaveUserAlert2Completed != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveUserAlert2Completed(this, new SaveUserAlert2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveUserAlert2Completed(this, new SaveUserAlert2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3519,10 +3648,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetAlertLogOperationCompleted(object arg)
 		{
-			if (this.GetAlertLogCompleted != null)
+			if (this._GetAlertLogCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetAlertLogCompleted(this, new GetAlertLogCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetAlertLogCompleted(this, new GetAlertLogCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3559,10 +3688,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetAlertLogByGroupOperationCompleted(object arg)
 		{
-			if (this.GetAlertLogByGroupCompleted != null)
+			if (this._GetAlertLogByGroupCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetAlertLogByGroupCompleted(this, new GetAlertLogByGroupCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetAlertLogByGroupCompleted(this, new GetAlertLogByGroupCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3601,10 +3730,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnVerifyAlertManagerOperationCompleted(object arg)
 		{
-			if (this.VerifyAlertManagerCompleted != null)
+			if (this._VerifyAlertManagerCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.VerifyAlertManagerCompleted(this, new VerifyAlertManagerCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._VerifyAlertManagerCompleted(this, new VerifyAlertManagerCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3641,10 +3770,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetUserAlertOperationCompleted(object arg)
 		{
-			if (this.GetUserAlertCompleted != null)
+			if (this._GetUserAlertCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetUserAlertCompleted(this, new GetUserAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetUserAlertCompleted(this, new GetUserAlertCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3681,10 +3810,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetStockAlertItemsOperationCompleted(object arg)
 		{
-			if (this.GetStockAlertItemsCompleted != null)
+			if (this._GetStockAlertItemsCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetStockAlertItemsCompleted(this, new GetStockAlertItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetStockAlertItemsCompleted(this, new GetStockAlertItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3721,10 +3850,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetPortAlertItemsOperationCompleted(object arg)
 		{
-			if (this.GetPortAlertItemsCompleted != null)
+			if (this._GetPortAlertItemsCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetPortAlertItemsCompleted(this, new GetPortAlertItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetPortAlertItemsCompleted(this, new GetPortAlertItemsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3765,10 +3894,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnNAVChartOperationCompleted(object arg)
 		{
-			if (this.NAVChartCompleted != null)
+			if (this._NAVChartCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.NAVChartCompleted(this, new NAVChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._NAVChartCompleted(this, new NAVChartCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3807,10 +3936,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetDataForSmartClickOperationCompleted(object arg)
 		{
-			if (this.GetDataForSmartClickCompleted != null)
+			if (this._GetDataForSmartClickCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetDataForSmartClickCompleted(this, new GetDataForSmartClickCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetDataForSmartClickCompleted(this, new GetDataForSmartClickCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3853,10 +3982,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetOrderFor1ClickOperationCompleted(object arg)
 		{
-			if (this.GetOrderFor1ClickCompleted != null)
+			if (this._GetOrderFor1ClickCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetOrderFor1ClickCompleted(this, new GetOrderFor1ClickCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetOrderFor1ClickCompleted(this, new GetOrderFor1ClickCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3909,10 +4038,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveSummaryMarketDataOperationCompleted(object arg)
 		{
-			if (this.SaveSummaryMarketDataCompleted != null)
+			if (this._SaveSummaryMarketDataCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveSummaryMarketDataCompleted(this, new SaveSummaryMarketDataCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveSummaryMarketDataCompleted(this, new SaveSummaryMarketDataCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3951,10 +4080,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetStockSMAOperationCompleted(object arg)
 		{
-			if (this.GetStockSMACompleted != null)
+			if (this._GetStockSMACompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetStockSMACompleted(this, new GetStockSMACompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetStockSMACompleted(this, new GetStockSMACompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -3995,10 +4124,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveUserConfigOperationCompleted(object arg)
 		{
-			if (this.SaveUserConfigCompleted != null)
+			if (this._SaveUserConfigCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveUserConfigCompleted(this, new SaveUserConfigCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveUserConfigCompleted(this, new SaveUserConfigCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4037,10 +4166,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveUserConfigAllOperationCompleted(object arg)
 		{
-			if (this.SaveUserConfigAllCompleted != null)
+			if (this._SaveUserConfigAllCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveUserConfigAllCompleted(this, new SaveUserConfigAllCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveUserConfigAllCompleted(this, new SaveUserConfigAllCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4079,10 +4208,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetPortEquityOperationCompleted(object arg)
 		{
-			if (this.GetPortEquityCompleted != null)
+			if (this._GetPortEquityCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetPortEquityCompleted(this, new GetPortEquityCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetPortEquityCompleted(this, new GetPortEquityCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4119,10 +4248,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSendHeartBeat2OperationCompleted(object arg)
 		{
-			if (this.SendHeartBeat2Completed != null)
+			if (this._SendHeartBeat2Completed != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SendHeartBeat2Completed(this, new SendHeartBeat2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SendHeartBeat2Completed(this, new SendHeartBeat2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4166,10 +4295,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveUserEfinForwardOperationCompleted(object arg)
 		{
-			if (this.SaveUserEfinForwardCompleted != null)
+			if (this._SaveUserEfinForwardCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveUserEfinForwardCompleted(this, new AsyncCompletedEventArgs(invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveUserEfinForwardCompleted(this, new AsyncCompletedEventArgs(invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4200,10 +4329,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLoadAllInformationOperationCompleted(object arg)
 		{
-			if (this.LoadAllInformationCompleted != null)
+			if (this._LoadAllInformationCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LoadAllInformationCompleted(this, new LoadAllInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LoadAllInformationCompleted(this, new LoadAllInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4240,10 +4369,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLoadAllInformationIsoddOperationCompleted(object arg)
 		{
-			if (this.LoadAllInformationIsoddCompleted != null)
+			if (this._LoadAllInformationIsoddCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LoadAllInformationIsoddCompleted(this, new LoadAllInformationIsoddCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LoadAllInformationIsoddCompleted(this, new LoadAllInformationIsoddCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4282,10 +4411,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLoadStockInformationOperationCompleted(object arg)
 		{
-			if (this.LoadStockInformationCompleted != null)
+			if (this._LoadStockInformationCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LoadStockInformationCompleted(this, new LoadStockInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LoadStockInformationCompleted(this, new LoadStockInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4316,10 +4445,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLoadMarketInformationOperationCompleted(object arg)
 		{
-			if (this.LoadMarketInformationCompleted != null)
+			if (this._LoadMarketInformationCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LoadMarketInformationCompleted(this, new LoadMarketInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LoadMarketInformationCompleted(this, new LoadMarketInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4350,10 +4479,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLoadOddLotInformationOperationCompleted(object arg)
 		{
-			if (this.LoadOddLotInformationCompleted != null)
+			if (this._LoadOddLotInformationCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LoadOddLotInformationCompleted(this, new LoadOddLotInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LoadOddLotInformationCompleted(this, new LoadOddLotInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4392,10 +4521,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnBoardcastMessageOperationCompleted(object arg)
 		{
-			if (this.BoardcastMessageCompleted != null)
+			if (this._BoardcastMessageCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.BoardcastMessageCompleted(this, new BoardcastMessageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._BoardcastMessageCompleted(this, new BoardcastMessageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4438,10 +4567,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSendPushMessageOperationCompleted(object arg)
 		{
-			if (this.SendPushMessageCompleted != null)
+			if (this._SendPushMessageCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SendPushMessageCompleted(this, new SendPushMessageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SendPushMessageCompleted(this, new SendPushMessageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4478,10 +4607,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnBestBidOfferOperationCompleted(object arg)
 		{
-			if (this.BestBidOfferCompleted != null)
+			if (this._BestBidOfferCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.BestBidOfferCompleted(this, new BestBidOfferCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._BestBidOfferCompleted(this, new BestBidOfferCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4528,10 +4657,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnBestOpenPriceOperationCompleted(object arg)
 		{
-			if (this.BestOpenPriceCompleted != null)
+			if (this._BestOpenPriceCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.BestOpenPriceCompleted(this, new BestOpenPriceCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._BestOpenPriceCompleted(this, new BestOpenPriceCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4578,10 +4707,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnBestProjectedOperationCompleted(object arg)
 		{
-			if (this.BestProjectedCompleted != null)
+			if (this._BestProjectedCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.BestProjectedCompleted(this, new BestProjectedCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._BestProjectedCompleted(this, new BestProjectedCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4612,10 +4741,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnIndustryStatOperationCompleted(object arg)
 		{
-			if (this.IndustryStatCompleted != null)
+			if (this._IndustryStatCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.IndustryStatCompleted(this, new IndustryStatCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._IndustryStatCompleted(this, new IndustryStatCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4658,10 +4787,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveOperationCompleted(object arg)
 		{
-			if (this.TopActiveCompleted != null)
+			if (this._TopActiveCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveCompleted(this, new TopActiveCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveCompleted(this, new TopActiveCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4704,10 +4833,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBOOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBOCompleted != null)
+			if (this._TopActiveBBOCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBOCompleted(this, new TopActiveBBOCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBOCompleted(this, new TopActiveBBOCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4738,10 +4867,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_BenefitOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_BenefitCompleted != null)
+			if (this._TopActiveBBO_BenefitCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_BenefitCompleted(this, new TopActiveBBO_BenefitCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_BenefitCompleted(this, new TopActiveBBO_BenefitCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4772,10 +4901,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_WarrantOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_WarrantCompleted != null)
+			if (this._TopActiveBBO_WarrantCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_WarrantCompleted(this, new TopActiveBBO_WarrantCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_WarrantCompleted(this, new TopActiveBBO_WarrantCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4812,10 +4941,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_CMPROperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_CMPRCompleted != null)
+			if (this._TopActiveBBO_CMPRCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_CMPRCompleted(this, new TopActiveBBO_CMPRCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_CMPRCompleted(this, new TopActiveBBO_CMPRCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4852,10 +4981,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_MyPortOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_MyPortCompleted != null)
+			if (this._TopActiveBBO_MyPortCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_MyPortCompleted(this, new TopActiveBBO_MyPortCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_MyPortCompleted(this, new TopActiveBBO_MyPortCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4892,10 +5021,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetMyPortSymbolListOperationCompleted(object arg)
 		{
-			if (this.GetMyPortSymbolListCompleted != null)
+			if (this._GetMyPortSymbolListCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetMyPortSymbolListCompleted(this, new GetMyPortSymbolListCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetMyPortSymbolListCompleted(this, new GetMyPortSymbolListCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4932,10 +5061,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_DWOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_DWCompleted != null)
+			if (this._TopActiveBBO_DWCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_DWCompleted(this, new TopActiveBBO_DWCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_DWCompleted(this, new TopActiveBBO_DWCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -4966,10 +5095,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_NewsOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_NewsCompleted != null)
+			if (this._TopActiveBBO_NewsCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_NewsCompleted(this, new TopActiveBBO_NewsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_NewsCompleted(this, new TopActiveBBO_NewsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5000,10 +5129,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_TurnOverOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_TurnOverCompleted != null)
+			if (this._TopActiveBBO_TurnOverCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_TurnOverCompleted(this, new TopActiveBBO_TurnOverCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_TurnOverCompleted(this, new TopActiveBBO_TurnOverCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5040,10 +5169,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopActiveBBO_SectorOperationCompleted(object arg)
 		{
-			if (this.TopActiveBBO_SectorCompleted != null)
+			if (this._TopActiveBBO_SectorCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopActiveBBO_SectorCompleted(this, new TopActiveBBO_SectorCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopActiveBBO_SectorCompleted(this, new TopActiveBBO_SectorCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5080,10 +5209,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnInvestorTypeOperationCompleted(object arg)
 		{
-			if (this.InvestorTypeCompleted != null)
+			if (this._InvestorTypeCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.InvestorTypeCompleted(this, new InvestorTypeCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._InvestorTypeCompleted(this, new InvestorTypeCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5114,10 +5243,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnMarketIndicatorOperationCompleted(object arg)
 		{
-			if (this.MarketIndicatorCompleted != null)
+			if (this._MarketIndicatorCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.MarketIndicatorCompleted(this, new MarketIndicatorCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._MarketIndicatorCompleted(this, new MarketIndicatorCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5160,10 +5289,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaleByPriceOperationCompleted(object arg)
 		{
-			if (this.SaleByPriceCompleted != null)
+			if (this._SaleByPriceCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaleByPriceCompleted(this, new SaleByPriceCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaleByPriceCompleted(this, new SaleByPriceCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5194,10 +5323,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSectorStatOperationCompleted(object arg)
 		{
-			if (this.SectorStatCompleted != null)
+			if (this._SectorStatCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SectorStatCompleted(this, new SectorStatCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SectorStatCompleted(this, new SectorStatCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5234,10 +5363,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSectorStatForDumpOperationCompleted(object arg)
 		{
-			if (this.SectorStatForDumpCompleted != null)
+			if (this._SectorStatForDumpCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SectorStatForDumpCompleted(this, new SectorStatForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SectorStatForDumpCompleted(this, new SectorStatForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5274,10 +5403,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStockStatForDumpOperationCompleted(object arg)
 		{
-			if (this.StockStatForDumpCompleted != null)
+			if (this._StockStatForDumpCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StockStatForDumpCompleted(this, new StockStatForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StockStatForDumpCompleted(this, new StockStatForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5314,10 +5443,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetUserConfigForDumpOperationCompleted(object arg)
 		{
-			if (this.GetUserConfigForDumpCompleted != null)
+			if (this._GetUserConfigForDumpCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetUserConfigForDumpCompleted(this, new GetUserConfigForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetUserConfigForDumpCompleted(this, new GetUserConfigForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5358,10 +5487,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveUserConfigForDumpOperationCompleted(object arg)
 		{
-			if (this.SaveUserConfigForDumpCompleted != null)
+			if (this._SaveUserConfigForDumpCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveUserConfigForDumpCompleted(this, new SaveUserConfigForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveUserConfigForDumpCompleted(this, new SaveUserConfigForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5406,10 +5535,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaleByTime2OperationCompleted(object arg)
 		{
-			if (this.SaleByTime2Completed != null)
+			if (this._SaleByTime2Completed != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaleByTime2Completed(this, new SaleByTime2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaleByTime2Completed(this, new SaleByTime2CompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5454,10 +5583,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStockInPlayOperationCompleted(object arg)
 		{
-			if (this.StockInPlayCompleted != null)
+			if (this._StockInPlayCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StockInPlayCompleted(this, new StockInPlayCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StockInPlayCompleted(this, new StockInPlayCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5496,10 +5625,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStockByPricePageOperationCompleted(object arg)
 		{
-			if (this.StockByPricePageCompleted != null)
+			if (this._StockByPricePageCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StockByPricePageCompleted(this, new StockByPricePageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StockByPricePageCompleted(this, new StockByPricePageCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5530,10 +5659,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnMarketStatusOperationCompleted(object arg)
 		{
-			if (this.MarketStatusCompleted != null)
+			if (this._MarketStatusCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.MarketStatusCompleted(this, new MarketStatusCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._MarketStatusCompleted(this, new MarketStatusCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5572,10 +5701,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopBBOOperationCompleted(object arg)
 		{
-			if (this.TopBBOCompleted != null)
+			if (this._TopBBOCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopBBOCompleted(this, new TopBBOCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopBBOCompleted(this, new TopBBOCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5614,10 +5743,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnTopBBOadOperationCompleted(object arg)
 		{
-			if (this.TopBBOadCompleted != null)
+			if (this._TopBBOadCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.TopBBOadCompleted(this, new TopBBOadCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._TopBBOadCompleted(this, new TopBBOadCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5656,10 +5785,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOddlotOperationCompleted(object arg)
 		{
-			if (this.ViewOddlotCompleted != null)
+			if (this._ViewOddlotCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOddlotCompleted(this, new ViewOddlotCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOddlotCompleted(this, new ViewOddlotCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5696,10 +5825,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGet5BidOfferOperationCompleted(object arg)
 		{
-			if (this.Get5BidOfferCompleted != null)
+			if (this._Get5BidOfferCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.Get5BidOfferCompleted(this, new Get5BidOfferCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._Get5BidOfferCompleted(this, new Get5BidOfferCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5756,10 +5885,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOrderTransactionOperationCompleted(object arg)
 		{
-			if (this.ViewOrderTransactionCompleted != null)
+			if (this._ViewOrderTransactionCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOrderTransactionCompleted(this, new ViewOrderTransactionCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOrderTransactionCompleted(this, new ViewOrderTransactionCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5806,10 +5935,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOrderHistoryOperationCompleted(object arg)
 		{
-			if (this.ViewOrderHistoryCompleted != null)
+			if (this._ViewOrderHistoryCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOrderHistoryCompleted(this, new ViewOrderHistoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOrderHistoryCompleted(this, new ViewOrderHistoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5860,10 +5989,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOrdersForDumpOperationCompleted(object arg)
 		{
-			if (this.ViewOrdersForDumpCompleted != null)
+			if (this._ViewOrdersForDumpCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOrdersForDumpCompleted(this, new ViewOrdersForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOrdersForDumpCompleted(this, new ViewOrdersForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5902,10 +6031,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOrderByOrderNoOperationCompleted(object arg)
 		{
-			if (this.ViewOrderByOrderNoCompleted != null)
+			if (this._ViewOrderByOrderNoCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOrderByOrderNoCompleted(this, new ViewOrderByOrderNoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOrderByOrderNoCompleted(this, new ViewOrderByOrderNoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5950,10 +6079,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewNewsHeaderOperationCompleted(object arg)
 		{
-			if (this.ViewNewsHeaderCompleted != null)
+			if (this._ViewNewsHeaderCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewNewsHeaderCompleted(this, new ViewNewsHeaderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewNewsHeaderCompleted(this, new ViewNewsHeaderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -5994,10 +6123,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewNewsStoryOperationCompleted(object arg)
 		{
-			if (this.ViewNewsStoryCompleted != null)
+			if (this._ViewNewsStoryCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewNewsStoryCompleted(this, new ViewNewsStoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewNewsStoryCompleted(this, new ViewNewsStoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6036,10 +6165,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomersInfoOperationCompleted(object arg)
 		{
-			if (this.ViewCustomersInfoCompleted != null)
+			if (this._ViewCustomersInfoCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomersInfoCompleted(this, new ViewCustomersInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomersInfoCompleted(this, new ViewCustomersInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6080,10 +6209,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomerCreditOnSendBox_FreewillOperationCompleted(object arg)
 		{
-			if (this.ViewCustomerCreditOnSendBox_FreewillCompleted != null)
+			if (this._ViewCustomerCreditOnSendBox_FreewillCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomerCreditOnSendBox_FreewillCompleted(this, new ViewCustomerCreditOnSendBox_FreewillCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomerCreditOnSendBox_FreewillCompleted(this, new ViewCustomerCreditOnSendBox_FreewillCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6122,10 +6251,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomerCreditOnSendBoxOperationCompleted(object arg)
 		{
-			if (this.ViewCustomerCreditOnSendBoxCompleted != null)
+			if (this._ViewCustomerCreditOnSendBoxCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomerCreditOnSendBoxCompleted(this, new ViewCustomerCreditOnSendBoxCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomerCreditOnSendBoxCompleted(this, new ViewCustomerCreditOnSendBoxCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6162,10 +6291,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetSwitchAccountInfoOperationCompleted(object arg)
 		{
-			if (this.GetSwitchAccountInfoCompleted != null)
+			if (this._GetSwitchAccountInfoCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetSwitchAccountInfoCompleted(this, new GetSwitchAccountInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetSwitchAccountInfoCompleted(this, new GetSwitchAccountInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6204,10 +6333,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_MobileReportAllOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_MobileReportAllCompleted != null)
+			if (this._ViewCustomer_MobileReportAllCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_MobileReportAllCompleted(this, new ViewCustomer_MobileReportAllCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_MobileReportAllCompleted(this, new ViewCustomer_MobileReportAllCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6250,10 +6379,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_OrdersConfirmsOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_OrdersConfirmsCompleted != null)
+			if (this._ViewCustomer_OrdersConfirmsCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_OrdersConfirmsCompleted(this, new ViewCustomer_OrdersConfirmsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_OrdersConfirmsCompleted(this, new ViewCustomer_OrdersConfirmsCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6296,10 +6425,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_CreditPositionOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_CreditPositionCompleted != null)
+			if (this._ViewCustomer_CreditPositionCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_CreditPositionCompleted(this, new ViewCustomer_CreditPositionCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_CreditPositionCompleted(this, new ViewCustomer_CreditPositionCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6342,10 +6471,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_ProjectedProfitLossOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_ProjectedProfitLossCompleted != null)
+			if (this._ViewCustomer_ProjectedProfitLossCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_ProjectedProfitLossCompleted(this, new ViewCustomer_ProjectedProfitLossCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_ProjectedProfitLossCompleted(this, new ViewCustomer_ProjectedProfitLossCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6388,10 +6517,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_RealizeProfitLossOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_RealizeProfitLossCompleted != null)
+			if (this._ViewCustomer_RealizeProfitLossCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_RealizeProfitLossCompleted(this, new ViewCustomer_RealizeProfitLossCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_RealizeProfitLossCompleted(this, new ViewCustomer_RealizeProfitLossCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6434,10 +6563,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_SummaryOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_SummaryCompleted != null)
+			if (this._ViewCustomer_SummaryCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_SummaryCompleted(this, new ViewCustomer_SummaryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_SummaryCompleted(this, new ViewCustomer_SummaryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6482,10 +6611,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_ConfirmSummaryOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_ConfirmSummaryCompleted != null)
+			if (this._ViewCustomer_ConfirmSummaryCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_ConfirmSummaryCompleted(this, new ViewCustomer_ConfirmSummaryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_ConfirmSummaryCompleted(this, new ViewCustomer_ConfirmSummaryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6530,10 +6659,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_ConfirmOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_ConfirmCompleted != null)
+			if (this._ViewCustomer_ConfirmCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_ConfirmCompleted(this, new ViewCustomer_ConfirmCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_ConfirmCompleted(this, new ViewCustomer_ConfirmCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6578,10 +6707,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_ConfirmByDealIDOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_ConfirmByDealIDCompleted != null)
+			if (this._ViewCustomer_ConfirmByDealIDCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_ConfirmByDealIDCompleted(this, new ViewCustomer_ConfirmByDealIDCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_ConfirmByDealIDCompleted(this, new ViewCustomer_ConfirmByDealIDCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6626,10 +6755,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewCustomer_ConfirmByStockOperationCompleted(object arg)
 		{
-			if (this.ViewCustomer_ConfirmByStockCompleted != null)
+			if (this._ViewCustomer_ConfirmByStockCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewCustomer_ConfirmByStockCompleted(this, new ViewCustomer_ConfirmByStockCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewCustomer_ConfirmByStockCompleted(this, new ViewCustomer_ConfirmByStockCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6666,10 +6795,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOrderInfo_AfterCloseFwOperationCompleted(object arg)
 		{
-			if (this.ViewOrderInfo_AfterCloseFwCompleted != null)
+			if (this._ViewOrderInfo_AfterCloseFwCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOrderInfo_AfterCloseFwCompleted(this, new ViewOrderInfo_AfterCloseFwCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOrderInfo_AfterCloseFwCompleted(this, new ViewOrderInfo_AfterCloseFwCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6714,10 +6843,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOrderDealDataOperationCompleted(object arg)
 		{
-			if (this.ViewOrderDealDataCompleted != null)
+			if (this._ViewOrderDealDataCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOrderDealDataCompleted(this, new ViewOrderDealDataCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOrderDealDataCompleted(this, new ViewOrderDealDataCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6760,10 +6889,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnViewOrderDealDataHistoryOperationCompleted(object arg)
 		{
-			if (this.ViewOrderDealDataHistoryCompleted != null)
+			if (this._ViewOrderDealDataHistoryCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ViewOrderDealDataHistoryCompleted(this, new ViewOrderDealDataHistoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ViewOrderDealDataHistoryCompleted(this, new ViewOrderDealDataHistoryCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6794,10 +6923,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetCometInfoOperationCompleted(object arg)
 		{
-			if (this.GetCometInfoCompleted != null)
+			if (this._GetCometInfoCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetCometInfoCompleted(this, new GetCometInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetCometInfoCompleted(this, new GetCometInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6828,10 +6957,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetTunnelConfigOperationCompleted(object arg)
 		{
-			if (this.GetTunnelConfigCompleted != null)
+			if (this._GetTunnelConfigCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetTunnelConfigCompleted(this, new GetTunnelConfigCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetTunnelConfigCompleted(this, new GetTunnelConfigCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6868,10 +6997,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetTunnelOperationCompleted(object arg)
 		{
-			if (this.GetTunnelCompleted != null)
+			if (this._GetTunnelCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetTunnelCompleted(this, new GetTunnelCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetTunnelCompleted(this, new GetTunnelCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6918,10 +7047,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnVerifyOrderOperationCompleted(object arg)
 		{
-			if (this.VerifyOrderCompleted != null)
+			if (this._VerifyOrderCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.VerifyOrderCompleted(this, new VerifyOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._VerifyOrderCompleted(this, new VerifyOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -6968,10 +7097,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnVerifyOrderFwOperationCompleted(object arg)
 		{
-			if (this.VerifyOrderFwCompleted != null)
+			if (this._VerifyOrderFwCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.VerifyOrderFwCompleted(this, new VerifyOrderFwCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._VerifyOrderFwCompleted(this, new VerifyOrderFwCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7002,10 +7131,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnVerifyOrderMktOperationCompleted(object arg)
 		{
-			if (this.VerifyOrderMktCompleted != null)
+			if (this._VerifyOrderMktCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.VerifyOrderMktCompleted(this, new VerifyOrderMktCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._VerifyOrderMktCompleted(this, new VerifyOrderMktCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7046,10 +7175,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetMainInfoOperationCompleted(object arg)
 		{
-			if (this.GetMainInfoCompleted != null)
+			if (this._GetMainInfoCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetMainInfoCompleted(this, new GetMainInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetMainInfoCompleted(this, new GetMainInfoCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7086,10 +7215,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnUserAuthenOperationCompleted(object arg)
 		{
-			if (this.UserAuthenCompleted != null)
+			if (this._UserAuthenCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.UserAuthenCompleted(this, new UserAuthenCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._UserAuthenCompleted(this, new UserAuthenCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7126,10 +7255,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnClearEfinSessionOperationCompleted(object arg)
 		{
-			if (this.ClearEfinSessionCompleted != null)
+			if (this._ClearEfinSessionCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ClearEfinSessionCompleted(this, new ClearEfinSessionCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ClearEfinSessionCompleted(this, new ClearEfinSessionCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7160,10 +7289,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnGetUrlClientOperationCompleted(object arg)
 		{
-			if (this.GetUrlClientCompleted != null)
+			if (this._GetUrlClientCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.GetUrlClientCompleted(this, new GetUrlClientCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._GetUrlClientCompleted(this, new GetUrlClientCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7203,10 +7332,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLogoutOperationCompleted(object arg)
 		{
-			if (this.LogoutCompleted != null)
+			if (this._LogoutCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LogoutCompleted(this, new AsyncCompletedEventArgs(invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LogoutCompleted(this, new AsyncCompletedEventArgs(invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7248,10 +7377,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnLogoutADOperationCompleted(object arg)
 		{
-			if (this.LogoutADCompleted != null)
+			if (this._LogoutADCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.LogoutADCompleted(this, new AsyncCompletedEventArgs(invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._LogoutADCompleted(this, new AsyncCompletedEventArgs(invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7292,10 +7421,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnChangeCustomerPasswordOperationCompleted(object arg)
 		{
-			if (this.ChangeCustomerPasswordCompleted != null)
+			if (this._ChangeCustomerPasswordCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ChangeCustomerPasswordCompleted(this, new ChangeCustomerPasswordCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ChangeCustomerPasswordCompleted(this, new ChangeCustomerPasswordCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7336,10 +7465,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnChangeTraderPasswordOperationCompleted(object arg)
 		{
-			if (this.ChangeTraderPasswordCompleted != null)
+			if (this._ChangeTraderPasswordCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.ChangeTraderPasswordCompleted(this, new ChangeTraderPasswordCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._ChangeTraderPasswordCompleted(this, new ChangeTraderPasswordCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7376,10 +7505,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnStockThresholdInformationOperationCompleted(object arg)
 		{
-			if (this.StockThresholdInformationCompleted != null)
+			if (this._StockThresholdInformationCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.StockThresholdInformationCompleted(this, new StockThresholdInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._StockThresholdInformationCompleted(this, new StockThresholdInformationCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7418,10 +7547,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSaveStockThresholdOperationCompleted(object arg)
 		{
-			if (this.SaveStockThresholdCompleted != null)
+			if (this._SaveStockThresholdCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SaveStockThresholdCompleted(this, new SaveStockThresholdCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SaveStockThresholdCompleted(this, new SaveStockThresholdCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7458,10 +7587,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSendNewOrderOperationCompleted(object arg)
 		{
-			if (this.SendNewOrderCompleted != null)
+			if (this._SendNewOrderCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SendNewOrderCompleted(this, new SendNewOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SendNewOrderCompleted(this, new SendNewOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7506,10 +7635,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSendCancelOrder_AfterCloseFwOperationCompleted(object arg)
 		{
-			if (this.SendCancelOrder_AfterCloseFwCompleted != null)
+			if (this._SendCancelOrder_AfterCloseFwCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SendCancelOrder_AfterCloseFwCompleted(this, new SendCancelOrder_AfterCloseFwCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SendCancelOrder_AfterCloseFwCompleted(this, new SendCancelOrder_AfterCloseFwCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7546,10 +7675,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSendCancelOrderOperationCompleted(object arg)
 		{
-			if (this.SendCancelOrderCompleted != null)
+			if (this._SendCancelOrderCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SendCancelOrderCompleted(this, new SendCancelOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SendCancelOrderCompleted(this, new SendCancelOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7604,10 +7733,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnSendEditOrderOperationCompleted(object arg)
 		{
-			if (this.SendEditOrderCompleted != null)
+			if (this._SendEditOrderCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.SendEditOrderCompleted(this, new SendEditOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._SendEditOrderCompleted(this, new SendEditOrderCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 
@@ -7656,10 +7785,10 @@ namespace i2TradePlus.ITSNetBusinessWS
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OnCountOrderCancelForDumpOperationCompleted(object arg)
 		{
-			if (this.CountOrderCancelForDumpCompleted != null)
+			if (this._CountOrderCancelForDumpCompleted != null)
 			{
 				InvokeCompletedEventArgs invokeCompletedEventArgs = (InvokeCompletedEventArgs)arg;
-				this.CountOrderCancelForDumpCompleted(this, new CountOrderCancelForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
+				this._CountOrderCancelForDumpCompleted(this, new CountOrderCancelForDumpCompletedEventArgs(invokeCompletedEventArgs.Results, invokeCompletedEventArgs.Error, invokeCompletedEventArgs.Cancelled, invokeCompletedEventArgs.UserState));
 			}
 		}
 

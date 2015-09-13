@@ -218,31 +218,33 @@ namespace i2TradePlus
 
 		private Button btnAutoTrade;
 
+        internal static frmMain.OnMessageRecievedEventHendler _OnMessageReceived;
 		internal static event frmMain.OnMessageRecievedEventHendler OnMessageReceived
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, value);
+				frmMain._OnMessageReceived += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, value);
+				frmMain._OnMessageReceived -= value;
 			}
 		}
 
+		internal static  frmMain.OnMessageTfexRecievedEventHendler _OnMessageTfexReceived;
 		internal static event frmMain.OnMessageTfexRecievedEventHendler OnMessageTfexReceived
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain.OnMessageTfexReceived, value);
+				frmMain._OnMessageTfexReceived += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, value);
+				frmMain._OnMessageTfexReceived -= value;
 			}
 		}
 
@@ -552,10 +554,11 @@ namespace i2TradePlus
 			{
 				goto IL_BC;
 			}
+            IL_BC:
 			e.SuppressKeyPress = true;
 			try
 			{
-				IL_BC:
+				//IL_BC:
 				if (ApplicationInfo.IsAreadyLogin)
 				{
 					if (HotKeyManager.IsValidHotKey(e.KeyData))
@@ -928,10 +931,10 @@ namespace i2TradePlus
 		{
 			try
 			{
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(((IRealtimeMessage)form).ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(((IRealtimeMessage)form).ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(((IRealtimeMessage)form).ReceiveTfexMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(((IRealtimeMessage)form).ReceiveTfexMessage));
+                frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(((IRealtimeMessage)form).ReceiveMessage));
+                frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(((IRealtimeMessage)form).ReceiveMessage));
+                frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(((IRealtimeMessage)form).ReceiveTfexMessage));
+                frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(((IRealtimeMessage)form).ReceiveTfexMessage));
 			}
 			catch (Exception ex)
 			{
@@ -1075,9 +1078,9 @@ namespace i2TradePlus
 									stockInformation = ApplicationInfo.StockInfo[((COMessage)broadcastMessage).SecurityNumber];
 									break;
 								}
-								if (frmMain.OnMessageReceived != null)
+								if (frmMain._OnMessageReceived != null)
 								{
-									frmMain.OnMessageReceived(broadcastMessage, stockInformation);
+									frmMain._OnMessageReceived(broadcastMessage, stockInformation);
 								}
 							}
 						}
@@ -1266,9 +1269,9 @@ namespace i2TradePlus
 									break;
 								}
 								}
-								if (frmMain.OnMessageTfexReceived != null)
+								if (frmMain._OnMessageTfexReceived != null)
 								{
-									frmMain.OnMessageTfexReceived(broadcastMessage, seriesInformation);
+									frmMain._OnMessageTfexReceived(broadcastMessage, seriesInformation);
 								}
 							}
 						}
@@ -1583,10 +1586,10 @@ namespace i2TradePlus
 					AlertManager.Instance.OnAlert += new AlertManager.OnAlertHandler(this.OnAlert);
 				}
 				AlertManager.Instance.IsMonitoring = true;
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(AlertManager.Instance.ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(AlertManager.Instance.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(AlertManager.Instance.ReceiveTfexMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(AlertManager.Instance.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(AlertManager.Instance.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(AlertManager.Instance.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(AlertManager.Instance.ReceiveTfexMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(AlertManager.Instance.ReceiveTfexMessage));
 			}
 			catch (Exception ex)
 			{
@@ -1671,24 +1674,24 @@ namespace i2TradePlus
 				this.SetTopPanelActive(true);
 				this.CloseSpashForm();
 				TemplateManager.Instance.MainForm = this;
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.SendOrderBox.ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.SendOrderBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.SendOrderBox.ReceiveTfexMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.SendOrderBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.ViewOrderBox.ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.ViewOrderBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.ViewOrderBox.ReceiveTfexMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.ViewOrderBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.BroadcastMessageBox.ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.BroadcastMessageBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.BroadcastMessageBox.ReceiveTfexMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.BroadcastMessageBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.TickerSlideBox.ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.TickerSlideBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.TickerSlideBox.ReceiveTfexMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.TickerSlideBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.Smart1ClickBox.ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.Smart1ClickBox.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.SendOrderBox.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.SendOrderBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.SendOrderBox.ReceiveTfexMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.SendOrderBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.ViewOrderBox.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.ViewOrderBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.ViewOrderBox.ReceiveTfexMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.ViewOrderBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.BroadcastMessageBox.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.BroadcastMessageBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.BroadcastMessageBox.ReceiveTfexMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.BroadcastMessageBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.TickerSlideBox.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.TickerSlideBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.TickerSlideBox.ReceiveTfexMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Combine(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.TickerSlideBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.Smart1ClickBox.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Combine(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.Smart1ClickBox.ReceiveMessage));
 				this.panBottom.Font = Settings.Default.Default_Font;
 				ApplicationInfo.UserPincodeWrongCount = 0;
 				this.Resize_Menu();
@@ -2028,17 +2031,17 @@ namespace i2TradePlus
 					this._qMessage = null;
 				}
 				SystemEvents.PowerModeChanged -= new PowerModeChangedEventHandler(this.SystemEvents_PowerModeChanged);
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.SendOrderBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.SendOrderBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.ViewOrderBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.ViewOrderBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.BroadcastMessageBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.BroadcastMessageBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.TickerSlideBox.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.TickerSlideBox.ReceiveTfexMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.Smart1ClickBox.ReceiveMessage));
-				frmMain.OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain.OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(AlertManager.Instance.ReceiveMessage));
-				frmMain.OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain.OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(AlertManager.Instance.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.SendOrderBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.SendOrderBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.ViewOrderBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.ViewOrderBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.BroadcastMessageBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.BroadcastMessageBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.TickerSlideBox.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(this.TickerSlideBox.ReceiveTfexMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(this.Smart1ClickBox.ReceiveMessage));
+				frmMain._OnMessageReceived = (frmMain.OnMessageRecievedEventHendler)Delegate.Remove(frmMain._OnMessageReceived, new frmMain.OnMessageRecievedEventHendler(AlertManager.Instance.ReceiveMessage));
+				frmMain._OnMessageTfexReceived = (frmMain.OnMessageTfexRecievedEventHendler)Delegate.Remove(frmMain._OnMessageTfexReceived, new frmMain.OnMessageTfexRecievedEventHendler(AlertManager.Instance.ReceiveTfexMessage));
 				try
 				{
 					AlertManager.Instance.OnAlert -= new AlertManager.OnAlertHandler(this.OnAlert);
@@ -2765,9 +2768,9 @@ namespace i2TradePlus
 										}
 										string message = new OrderInfoClient().Pack("", "", "R" + str, orderNumber, dataRow["side"].ToString(), dataRow["stock"].ToString(), volume, text3, priceForCal, matchedVolume, matcedValue, num, ApplicationInfo.AccInfo.CurrentAccount, dataRow["trustee_id"].ToString(), "", dataRow["status"].ToString(), dataRow["quote"].ToString(), orderTime, "", 0m, "1I", 0L, "", approverId, sendDate);
 										IBroadcastMessage message2 = this._bcMessageFactory.CreateSETMessage(message);
-										if (frmMain.OnMessageReceived != null)
+										if (frmMain._OnMessageReceived != null)
 										{
-											frmMain.OnMessageReceived(message2, null);
+											frmMain._OnMessageReceived(message2, null);
 										}
 									}
 								}
@@ -2795,9 +2798,9 @@ namespace i2TradePlus
 												array2[5]
 											}));
 											IBroadcastMessage message2 = this._bcMessageFactory.CreateSETMessage(message);
-											if (frmMain.OnMessageReceived != null)
+											if (frmMain._OnMessageReceived != null)
 											{
-												frmMain.OnMessageReceived(message2, null);
+												frmMain._OnMessageReceived(message2, null);
 											}
 										}
 									}
@@ -2858,9 +2861,9 @@ namespace i2TradePlus
 											sendDate = dataRow["orderdate"].ToString();
 											string message = new OrderInfoClient().Pack("", "", "OFFLINE", orderNumber, dataRow["side"].ToString(), dataRow["secsymbol"].ToString(), volume, text3, priceForCal, 0L, 0m, num, ApplicationInfo.AccInfo.CurrentAccount, dataRow["trusteeid"].ToString(), "", dataRow["orderstatus"].ToString(), "", orderTime, "", 0m, "1I", 0L, "", "", sendDate);
 											IBroadcastMessage message2 = this._bcMessageFactory.CreateSETMessage(message);
-											if (frmMain.OnMessageReceived != null)
+											if (frmMain._OnMessageReceived != null)
 											{
-												frmMain.OnMessageReceived(message2, null);
+												frmMain._OnMessageReceived(message2, null);
 											}
 											continue;
 											IL_888:
@@ -2921,9 +2924,9 @@ namespace i2TradePlus
 										sendDate2 = dataRow["sSendDate"].ToString();
 										string message = new OrderTFEXInfoClient().Pack("", ApplicationInfo.AccInfo.CurrentAccount, orderNumber.ToString(), dataRow["position"].ToString(), dataRow["side"].ToString(), dataRow["series"].ToString().Trim(), volume, text3, matchedVolume, num, dataRow["status"].ToString().Trim(), orderTime, dataRow["quote"].ToString().Trim(), sendDate2, dataRow["sOrdType"].ToString(), 0L, "", "");
 										IBroadcastMessage message2 = this._bcMessageFactory.CreateTfexMessage(message);
-										if (frmMain.OnMessageTfexReceived != null)
+										if (frmMain._OnMessageTfexReceived != null)
 										{
-											frmMain.OnMessageTfexReceived(message2, null);
+											frmMain._OnMessageTfexReceived(message2, null);
 										}
 										ApplicationInfo.RemoveOrderNoFromAutoRefreshList_TFEX(orderNumber.ToString());
 									}

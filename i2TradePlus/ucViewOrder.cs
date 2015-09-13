@@ -230,17 +230,18 @@ namespace i2TradePlus
 
 		private frmEditOrder _editOrderBox = null;
 
+        public ucViewOrder.OnDisplaySummaryOrdersHandler _OnDisplaySummaryOrders;
 		public event ucViewOrder.OnDisplaySummaryOrdersHandler OnDisplaySummaryOrders
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnDisplaySummaryOrders = (ucViewOrder.OnDisplaySummaryOrdersHandler)Delegate.Combine(this.OnDisplaySummaryOrders, value);
+				this._OnDisplaySummaryOrders += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnDisplaySummaryOrders = (ucViewOrder.OnDisplaySummaryOrdersHandler)Delegate.Remove(this.OnDisplaySummaryOrders, value);
+				this._OnDisplaySummaryOrders -= value;
 			}
 		}
 
@@ -2262,7 +2263,7 @@ namespace i2TradePlus
 					foreach (DataRow dataRow in this.tdsOrder.Tables["ORDERS"].Rows)
 					{
 						ucViewOrder.RecordData recordData = default(ucViewOrder.RecordData);
-						DataRow dataRow;
+						//DataRow dataRow;
 						long.TryParse(dataRow["order_number"].ToString(), out recordData.OrderNumber);
 						if (ApplicationInfo.SupportFreewill)
 						{
@@ -2330,10 +2331,10 @@ namespace i2TradePlus
 						this.UpdateToGrid(num, recordData);
 						num++;
 					}
-					if (this.OnDisplaySummaryOrders != null)
+					if (this._OnDisplaySummaryOrders != null)
 					{
 						this.UpdateDisplaySummary(this.tdsOrder.Tables["ORDERS"]);
-						this.OnDisplaySummaryOrders();
+						this._OnDisplaySummaryOrders();
 					}
 					this.intzaOrderList.Redraw();
 					if (!this.showOnMainForm)

@@ -339,201 +339,201 @@ namespace i2TradePlus
 					}
 					else if (message.MessageType == "0I")
 					{
-						Color color = Color.White;
-						OrderInfoClient orderInfoClient = (OrderInfoClient)message;
-						if (ApplicationInfo.CanReceiveMessage(orderInfoClient.Account))
-						{
-							string text = string.Empty;
-							string originalMessageType = orderInfoClient.OriginalMessageType;
-							if (originalMessageType != null)
-							{
-								if (<PrivateImplementationDetails>{555958F3-EED7-48D3-B4C3-A36F9201C69E}.$$method0x60003eb-1 == null)
-								{
-									<PrivateImplementationDetails>{555958F3-EED7-48D3-B4C3-A36F9201C69E}.$$method0x60003eb-1 = new Dictionary<string, int>(7)
-									{
-										{
-											"2G",
-											0
-										},
-										{
-											"2E",
-											1
-										},
-										{
-											"2I",
-											2
-										},
-										{
-											"1C",
-											3
-										},
-										{
-											"2C",
-											4
-										},
-										{
-											"1I",
-											5
-										},
-										{
-											"2D",
-											6
-										}
-									};
-								}
-								int num;
-								if (<PrivateImplementationDetails>{555958F3-EED7-48D3-B4C3-A36F9201C69E}.$$method0x60003eb-1.TryGetValue(originalMessageType, out num))
-								{
-									switch (num)
-									{
-									case 0:
-										text = string.Concat(new object[]
-										{
-											"Request fail #",
-											orderInfoClient.OrderNumber,
-											", ",
-											Utilities.GetOrderSideName(orderInfoClient.Side),
-											"  ",
-											orderInfoClient.Stock,
-											", Vol ",
-											FormatUtil.VolumeFormat(orderInfoClient.Volume, false),
-											", Price ",
-											Utilities.PriceFormat(orderInfoClient.PriceToSET),
-											", Acc ",
-											orderInfoClient.Account
-										});
-										color = MyColor.UnChgColor;
-										break;
-									case 1:
-									case 2:
-										if (orderInfoClient.OriginalMessageType == "2I")
-										{
-											text = "Crossing Deal ";
-										}
-										text = string.Concat(new object[]
-										{
-											text,
-											"Matched ",
-											FormatUtil.VolumeFormat(orderInfoClient.LastVolumeInCase, true),
-											"  @",
-											Utilities.PriceFormat(orderInfoClient.LastPriceInCase),
-											"  Order# ",
-											orderInfoClient.OrderNumber,
-											"  ",
-											orderInfoClient.Side,
-											"  ",
-											orderInfoClient.Stock,
-											"  ",
-											FormatUtil.VolumeFormat(orderInfoClient.Volume, true),
-											"  @",
-											Utilities.PriceFormat(orderInfoClient.PriceToSET),
-											"  ",
-											"  Account ",
-											orderInfoClient.Account,
-											"  Leave ",
-											(orderInfoClient.Volume - orderInfoClient.MatchedVolume).ToString("#,##0")
-										});
-										if (orderInfoClient.Side == "B")
-										{
-											color = MyColor.UpColor;
-										}
-										else if (orderInfoClient.Side == "S")
-										{
-											color = MyColor.DownColor;
-										}
-										else if (orderInfoClient.Side == "C")
-										{
-											color = Color.Cyan;
-										}
-										else if (orderInfoClient.Side == "H")
-										{
-											color = Color.Magenta;
-										}
-										else
-										{
-											color = MyColor.UnChgColor;
-										}
-										break;
-									case 3:
-									case 4:
-										if (orderInfoClient.Status == "X")
-										{
-											text = string.Concat(new object[]
-											{
-												"Cancel Order# ",
-												orderInfoClient.OrderNumber,
-												"  ",
-												orderInfoClient.Side,
-												"  ",
-												orderInfoClient.Stock,
-												"  ",
-												FormatUtil.VolumeFormat(orderInfoClient.LastVolumeInCase, false),
-												"  @",
-												Utilities.PriceFormat(orderInfoClient.LastPriceInCase),
-												"  Account ",
-												orderInfoClient.Account,
-												"  Leave ",
-												orderInfoClient.LastVolumeInCase
-											});
-										}
-										else
-										{
-											if (!(orderInfoClient.Status == "C"))
-											{
-												return;
-											}
-											text = string.Concat(new object[]
-											{
-												"Cancel from SET Order# ",
-												orderInfoClient.OrderNumber,
-												"  ",
-												orderInfoClient.Side,
-												"  ",
-												orderInfoClient.Stock,
-												"  ",
-												FormatUtil.VolumeFormat(orderInfoClient.LastVolumeInCase, false),
-												"  @",
-												Utilities.PriceFormat(orderInfoClient.LastPriceInCase),
-												"  Account ",
-												orderInfoClient.Account,
-												"  Leave ",
-												orderInfoClient.LastVolumeInCase
-											});
-										}
-										color = Color.Yellow;
-										break;
-									case 5:
-										break;
-									case 6:
-										text = string.Concat(new object[]
-										{
-											"Change Order Confirm ",
-											",  Order# ",
-											orderInfoClient.OrderNumber,
-											",  Account ",
-											orderInfoClient.Account
-										});
-										color = Color.Orange;
-										break;
-									default:
-										goto IL_746;
-									}
-									if (text != string.Empty)
-									{
-										this.UpdateToGrid(new ucBroadcastMessage.RecordData
-										{
-											messageType = orderInfoClient.OriginalMessageType,
-											stockSymbol = string.Empty,
-											messageTime = DateTime.Now.ToString("HH:mm"),
-											messageText = text,
-											side = orderInfoClient.Side
-										}, color, true);
-										this.intza1.Redraw();
-									}
-								}
-							}
-							IL_746:;
-						}
+                        //Color color = Color.White;
+                        //OrderInfoClient orderInfoClient = (OrderInfoClient)message;
+                        //if (ApplicationInfo.CanReceiveMessage(orderInfoClient.Account))
+                        //{
+                        //    string text = string.Empty;
+                        //    string originalMessageType = orderInfoClient.OriginalMessageType;
+                        //    if (originalMessageType != null)
+                        //    {
+                        //        if (<PrivateImplementationDetails>{555958F3-EED7-48D3-B4C3-A36F9201C69E}.$$method0x60003eb-1 == null)
+                        //        {
+                        //            <PrivateImplementationDetails>{555958F3-EED7-48D3-B4C3-A36F9201C69E}.$$method0x60003eb-1 = new Dictionary<string, int>(7)
+                        //            {
+                        //                {
+                        //                    "2G",
+                        //                    0
+                        //                },
+                        //                {
+                        //                    "2E",
+                        //                    1
+                        //                },
+                        //                {
+                        //                    "2I",
+                        //                    2
+                        //                },
+                        //                {
+                        //                    "1C",
+                        //                    3
+                        //                },
+                        //                {
+                        //                    "2C",
+                        //                    4
+                        //                },
+                        //                {
+                        //                    "1I",
+                        //                    5
+                        //                },
+                        //                {
+                        //                    "2D",
+                        //                    6
+                        //                }
+                        //            };
+                        //        }
+                        //        int num;
+                        //        if (<PrivateImplementationDetails>{555958F3-EED7-48D3-B4C3-A36F9201C69E}.$$method0x60003eb-1.TryGetValue(originalMessageType, out num))
+                        //        {
+                        //            switch (num)
+                        //            {
+                        //            case 0:
+                        //                text = string.Concat(new object[]
+                        //                {
+                        //                    "Request fail #",
+                        //                    orderInfoClient.OrderNumber,
+                        //                    ", ",
+                        //                    Utilities.GetOrderSideName(orderInfoClient.Side),
+                        //                    "  ",
+                        //                    orderInfoClient.Stock,
+                        //                    ", Vol ",
+                        //                    FormatUtil.VolumeFormat(orderInfoClient.Volume, false),
+                        //                    ", Price ",
+                        //                    Utilities.PriceFormat(orderInfoClient.PriceToSET),
+                        //                    ", Acc ",
+                        //                    orderInfoClient.Account
+                        //                });
+                        //                color = MyColor.UnChgColor;
+                        //                break;
+                        //            case 1:
+                        //            case 2:
+                        //                if (orderInfoClient.OriginalMessageType == "2I")
+                        //                {
+                        //                    text = "Crossing Deal ";
+                        //                }
+                        //                text = string.Concat(new object[]
+                        //                {
+                        //                    text,
+                        //                    "Matched ",
+                        //                    FormatUtil.VolumeFormat(orderInfoClient.LastVolumeInCase, true),
+                        //                    "  @",
+                        //                    Utilities.PriceFormat(orderInfoClient.LastPriceInCase),
+                        //                    "  Order# ",
+                        //                    orderInfoClient.OrderNumber,
+                        //                    "  ",
+                        //                    orderInfoClient.Side,
+                        //                    "  ",
+                        //                    orderInfoClient.Stock,
+                        //                    "  ",
+                        //                    FormatUtil.VolumeFormat(orderInfoClient.Volume, true),
+                        //                    "  @",
+                        //                    Utilities.PriceFormat(orderInfoClient.PriceToSET),
+                        //                    "  ",
+                        //                    "  Account ",
+                        //                    orderInfoClient.Account,
+                        //                    "  Leave ",
+                        //                    (orderInfoClient.Volume - orderInfoClient.MatchedVolume).ToString("#,##0")
+                        //                });
+                        //                if (orderInfoClient.Side == "B")
+                        //                {
+                        //                    color = MyColor.UpColor;
+                        //                }
+                        //                else if (orderInfoClient.Side == "S")
+                        //                {
+                        //                    color = MyColor.DownColor;
+                        //                }
+                        //                else if (orderInfoClient.Side == "C")
+                        //                {
+                        //                    color = Color.Cyan;
+                        //                }
+                        //                else if (orderInfoClient.Side == "H")
+                        //                {
+                        //                    color = Color.Magenta;
+                        //                }
+                        //                else
+                        //                {
+                        //                    color = MyColor.UnChgColor;
+                        //                }
+                        //                break;
+                        //            case 3:
+                        //            case 4:
+                        //                if (orderInfoClient.Status == "X")
+                        //                {
+                        //                    text = string.Concat(new object[]
+                        //                    {
+                        //                        "Cancel Order# ",
+                        //                        orderInfoClient.OrderNumber,
+                        //                        "  ",
+                        //                        orderInfoClient.Side,
+                        //                        "  ",
+                        //                        orderInfoClient.Stock,
+                        //                        "  ",
+                        //                        FormatUtil.VolumeFormat(orderInfoClient.LastVolumeInCase, false),
+                        //                        "  @",
+                        //                        Utilities.PriceFormat(orderInfoClient.LastPriceInCase),
+                        //                        "  Account ",
+                        //                        orderInfoClient.Account,
+                        //                        "  Leave ",
+                        //                        orderInfoClient.LastVolumeInCase
+                        //                    });
+                        //                }
+                        //                else
+                        //                {
+                        //                    if (!(orderInfoClient.Status == "C"))
+                        //                    {
+                        //                        return;
+                        //                    }
+                        //                    text = string.Concat(new object[]
+                        //                    {
+                        //                        "Cancel from SET Order# ",
+                        //                        orderInfoClient.OrderNumber,
+                        //                        "  ",
+                        //                        orderInfoClient.Side,
+                        //                        "  ",
+                        //                        orderInfoClient.Stock,
+                        //                        "  ",
+                        //                        FormatUtil.VolumeFormat(orderInfoClient.LastVolumeInCase, false),
+                        //                        "  @",
+                        //                        Utilities.PriceFormat(orderInfoClient.LastPriceInCase),
+                        //                        "  Account ",
+                        //                        orderInfoClient.Account,
+                        //                        "  Leave ",
+                        //                        orderInfoClient.LastVolumeInCase
+                        //                    });
+                        //                }
+                        //                color = Color.Yellow;
+                        //                break;
+                        //            case 5:
+                        //                break;
+                        //            case 6:
+                        //                text = string.Concat(new object[]
+                        //                {
+                        //                    "Change Order Confirm ",
+                        //                    ",  Order# ",
+                        //                    orderInfoClient.OrderNumber,
+                        //                    ",  Account ",
+                        //                    orderInfoClient.Account
+                        //                });
+                        //                color = Color.Orange;
+                        //                break;
+                        //            default:
+                        //                goto IL_746;
+                        //            }
+                        //            if (text != string.Empty)
+                        //            {
+                        //                this.UpdateToGrid(new ucBroadcastMessage.RecordData
+                        //                {
+                        //                    messageType = orderInfoClient.OriginalMessageType,
+                        //                    stockSymbol = string.Empty,
+                        //                    messageTime = DateTime.Now.ToString("HH:mm"),
+                        //                    messageText = text,
+                        //                    side = orderInfoClient.Side
+                        //                }, color, true);
+                        //                this.intza1.Redraw();
+                        //            }
+                        //        }
+                        //    }
+                        //    IL_746:;
+                        //}
 					}
 					else if (message.MessageType == "BA")
 					{

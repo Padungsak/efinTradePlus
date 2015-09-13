@@ -134,7 +134,7 @@ namespace i2TradePlus.Controls
 		private ToolStripLabel tslbMode;
 
 		[CompilerGenerated]
-		private static Comparison<decimal> <>9__CachedAnonymousMethodDelegate1;
+		//private static Comparison<decimal> <>9__CachedAnonymousMethodDelegate1;
 
 		public bool IsLoadingData
 		{

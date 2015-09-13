@@ -43,87 +43,93 @@ namespace i2TradePlus.WebProxy
 
 		private bool isRecv = false;
 
+        internal FeedsWebProxy.OnDataInHandler _OnDataIN;
 		internal event FeedsWebProxy.OnDataInHandler OnDataIN
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnDataIN = (FeedsWebProxy.OnDataInHandler)Delegate.Combine(this.OnDataIN, value);
+				this._OnDataIN += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnDataIN = (FeedsWebProxy.OnDataInHandler)Delegate.Remove(this.OnDataIN, value);
+				this._OnDataIN -= value;
 			}
 		}
 
+		internal FeedsWebProxy.OnErrorHandler _OnError;
 		internal event FeedsWebProxy.OnErrorHandler OnError
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnError = (FeedsWebProxy.OnErrorHandler)Delegate.Combine(this.OnError, value);
+				this._OnError += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnError = (FeedsWebProxy.OnErrorHandler)Delegate.Remove(this.OnError, value);
+				this._OnError -= value;
 			}
 		}
 
+		internal EventHandler _OnGettingHttp;
 		internal event EventHandler OnGettingHttp
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnGettingHttp = (EventHandler)Delegate.Combine(this.OnGettingHttp, value);
+				this._OnGettingHttp += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnGettingHttp = (EventHandler)Delegate.Remove(this.OnGettingHttp, value);
+				this._OnGettingHttp -= value;
 			}
 		}
 
+		internal EventHandler _OnGettedHttp;
 		internal event EventHandler OnGettedHttp
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnGettedHttp = (EventHandler)Delegate.Combine(this.OnGettedHttp, value);
+				this._OnGettedHttp += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnGettedHttp = (EventHandler)Delegate.Remove(this.OnGettedHttp, value);
+				this._OnGettedHttp -= value;
 			}
 		}
 
+		internal EventHandler _OnStarted;
 		internal event EventHandler OnStarted
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnStarted = (EventHandler)Delegate.Combine(this.OnStarted, value);
+				this._OnStarted += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnStarted = (EventHandler)Delegate.Remove(this.OnStarted, value);
+				this._OnStarted -= value;
 			}
 		}
 
+		internal EventHandler _OnStoped;
 		internal event EventHandler OnStoped
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnStoped = (EventHandler)Delegate.Combine(this.OnStoped, value);
+				this._OnStoped += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnStoped = (EventHandler)Delegate.Remove(this.OnStoped, value);
+				this._OnStoped -= value;
 			}
 		}
 
@@ -256,9 +262,9 @@ namespace i2TradePlus.WebProxy
 						this._dataInQueue.Clear();
 					}
 				}
-				if (this.OnStoped != null)
+				if (this._OnStoped != null)
 				{
-					this.OnStoped(this, EventArgs.Empty);
+					this._OnStoped(this, EventArgs.Empty);
 				}
 			}
 			catch (Exception ex)
@@ -276,9 +282,9 @@ namespace i2TradePlus.WebProxy
 			this.canConnectServer = false;
 			if (this.isServiceStarted)
 			{
-				if (this.OnError != null)
+				if (this._OnError != null)
 				{
-					this.OnError(new TransferEventArgs(ex));
+					this._OnError(new TransferEventArgs(ex));
 				}
 			}
 		}
@@ -329,9 +335,9 @@ namespace i2TradePlus.WebProxy
 			catch (Exception exception)
 			{
 				this.isRecv = false;
-				if (this.OnError != null)
+				if (this._OnError != null)
 				{
-					this.OnError(new TransferEventArgs(exception));
+					this._OnError(new TransferEventArgs(exception));
 				}
 			}
 		}
@@ -356,7 +362,7 @@ namespace i2TradePlus.WebProxy
 							text = this._dataInQueue.Dequeue();
 						}
 						i--;
-						if (this.OnDataIN != null)
+						if (this._OnDataIN != null)
 						{
 							string[] array = text.Split(new char[]
 							{
@@ -366,7 +372,7 @@ namespace i2TradePlus.WebProxy
 							{
 								for (int j = 0; j < array.Length; j++)
 								{
-									this.OnDataIN(array[j]);
+									this._OnDataIN(array[j]);
 								}
 							}
 						}
@@ -376,9 +382,9 @@ namespace i2TradePlus.WebProxy
 			}
 			catch (Exception exception)
 			{
-				if (this.OnError != null)
+				if (this._OnError != null)
 				{
-					this.OnError(new TransferEventArgs(exception));
+					this._OnError(new TransferEventArgs(exception));
 				}
 			}
 		}
@@ -417,9 +423,9 @@ namespace i2TradePlus.WebProxy
 			{
 				if (!this.isRecv)
 				{
-					if (this.OnGettingHttp != null)
+					if (this._OnGettingHttp != null)
 					{
-						this.OnGettingHttp(this, EventArgs.Empty);
+						this._OnGettingHttp(this, EventArgs.Empty);
 					}
 					this.https.Get(string.Concat(new object[]
 					{
@@ -432,10 +438,10 @@ namespace i2TradePlus.WebProxy
 					this.canConnectServer = true;
 					if (!this.isAreadySendOnStarted && this.isServiceStarted)
 					{
-						if (this.OnStarted != null)
+						if (this._OnStarted != null)
 						{
 							this.isAreadySendOnStarted = true;
-							this.OnStarted(this, EventArgs.Empty);
+							this._OnStarted(this, EventArgs.Empty);
 						}
 					}
 				}
@@ -448,17 +454,17 @@ namespace i2TradePlus.WebProxy
 				this.isAreadySendOnStarted = false;
 				if (this.isServiceStarted)
 				{
-					if (this.OnError != null)
+					if (this._OnError != null)
 					{
-						this.OnError(new TransferEventArgs(exception));
+						this._OnError(new TransferEventArgs(exception));
 					}
 				}
 			}
 			finally
 			{
-				if (this.OnGettedHttp != null)
+				if (this._OnGettedHttp != null)
 				{
-					this.OnGettedHttp(this, EventArgs.Empty);
+					this._OnGettedHttp(this, EventArgs.Empty);
 				}
 			}
 		}

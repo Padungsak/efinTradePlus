@@ -42,59 +42,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnAlertValue;
 
+            public AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler _AlertCollectionRowChanging;
 			public event AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler AlertCollectionRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.AlertCollectionRowChanging = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Combine(this.AlertCollectionRowChanging, value);
+					this._AlertCollectionRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.AlertCollectionRowChanging = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Remove(this.AlertCollectionRowChanging, value);
+					this._AlertCollectionRowChanging -= value;
 				}
 			}
 
+			public AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler _AlertCollectionRowChanged;
 			public event AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler AlertCollectionRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.AlertCollectionRowChanged = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Combine(this.AlertCollectionRowChanged, value);
+					this._AlertCollectionRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.AlertCollectionRowChanged = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Remove(this.AlertCollectionRowChanged, value);
+					this._AlertCollectionRowChanged -= value;
 				}
 			}
 
+			public AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler _AlertCollectionRowDeleting;
 			public event AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler AlertCollectionRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.AlertCollectionRowDeleting = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Combine(this.AlertCollectionRowDeleting, value);
+					this._AlertCollectionRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.AlertCollectionRowDeleting = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Remove(this.AlertCollectionRowDeleting, value);
+					this._AlertCollectionRowDeleting -= value;
 				}
 			}
 
+			public AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler _AlertCollectionRowDeleted;
 			public event AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler AlertCollectionRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.AlertCollectionRowDeleted = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Combine(this.AlertCollectionRowDeleted, value);
+					this._AlertCollectionRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.AlertCollectionRowDeleted = (AlertCustomerExpressionDS.AlertCollectionRowChangeEventHandler)Delegate.Remove(this.AlertCollectionRowDeleted, value);
+					this._AlertCollectionRowDeleted -= value;
 				}
 			}
 
@@ -374,9 +378,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.AlertCollectionRowChanged != null)
+				if (this._AlertCollectionRowChanged != null)
 				{
-					this.AlertCollectionRowChanged(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
+					this._AlertCollectionRowChanged(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
 				}
 			}
 
@@ -385,9 +389,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.AlertCollectionRowChanging != null)
+				if (this._AlertCollectionRowChanging != null)
 				{
-					this.AlertCollectionRowChanging(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
+					this._AlertCollectionRowChanging(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
 				}
 			}
 
@@ -396,9 +400,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.AlertCollectionRowDeleted != null)
+				if (this._AlertCollectionRowDeleted != null)
 				{
-					this.AlertCollectionRowDeleted(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
+					this._AlertCollectionRowDeleted(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
 				}
 			}
 
@@ -407,9 +411,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.AlertCollectionRowDeleting != null)
+				if (this._AlertCollectionRowDeleting != null)
 				{
-					this.AlertCollectionRowDeleting(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
+					this._AlertCollectionRowDeleting(this, new AlertCustomerExpressionDS.AlertCollectionRowChangeEvent((AlertCustomerExpressionDS.AlertCollectionRow)e.Row, e.Action));
 				}
 			}
 

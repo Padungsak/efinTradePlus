@@ -732,7 +732,7 @@ namespace i2TradePlus
 								int.TryParse(dataRow["compare_price_down"].ToString(), out num7);
 								if (num2 > 0 && num > 0)
 								{
-									trin = Math.Round(num4 / (long)num2 / (num3 / (long)num), 2);
+									trin = Math.Round((decimal)(num4 / (long)num2 / (num3 / (long)num)), 2);
 								}
 								int tick = num6 - num7;
 								this.MarketInfoUpdateByIS(tick, trin, num, num2, securityNoChg, num3 * 1000L, num4 * 1000L, num5 * 1000L);

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{A951A2B3-9C40-437F-9480-CE6502A11224}</ProjectGuid>
@@ -24,19 +24,34 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DefineConstants>DEBUG</DefineConstants>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EO.WebBrowser">
+      <HintPath>dependency\EO.WebBrowser.DLL</HintPath>
+    </Reference>
+    <Reference Include="ITSNet.Common.BIZ">
+      <HintPath>dependency\ITSNet.Common.BIZ.DLL</HintPath>
+    </Reference>
+    <Reference Include="ITSNet.Controls.XtWebBrowser">
+      <HintPath>dependency\ITSNet.Controls.XtWebBrowser.DLL</HintPath>
+    </Reference>
+    <Reference Include="nsoftware.IPWorksSSL.Ipports">
+      <HintPath>dependency\nsoftware.IPWorksSSL.Ipports.DLL</HintPath>
+    </Reference>
+    <Reference Include="STIControl.i2Chart">
+      <HintPath>dependency\STIControl.i2Chart.DLL</HintPath>
+    </Reference>
+    <Reference Include="STIControl.IntzaGrid">
+      <HintPath>dependency\STIControl.IntzaGrid.DLL</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Data" />
     <Reference Include="System" />
     <Reference Include="System.Web.Services" />
-    <Reference Include="STIControl.i2Chart" />
-    <Reference Include="STIControl.IntzaGrid" />
     <Reference Include="System.Drawing" />
-    <Reference Include="ITSNet.Common.BIZ" />
-    <Reference Include="nsoftware.IPWorksSSL.Ipports" />
-    <Reference Include="ITSNet.Controls.XtWebBrowser" />
     <Reference Include="System.Xml" />
-    <Reference Include="EO.WebBrowser" />
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
@@ -55,16 +70,36 @@
     <Compile Include="hSMemhKuKpwQGkHmvF\Gpbicqb1VlGm3Tejgv.cs" />
     <Compile Include="i2TradePlus.BrokerAPI\KimengService.cs" />
     <Compile Include="i2TradePlus.BrokerAPI\KimengWSResult.cs" />
-    <Compile Include="i2TradePlus.Controls\frmColumnEditor.cs" />
-    <Compile Include="i2TradePlus.Controls\ucBSSetting.cs" />
-    <Compile Include="i2TradePlus.Controls\ucSmart1Click.cs" />
-    <Compile Include="i2TradePlus.FixForm\frmBrowser.cs" />
-    <Compile Include="i2TradePlus.FixForm\frmMarketWatch.cs" />
-    <Compile Include="i2TradePlus.FixForm\frmPortfolio.cs" />
-    <Compile Include="i2TradePlus.FixForm\frmStockRanking.cs" />
-    <Compile Include="i2TradePlus.FixForm\frmStockSummary.cs" />
-    <Compile Include="i2TradePlus.FixForm\frmTopBBOs.cs" />
-    <Compile Include="i2TradePlus.FixForm\frmViewOrder.cs" />
+    <Compile Include="i2TradePlus.Controls\frmColumnEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.Controls\ucBSSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.Controls\ucSmart1Click.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.FixForm\frmBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.FixForm\frmMarketWatch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.FixForm\frmPortfolio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.FixForm\frmStockRanking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.FixForm\frmStockSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.FixForm\frmTopBBOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.FixForm\frmViewOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="i2TradePlus.Information\AccountInfo.cs" />
     <Compile Include="i2TradePlus.Information\BBOTFEXCurrency.cs" />
     <Compile Include="i2TradePlus.Information\IndexStat.cs" />
@@ -110,7 +145,9 @@
     <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\SeriesStateCompletedEventHandler.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\SeriesSumaryCompletedEventArgs.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\SeriesSumaryCompletedEventHandler.cs" />
-    <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\Service.cs" />
+    <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\StockInPlayADCompletedEventArgs.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\StockInPlayADCompletedEventHandler.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWSTFEX\StockInPlayCompletedEventArgs.cs" />
@@ -287,7 +324,9 @@
     <Compile Include="i2TradePlus.ITSNetBusinessWS\SendNewOrderCompletedEventHandler.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWS\SendPushMessageCompletedEventArgs.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWS\SendPushMessageCompletedEventHandler.cs" />
-    <Compile Include="i2TradePlus.ITSNetBusinessWS\Service.cs" />
+    <Compile Include="i2TradePlus.ITSNetBusinessWS\Service.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="i2TradePlus.ITSNetBusinessWS\StockByPricePageCompletedEventArgs.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWS\StockByPricePageCompletedEventHandler.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWS\StockChartCompletedEventArgs.cs" />
@@ -398,59 +437,127 @@
     <Compile Include="i2TradePlus.ITSNetBusinessWS\ViewOrdersForDumpCompletedEventHandler.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWS\ViewOrderTransactionCompletedEventArgs.cs" />
     <Compile Include="i2TradePlus.ITSNetBusinessWS\ViewOrderTransactionCompletedEventHandler.cs" />
-    <Compile Include="i2TradePlus.MyDataSet\AlertCustomerExpressionDS.cs" />
-    <Compile Include="i2TradePlus.MyDataSet\ApplicationInfoDS.cs" />
-    <Compile Include="i2TradePlus.MyDataSet\OrderQueueDS.cs" />
-    <Compile Include="i2TradePlus.MyDataSet\TemplateDS.cs" />
-    <Compile Include="i2TradePlus.MyDataSet\UserWorkingProfileDS.cs" />
+    <Compile Include="i2TradePlus.MyDataSet\AlertCustomerExpressionDS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.MyDataSet\ApplicationInfoDS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.MyDataSet\OrderQueueDS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.MyDataSet\TemplateDS.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.MyDataSet\UserWorkingProfileDS.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="i2TradePlus.Properties\Resources.cs" />
     <Compile Include="i2TradePlus.Properties\Settings.cs" />
     <Compile Include="i2TradePlus.Templates\FormProperties.cs" />
     <Compile Include="i2TradePlus.Templates\TemplateManager.cs" />
     <Compile Include="i2TradePlus.Templates\TemplatePropeties.cs" />
     <Compile Include="i2TradePlus.Templates\TemplateView.cs" />
-    <Compile Include="i2TradePlus.User_Control\ucMarketStateBox.cs" />
+    <Compile Include="i2TradePlus.User_Control\ucMarketStateBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="i2TradePlus.WebProxy\FeedsWebProxy.cs" />
     <Compile Include="i2TradePlus.WebProxy\Https.cs" />
     <Compile Include="i2TradePlus.WebProxy\HttpsSSLServerAuthenticationEventArgs.cs" />
     <Compile Include="i2TradePlus.WebProxy\TransferEventArgs.cs" />
-    <Compile Include="i2TradePlus.WindowsForms\frmCleanPort.cs" />
-    <Compile Include="i2TradePlus.WindowsForms\frmTickerSetting.cs" />
+    <Compile Include="i2TradePlus.WindowsForms\frmCleanPort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus.WindowsForms\frmTickerSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="i2TradePlus\AlertItem.cs" />
     <Compile Include="i2TradePlus\AlertItemCollection.cs" />
     <Compile Include="i2TradePlus\AlertManager.cs" />
-    <Compile Include="i2TradePlus\AlertStockUC.cs" />
+    <Compile Include="i2TradePlus\AlertStockUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="i2TradePlus\ApplicationInfo.cs" />
     <Compile Include="i2TradePlus\BroadcastMessageFactory.cs" />
-    <Compile Include="i2TradePlus\BusinessService.cs" />
+    <Compile Include="i2TradePlus\BusinessService.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="i2TradePlus\BusinessServiceFactory.cs" />
-    <Compile Include="i2TradePlus\BusinessTfexService.cs" />
-    <Compile Include="i2TradePlus\ClientBaseForm.cs" />
+    <Compile Include="i2TradePlus\BusinessTfexService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ClientBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="i2TradePlus\DbDataManager.cs" />
     <Compile Include="i2TradePlus\ErrorItem.cs" />
     <Compile Include="i2TradePlus\ExceptionManager.cs" />
-    <Compile Include="i2TradePlus\frmAlertDetail.cs" />
-    <Compile Include="i2TradePlus\frmAutoTrade.cs" />
-    <Compile Include="i2TradePlus\frmBatchOrder.cs" />
-    <Compile Include="i2TradePlus\frmDcaCreateNew.cs" />
-    <Compile Include="i2TradePlus\frmDcaItemsInfo.cs" />
-    <Compile Include="i2TradePlus\frmEditOrder.cs" />
-    <Compile Include="i2TradePlus\frmLogIn.cs" />
-    <Compile Include="i2TradePlus\frmMain.cs" />
-    <Compile Include="i2TradePlus\frmMarketInfo.cs" />
-    <Compile Include="i2TradePlus\frmMobileAlert.cs" />
-    <Compile Include="i2TradePlus\frmOrderFormConfirm.cs" />
-    <Compile Include="i2TradePlus\frmPcPriceAlert.cs" />
-    <Compile Include="i2TradePlus\frmPzCreateNew.cs" />
-    <Compile Include="i2TradePlus\frmPzItemsInfo.cs" />
-    <Compile Include="i2TradePlus\frmRiskControl.cs" />
-    <Compile Include="i2TradePlus\frmSplash.cs" />
-    <Compile Include="i2TradePlus\frmStockChart.cs" />
-    <Compile Include="i2TradePlus\frmStopDisclaimer.cs" />
-    <Compile Include="i2TradePlus\frmSystemOption.cs" />
-    <Compile Include="i2TradePlus\frmTemplateInfo.cs" />
-    <Compile Include="i2TradePlus\frmViewOrderInfo.cs" />
-    <Compile Include="i2TradePlus\frmViewOrderInfoTFEX.cs" />
+    <Compile Include="i2TradePlus\frmAlertDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmAutoTrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmBatchOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmDcaCreateNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmDcaItemsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmEditOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmMarketInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmMobileAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmOrderFormConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmPcPriceAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmPzCreateNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmPzItemsInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmRiskControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmStockChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmStopDisclaimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmSystemOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmTemplateInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmViewOrderInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\frmViewOrderInfoTFEX.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="i2TradePlus\HotKeyFor.cs" />
     <Compile Include="i2TradePlus\HotKeyManager.cs" />
     <Compile Include="i2TradePlus\i2InfoWS.cs" />
@@ -462,24 +569,46 @@
     <Compile Include="i2TradePlus\MessageTPmodulo.cs" />
     <Compile Include="i2TradePlus\MyColor.cs" />
     <Compile Include="i2TradePlus\MyDataHelper.cs" />
-    <Compile Include="i2TradePlus\PasswordEntryUC.cs" />
+    <Compile Include="i2TradePlus\PasswordEntryUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="i2TradePlus\Program.cs" />
     <Compile Include="i2TradePlus\SymbolLinkSource.cs" />
-    <Compile Include="i2TradePlus\TemplateTreeMenus.cs" />
-    <Compile Include="i2TradePlus\ucBids.cs" />
-    <Compile Include="i2TradePlus\ucBroadcastMessage.cs" />
-    <Compile Include="i2TradePlus\ucIndexBox.cs" />
-    <Compile Include="i2TradePlus\ucOrderStat.cs" />
-    <Compile Include="i2TradePlus\ucSendNewOrder.cs" />
-    <Compile Include="i2TradePlus\ucTickerSlide.cs" />
-    <Compile Include="i2TradePlus\ucViewOrder.cs" />
+    <Compile Include="i2TradePlus\TemplateTreeMenus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ucBids.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ucBroadcastMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ucIndexBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ucOrderStat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ucSendNewOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ucTickerSlide.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="i2TradePlus\ucViewOrder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="i2TradePlus\Utilities.cs" />
     <Compile Include="i2TradePlus\WebServiceFactory.cs" />
     <Compile Include="ItemByStock.cs" />
-    <Compile Include="ITSNet.Wins.Controls\LoadingCircleControl.cs" />
+    <Compile Include="ITSNet.Wins.Controls\LoadingCircleControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TunnelInfo.cs" />
-    <Compile Include="ucVolumeAtPrice.cs" />
+    <Compile Include="ucVolumeAtPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="VolumeGraphItem.cs" />
   </ItemGroup>
   <ItemGroup>

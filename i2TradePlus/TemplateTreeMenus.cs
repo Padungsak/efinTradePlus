@@ -55,17 +55,18 @@ namespace i2TradePlus
 
 		public UserWorkingProfileDS tdsUserProfile;
 
+        public TemplateTreeMenus.OnOpenTemplateHandler _OnOpenTemplate;
 		public event TemplateTreeMenus.OnOpenTemplateHandler OnOpenTemplate
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnOpenTemplate = (TemplateTreeMenus.OnOpenTemplateHandler)Delegate.Combine(this.OnOpenTemplate, value);
+				this._OnOpenTemplate += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnOpenTemplate = (TemplateTreeMenus.OnOpenTemplateHandler)Delegate.Remove(this.OnOpenTemplate, value);
+				this._OnOpenTemplate -= value;
 			}
 		}
 
@@ -159,9 +160,9 @@ namespace i2TradePlus
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void OpenTemplate(string templateName, string templateGroup)
 		{
-			if (this.OnOpenTemplate != null)
+			if (this._OnOpenTemplate != null)
 			{
-				this.OnOpenTemplate(templateName, templateGroup);
+				this._OnOpenTemplate(templateName, templateGroup);
 			}
 		}
 

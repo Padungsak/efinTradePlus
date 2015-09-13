@@ -40,59 +40,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columndeposit;
 
+			public OrderQueueDS.OrderRecordRowChangeEventHandler _OrderRecordRowChanging;
 			public event OrderQueueDS.OrderRecordRowChangeEventHandler OrderRecordRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.OrderRecordRowChanging = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Combine(this.OrderRecordRowChanging, value);
+					this._OrderRecordRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.OrderRecordRowChanging = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Remove(this.OrderRecordRowChanging, value);
+					this._OrderRecordRowChanging -= value;
 				}
 			}
 
+			public OrderQueueDS.OrderRecordRowChangeEventHandler _OrderRecordRowChanged;
 			public event OrderQueueDS.OrderRecordRowChangeEventHandler OrderRecordRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.OrderRecordRowChanged = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Combine(this.OrderRecordRowChanged, value);
+					this._OrderRecordRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.OrderRecordRowChanged = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Remove(this.OrderRecordRowChanged, value);
+					this._OrderRecordRowChanged -= value;
 				}
 			}
 
+			public OrderQueueDS.OrderRecordRowChangeEventHandler _OrderRecordRowDeleting;
 			public event OrderQueueDS.OrderRecordRowChangeEventHandler OrderRecordRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.OrderRecordRowDeleting = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Combine(this.OrderRecordRowDeleting, value);
+					this._OrderRecordRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.OrderRecordRowDeleting = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Remove(this.OrderRecordRowDeleting, value);
+					this._OrderRecordRowDeleting -= value;
 				}
 			}
 
+            public OrderQueueDS.OrderRecordRowChangeEventHandler _OrderRecordRowDeleted;
 			public event OrderQueueDS.OrderRecordRowChangeEventHandler OrderRecordRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.OrderRecordRowDeleted = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Combine(this.OrderRecordRowDeleted, value);
+					this._OrderRecordRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.OrderRecordRowDeleted = (OrderQueueDS.OrderRecordRowChangeEventHandler)Delegate.Remove(this.OrderRecordRowDeleted, value);
+					this._OrderRecordRowDeleted -= value;
 				}
 			}
 
@@ -355,9 +359,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.OrderRecordRowChanged != null)
+				if (this._OrderRecordRowChanged != null)
 				{
-					this.OrderRecordRowChanged(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
+					this._OrderRecordRowChanged(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
 				}
 			}
 
@@ -366,9 +370,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.OrderRecordRowChanging != null)
+				if (this._OrderRecordRowChanging != null)
 				{
-					this.OrderRecordRowChanging(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
+					this._OrderRecordRowChanging(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
 				}
 			}
 
@@ -377,9 +381,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.OrderRecordRowDeleted != null)
+				if (this._OrderRecordRowDeleted != null)
 				{
-					this.OrderRecordRowDeleted(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
+					this._OrderRecordRowDeleted(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
 				}
 			}
 
@@ -388,9 +392,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.OrderRecordRowDeleting != null)
+				if (this._OrderRecordRowDeleting != null)
 				{
-					this.OrderRecordRowDeleting(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
+					this._OrderRecordRowDeleting(this, new OrderQueueDS.OrderRecordRowChangeEvent((OrderQueueDS.OrderRecordRow)e.Row, e.Action));
 				}
 			}
 

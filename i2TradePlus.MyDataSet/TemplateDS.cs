@@ -34,59 +34,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnPropertyValue;
 
+			public TemplateDS.TemplatePropertyRowChangeEventHandler _TemplatePropertyRowChanging;
 			public event TemplateDS.TemplatePropertyRowChangeEventHandler TemplatePropertyRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplatePropertyRowChanging = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Combine(this.TemplatePropertyRowChanging, value);
+					this._TemplatePropertyRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplatePropertyRowChanging = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Remove(this.TemplatePropertyRowChanging, value);
+					this._TemplatePropertyRowChanging -= value;
 				}
 			}
 
+            public TemplateDS.TemplatePropertyRowChangeEventHandler _TemplatePropertyRowChanged;
 			public event TemplateDS.TemplatePropertyRowChangeEventHandler TemplatePropertyRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplatePropertyRowChanged = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Combine(this.TemplatePropertyRowChanged, value);
+					this._TemplatePropertyRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplatePropertyRowChanged = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Remove(this.TemplatePropertyRowChanged, value);
+					this._TemplatePropertyRowChanged -= value;
 				}
 			}
 
+			public TemplateDS.TemplatePropertyRowChangeEventHandler _TemplatePropertyRowDeleting;
 			public event TemplateDS.TemplatePropertyRowChangeEventHandler TemplatePropertyRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplatePropertyRowDeleting = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Combine(this.TemplatePropertyRowDeleting, value);
+					this._TemplatePropertyRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplatePropertyRowDeleting = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Remove(this.TemplatePropertyRowDeleting, value);
+					this._TemplatePropertyRowDeleting -= value;
 				}
 			}
 
+			public TemplateDS.TemplatePropertyRowChangeEventHandler _TemplatePropertyRowDeleted;
 			public event TemplateDS.TemplatePropertyRowChangeEventHandler TemplatePropertyRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplatePropertyRowDeleted = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Combine(this.TemplatePropertyRowDeleted, value);
+					this._TemplatePropertyRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplatePropertyRowDeleted = (TemplateDS.TemplatePropertyRowChangeEventHandler)Delegate.Remove(this.TemplatePropertyRowDeleted, value);
+					this._TemplatePropertyRowDeleted -= value;
 				}
 			}
 
@@ -257,9 +261,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.TemplatePropertyRowChanged != null)
+				if (this._TemplatePropertyRowChanged != null)
 				{
-					this.TemplatePropertyRowChanged(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
+					this._TemplatePropertyRowChanged(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -268,9 +272,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.TemplatePropertyRowChanging != null)
+				if (this._TemplatePropertyRowChanging != null)
 				{
-					this.TemplatePropertyRowChanging(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
+					this._TemplatePropertyRowChanging(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -279,9 +283,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.TemplatePropertyRowDeleted != null)
+				if (this._TemplatePropertyRowDeleted != null)
 				{
-					this.TemplatePropertyRowDeleted(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
+					this._TemplatePropertyRowDeleted(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -290,9 +294,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.TemplatePropertyRowDeleting != null)
+				if (this._TemplatePropertyRowDeleting != null)
 				{
-					this.TemplatePropertyRowDeleting(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
+					this._TemplatePropertyRowDeleting(this, new TemplateDS.TemplatePropertyRowChangeEvent((TemplateDS.TemplatePropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -388,59 +392,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnName;
 
+			public TemplateDS.FormInfoRowChangeEventHandler _FormInfoRowChanging;
 			public event TemplateDS.FormInfoRowChangeEventHandler FormInfoRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormInfoRowChanging = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Combine(this.FormInfoRowChanging, value);
+					this._FormInfoRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormInfoRowChanging = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Remove(this.FormInfoRowChanging, value);
+					this._FormInfoRowChanging -= value;
 				}
 			}
 
+			public TemplateDS.FormInfoRowChangeEventHandler _FormInfoRowChanged;
 			public event TemplateDS.FormInfoRowChangeEventHandler FormInfoRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormInfoRowChanged = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Combine(this.FormInfoRowChanged, value);
+					this._FormInfoRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormInfoRowChanged = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Remove(this.FormInfoRowChanged, value);
+					this._FormInfoRowChanged -= value;
 				}
 			}
 
+			public TemplateDS.FormInfoRowChangeEventHandler _FormInfoRowDeleting;
 			public event TemplateDS.FormInfoRowChangeEventHandler FormInfoRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormInfoRowDeleting = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Combine(this.FormInfoRowDeleting, value);
+					this._FormInfoRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormInfoRowDeleting = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Remove(this.FormInfoRowDeleting, value);
+					this._FormInfoRowDeleting -= value;
 				}
 			}
 
+			public TemplateDS.FormInfoRowChangeEventHandler _FormInfoRowDeleted;
 			public event TemplateDS.FormInfoRowChangeEventHandler FormInfoRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormInfoRowDeleted = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Combine(this.FormInfoRowDeleted, value);
+					this._FormInfoRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormInfoRowDeleted = (TemplateDS.FormInfoRowChangeEventHandler)Delegate.Remove(this.FormInfoRowDeleted, value);
+					this._FormInfoRowDeleted -= value;
 				}
 			}
 
@@ -625,9 +633,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.FormInfoRowChanged != null)
+				if (this._FormInfoRowChanged != null)
 				{
-					this.FormInfoRowChanged(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
+					this._FormInfoRowChanged(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
 				}
 			}
 
@@ -636,9 +644,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.FormInfoRowChanging != null)
+				if (this._FormInfoRowChanging != null)
 				{
-					this.FormInfoRowChanging(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
+					this._FormInfoRowChanging(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
 				}
 			}
 
@@ -647,9 +655,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.FormInfoRowDeleted != null)
+				if (this._FormInfoRowDeleted != null)
 				{
-					this.FormInfoRowDeleted(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
+					this._FormInfoRowDeleted(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
 				}
 			}
 
@@ -658,9 +666,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.FormInfoRowDeleting != null)
+				if (this._FormInfoRowDeleting != null)
 				{
-					this.FormInfoRowDeleting(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
+					this._FormInfoRowDeleting(this, new TemplateDS.FormInfoRowChangeEvent((TemplateDS.FormInfoRow)e.Row, e.Action));
 				}
 			}
 
@@ -756,59 +764,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnPropertyValue;
 
+			public TemplateDS.FormPropertyRowChangeEventHandler _FormPropertyRowChanging;
 			public event TemplateDS.FormPropertyRowChangeEventHandler FormPropertyRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormPropertyRowChanging = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Combine(this.FormPropertyRowChanging, value);
+					this._FormPropertyRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormPropertyRowChanging = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Remove(this.FormPropertyRowChanging, value);
+					this._FormPropertyRowChanging -= value;
 				}
 			}
 
+			public TemplateDS.FormPropertyRowChangeEventHandler _FormPropertyRowChanged;
 			public event TemplateDS.FormPropertyRowChangeEventHandler FormPropertyRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormPropertyRowChanged = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Combine(this.FormPropertyRowChanged, value);
+					this._FormPropertyRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormPropertyRowChanged = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Remove(this.FormPropertyRowChanged, value);
+					this._FormPropertyRowChanged -= value;
 				}
 			}
 
+			public TemplateDS.FormPropertyRowChangeEventHandler _FormPropertyRowDeleting;
 			public event TemplateDS.FormPropertyRowChangeEventHandler FormPropertyRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormPropertyRowDeleting = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Combine(this.FormPropertyRowDeleting, value);
+					this._FormPropertyRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormPropertyRowDeleting = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Remove(this.FormPropertyRowDeleting, value);
+					this._FormPropertyRowDeleting -= value;
 				}
 			}
 
+			public TemplateDS.FormPropertyRowChangeEventHandler _FormPropertyRowDeleted;
 			public event TemplateDS.FormPropertyRowChangeEventHandler FormPropertyRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormPropertyRowDeleted = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Combine(this.FormPropertyRowDeleted, value);
+					this._FormPropertyRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormPropertyRowDeleted = (TemplateDS.FormPropertyRowChangeEventHandler)Delegate.Remove(this.FormPropertyRowDeleted, value);
+					this._FormPropertyRowDeleted -= value;
 				}
 			}
 
@@ -993,9 +1005,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.FormPropertyRowChanged != null)
+				if (this._FormPropertyRowChanged != null)
 				{
-					this.FormPropertyRowChanged(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
+					this._FormPropertyRowChanged(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -1004,9 +1016,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.FormPropertyRowChanging != null)
+				if (this._FormPropertyRowChanging != null)
 				{
-					this.FormPropertyRowChanging(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
+					this._FormPropertyRowChanging(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -1015,9 +1027,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.FormPropertyRowDeleted != null)
+				if (this._FormPropertyRowDeleted != null)
 				{
-					this.FormPropertyRowDeleted(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
+					this._FormPropertyRowDeleted(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -1026,9 +1038,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.FormPropertyRowDeleting != null)
+				if (this._FormPropertyRowDeleting != null)
 				{
-					this.FormPropertyRowDeleting(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
+					this._FormPropertyRowDeleting(this, new TemplateDS.FormPropertyRowChangeEvent((TemplateDS.FormPropertyRow)e.Row, e.Action));
 				}
 			}
 
@@ -1124,59 +1136,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnFieldValue;
 
+            public TemplateDS.FormRememberFieldRowChangeEventHandler _FormRememberFieldRowChanging;
 			public event TemplateDS.FormRememberFieldRowChangeEventHandler FormRememberFieldRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormRememberFieldRowChanging = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Combine(this.FormRememberFieldRowChanging, value);
+					this._FormRememberFieldRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormRememberFieldRowChanging = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Remove(this.FormRememberFieldRowChanging, value);
+					this._FormRememberFieldRowChanging -= value;
 				}
 			}
 
+			public TemplateDS.FormRememberFieldRowChangeEventHandler _FormRememberFieldRowChanged;
 			public event TemplateDS.FormRememberFieldRowChangeEventHandler FormRememberFieldRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormRememberFieldRowChanged = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Combine(this.FormRememberFieldRowChanged, value);
+					this._FormRememberFieldRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormRememberFieldRowChanged = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Remove(this.FormRememberFieldRowChanged, value);
+					this._FormRememberFieldRowChanged -= value;
 				}
 			}
 
+			public TemplateDS.FormRememberFieldRowChangeEventHandler _FormRememberFieldRowDeleting;
 			public event TemplateDS.FormRememberFieldRowChangeEventHandler FormRememberFieldRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormRememberFieldRowDeleting = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Combine(this.FormRememberFieldRowDeleting, value);
+					this._FormRememberFieldRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormRememberFieldRowDeleting = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Remove(this.FormRememberFieldRowDeleting, value);
+					this._FormRememberFieldRowDeleting -= value;
 				}
 			}
 
+			public TemplateDS.FormRememberFieldRowChangeEventHandler _FormRememberFieldRowDeleted;
 			public event TemplateDS.FormRememberFieldRowChangeEventHandler FormRememberFieldRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.FormRememberFieldRowDeleted = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Combine(this.FormRememberFieldRowDeleted, value);
+					this._FormRememberFieldRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.FormRememberFieldRowDeleted = (TemplateDS.FormRememberFieldRowChangeEventHandler)Delegate.Remove(this.FormRememberFieldRowDeleted, value);
+					this._FormRememberFieldRowDeleted -= value;
 				}
 			}
 
@@ -1361,9 +1377,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.FormRememberFieldRowChanged != null)
+				if (this._FormRememberFieldRowChanged != null)
 				{
-					this.FormRememberFieldRowChanged(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
+					this._FormRememberFieldRowChanged(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
 				}
 			}
 
@@ -1372,9 +1388,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.FormRememberFieldRowChanging != null)
+				if (this._FormRememberFieldRowChanging != null)
 				{
-					this.FormRememberFieldRowChanging(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
+					this._FormRememberFieldRowChanging(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
 				}
 			}
 
@@ -1383,9 +1399,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.FormRememberFieldRowDeleted != null)
+				if (this._FormRememberFieldRowDeleted != null)
 				{
-					this.FormRememberFieldRowDeleted(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
+					this._FormRememberFieldRowDeleted(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
 				}
 			}
 
@@ -1394,9 +1410,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.FormRememberFieldRowDeleting != null)
+				if (this._FormRememberFieldRowDeleting != null)
 				{
-					this.FormRememberFieldRowDeleting(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
+					this._FormRememberFieldRowDeleting(this, new TemplateDS.FormRememberFieldRowChangeEvent((TemplateDS.FormRememberFieldRow)e.Row, e.Action));
 				}
 			}
 

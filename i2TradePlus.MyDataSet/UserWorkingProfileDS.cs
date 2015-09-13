@@ -30,59 +30,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnListIndex;
 
+			public UserWorkingProfileDS.TemplateRootsRowChangeEventHandler _TemplateRootsRowChanging;
 			public event UserWorkingProfileDS.TemplateRootsRowChangeEventHandler TemplateRootsRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateRootsRowChanging = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Combine(this.TemplateRootsRowChanging, value);
+					this._TemplateRootsRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateRootsRowChanging = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Remove(this.TemplateRootsRowChanging, value);
+					this._TemplateRootsRowChanging -= value;
 				}
 			}
 
+            public UserWorkingProfileDS.TemplateRootsRowChangeEventHandler _TemplateRootsRowChanged;
 			public event UserWorkingProfileDS.TemplateRootsRowChangeEventHandler TemplateRootsRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateRootsRowChanged = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Combine(this.TemplateRootsRowChanged, value);
+					this._TemplateRootsRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateRootsRowChanged = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Remove(this.TemplateRootsRowChanged, value);
+					this._TemplateRootsRowChanged -= value;
 				}
 			}
 
+			public UserWorkingProfileDS.TemplateRootsRowChangeEventHandler _TemplateRootsRowDeleting;
 			public event UserWorkingProfileDS.TemplateRootsRowChangeEventHandler TemplateRootsRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateRootsRowDeleting = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Combine(this.TemplateRootsRowDeleting, value);
+					this._TemplateRootsRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateRootsRowDeleting = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Remove(this.TemplateRootsRowDeleting, value);
+					this._TemplateRootsRowDeleting -= value;
 				}
 			}
 
+			public UserWorkingProfileDS.TemplateRootsRowChangeEventHandler _TemplateRootsRowDeleted;
 			public event UserWorkingProfileDS.TemplateRootsRowChangeEventHandler TemplateRootsRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateRootsRowDeleted = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Combine(this.TemplateRootsRowDeleted, value);
+					this._TemplateRootsRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateRootsRowDeleted = (UserWorkingProfileDS.TemplateRootsRowChangeEventHandler)Delegate.Remove(this.TemplateRootsRowDeleted, value);
+					this._TemplateRootsRowDeleted -= value;
 				}
 			}
 
@@ -254,9 +258,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.TemplateRootsRowChanged != null)
+				if (this._TemplateRootsRowChanged != null)
 				{
-					this.TemplateRootsRowChanged(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
+					this._TemplateRootsRowChanged(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
 				}
 			}
 
@@ -265,9 +269,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.TemplateRootsRowChanging != null)
+				if (this._TemplateRootsRowChanging != null)
 				{
-					this.TemplateRootsRowChanging(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
+					this._TemplateRootsRowChanging(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
 				}
 			}
 
@@ -276,9 +280,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.TemplateRootsRowDeleted != null)
+				if (this._TemplateRootsRowDeleted != null)
 				{
-					this.TemplateRootsRowDeleted(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
+					this._TemplateRootsRowDeleted(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
 				}
 			}
 
@@ -287,9 +291,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.TemplateRootsRowDeleting != null)
+				if (this._TemplateRootsRowDeleting != null)
 				{
-					this.TemplateRootsRowDeleting(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
+					this._TemplateRootsRowDeleting(this, new UserWorkingProfileDS.TemplateRootsRowChangeEvent((UserWorkingProfileDS.TemplateRootsRow)e.Row, e.Action));
 				}
 			}
 
@@ -389,59 +393,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnHotKey;
 
+			public UserWorkingProfileDS.TemplateItemRowChangeEventHandler _TemplateItemRowChanging;
 			public event UserWorkingProfileDS.TemplateItemRowChangeEventHandler TemplateItemRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateItemRowChanging = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Combine(this.TemplateItemRowChanging, value);
+					this._TemplateItemRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateItemRowChanging = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Remove(this.TemplateItemRowChanging, value);
+					this._TemplateItemRowChanging -= value;
 				}
 			}
 
+			public UserWorkingProfileDS.TemplateItemRowChangeEventHandler _TemplateItemRowChanged;
 			public event UserWorkingProfileDS.TemplateItemRowChangeEventHandler TemplateItemRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateItemRowChanged = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Combine(this.TemplateItemRowChanged, value);
+					this._TemplateItemRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateItemRowChanged = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Remove(this.TemplateItemRowChanged, value);
+					this._TemplateItemRowChanged -= value;
 				}
 			}
 
+			public UserWorkingProfileDS.TemplateItemRowChangeEventHandler _TemplateItemRowDeleting;
 			public event UserWorkingProfileDS.TemplateItemRowChangeEventHandler TemplateItemRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateItemRowDeleting = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Combine(this.TemplateItemRowDeleting, value);
+					this._TemplateItemRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateItemRowDeleting = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Remove(this.TemplateItemRowDeleting, value);
+					this._TemplateItemRowDeleting -= value;
 				}
 			}
 
+            public UserWorkingProfileDS.TemplateItemRowChangeEventHandler _TemplateItemRowDeleted;
 			public event UserWorkingProfileDS.TemplateItemRowChangeEventHandler TemplateItemRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.TemplateItemRowDeleted = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Combine(this.TemplateItemRowDeleted, value);
+					this._TemplateItemRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.TemplateItemRowDeleted = (UserWorkingProfileDS.TemplateItemRowChangeEventHandler)Delegate.Remove(this.TemplateItemRowDeleted, value);
+					this._TemplateItemRowDeleted -= value;
 				}
 			}
 
@@ -657,9 +665,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.TemplateItemRowChanged != null)
+				if (this._TemplateItemRowChanged != null)
 				{
-					this.TemplateItemRowChanged(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
+					this._TemplateItemRowChanged(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
 				}
 			}
 
@@ -668,9 +676,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.TemplateItemRowChanging != null)
+				if (this._TemplateItemRowChanging != null)
 				{
-					this.TemplateItemRowChanging(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
+					this._TemplateItemRowChanging(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
 				}
 			}
 
@@ -679,9 +687,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.TemplateItemRowDeleted != null)
+				if (this._TemplateItemRowDeleted != null)
 				{
-					this.TemplateItemRowDeleted(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
+					this._TemplateItemRowDeleted(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
 				}
 			}
 
@@ -690,9 +698,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.TemplateItemRowDeleting != null)
+				if (this._TemplateItemRowDeleting != null)
 				{
-					this.TemplateItemRowDeleting(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
+					this._TemplateItemRowDeleting(this, new UserWorkingProfileDS.TemplateItemRowChangeEvent((UserWorkingProfileDS.TemplateItemRow)e.Row, e.Action));
 				}
 			}
 

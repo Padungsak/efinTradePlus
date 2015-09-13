@@ -212,17 +212,18 @@ namespace i2TradePlus
 
 		private Button btnRefreshLog;
 
+        public frmMobileAlert.OnAlertClickHandler _OnAlertClick;
 		public event frmMobileAlert.OnAlertClickHandler OnAlertClick
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnAlertClick = (frmMobileAlert.OnAlertClickHandler)Delegate.Combine(this.OnAlertClick, value);
+				this._OnAlertClick += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnAlertClick = (frmMobileAlert.OnAlertClickHandler)Delegate.Remove(this.OnAlertClick, value);
+				this._OnAlertClick += value;
 			}
 		}
 
@@ -404,9 +405,9 @@ namespace i2TradePlus
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void btnAlertDetail_Click(object sender, EventArgs e)
 		{
-			if (this.OnAlertClick != null)
+			if (this._OnAlertClick != null)
 			{
-				this.OnAlertClick();
+				this._OnAlertClick();
 			}
 		}
 

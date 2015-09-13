@@ -317,18 +317,18 @@ namespace i2TradePlus
 		private static string _ip = string.Empty;
 
 		public static string PINCODE_TIMEOUT = "PINCODE_TIMEOUT";
-
+        public static ApplicationInfo.OnPincodeChangedCompleteHandler _OnPincodeChanged;
 		public static event ApplicationInfo.OnPincodeChangedCompleteHandler OnPincodeChanged
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				ApplicationInfo.OnPincodeChanged = (ApplicationInfo.OnPincodeChangedCompleteHandler)Delegate.Combine(ApplicationInfo.OnPincodeChanged, value);
+                ApplicationInfo._OnPincodeChanged = value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				ApplicationInfo.OnPincodeChanged = (ApplicationInfo.OnPincodeChangedCompleteHandler)Delegate.Remove(ApplicationInfo.OnPincodeChanged, value);
+                ApplicationInfo._OnPincodeChanged = value;
 			}
 		}
 
@@ -1001,9 +1001,9 @@ namespace i2TradePlus
 				if (ApplicationInfo.UserPincodeLastEntry != pincodeEntry)
 				{
 					ApplicationInfo.UserPincodeLastEntry = pincodeEntry;
-					if (ApplicationInfo.OnPincodeChanged != null)
+					if (ApplicationInfo._OnPincodeChanged != null)
 					{
-						ApplicationInfo.OnPincodeChanged();
+						ApplicationInfo._OnPincodeChanged();
 					}
 				}
 				if (ApplicationInfo.UserPincode != string.Empty && pincodeEntry == ApplicationInfo.UserPincode)

@@ -67,115 +67,123 @@ namespace i2TradePlus
 
 		private List<Control> _allControls = null;
 
+        public ClientBaseForm.OnReActiveEventHandler _IDoReActivated;
 		public event ClientBaseForm.OnReActiveEventHandler IDoReActivated
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoReActivated = (ClientBaseForm.OnReActiveEventHandler)Delegate.Combine(this.IDoReActivated, value);
+				this._IDoReActivated += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoReActivated = (ClientBaseForm.OnReActiveEventHandler)Delegate.Remove(this.IDoReActivated, value);
+				this._IDoReActivated -= value;
 			}
 		}
 
+        public ClientBaseForm.CustomSizeChangedEventHandler _IDoCustomSizeChanged;  
 		public event ClientBaseForm.CustomSizeChangedEventHandler IDoCustomSizeChanged
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoCustomSizeChanged = (ClientBaseForm.CustomSizeChangedEventHandler)Delegate.Combine(this.IDoCustomSizeChanged, value);
+				this._IDoCustomSizeChanged += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoCustomSizeChanged = (ClientBaseForm.CustomSizeChangedEventHandler)Delegate.Remove(this.IDoCustomSizeChanged, value);
+				this._IDoCustomSizeChanged -= value;
 			}
 		}
 
+        public ClientBaseForm.OnShownDelayEventHandler _IDoShownDelay;
 		public event ClientBaseForm.OnShownDelayEventHandler IDoShownDelay
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoShownDelay = (ClientBaseForm.OnShownDelayEventHandler)Delegate.Combine(this.IDoShownDelay, value);
+				this._IDoShownDelay += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoShownDelay = (ClientBaseForm.OnShownDelayEventHandler)Delegate.Remove(this.IDoShownDelay, value);
+				this._IDoShownDelay -= value;
 			}
 		}
 
+        public ClientBaseForm.OnFormKeyUpEventHandler _IDoMainFormKeyUp;
 		public event ClientBaseForm.OnFormKeyUpEventHandler IDoMainFormKeyUp
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoMainFormKeyUp = (ClientBaseForm.OnFormKeyUpEventHandler)Delegate.Combine(this.IDoMainFormKeyUp, value);
+				this._IDoMainFormKeyUp += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoMainFormKeyUp = (ClientBaseForm.OnFormKeyUpEventHandler)Delegate.Remove(this.IDoMainFormKeyUp, value);
+				this._IDoMainFormKeyUp -=  value;
 			}
 		}
 
+		public ClientBaseForm.OnSymbolLinkEventHandler _IDoSymbolLinked;
 		public event ClientBaseForm.OnSymbolLinkEventHandler IDoSymbolLinked
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoSymbolLinked = (ClientBaseForm.OnSymbolLinkEventHandler)Delegate.Combine(this.IDoSymbolLinked, value);
+				this._IDoSymbolLinked += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoSymbolLinked = (ClientBaseForm.OnSymbolLinkEventHandler)Delegate.Remove(this.IDoSymbolLinked, value);
+				this._IDoSymbolLinked -= value;
 			}
 		}
 
+        public ClientBaseForm.OnFontChangedEventHandler _IDoFontChanged;
 		public event ClientBaseForm.OnFontChangedEventHandler IDoFontChanged
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoFontChanged = (ClientBaseForm.OnFontChangedEventHandler)Delegate.Combine(this.IDoFontChanged, value);
+				this._IDoFontChanged += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoFontChanged = (ClientBaseForm.OnFontChangedEventHandler)Delegate.Remove(this.IDoFontChanged, value);
+				this._IDoFontChanged -= value;
 			}
 		}
 
+        public ClientBaseForm.OnIDoLoadDataEventHandler _IDoLoadData;
 		public event ClientBaseForm.OnIDoLoadDataEventHandler IDoLoadData
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoLoadData = (ClientBaseForm.OnIDoLoadDataEventHandler)Delegate.Combine(this.IDoLoadData, value);
+                this._IDoLoadData +=  value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoLoadData = (ClientBaseForm.OnIDoLoadDataEventHandler)Delegate.Remove(this.IDoLoadData, value);
+                this._IDoLoadData -= value;
 			}
 		}
 
+        public ClientBaseForm.OnHeaderChangedEventHandler _IDoHeaderChanged;
 		public event ClientBaseForm.OnHeaderChangedEventHandler IDoHeaderChanged
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.IDoHeaderChanged = (ClientBaseForm.OnHeaderChangedEventHandler)Delegate.Combine(this.IDoHeaderChanged, value);
+				this._IDoHeaderChanged += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.IDoHeaderChanged = (ClientBaseForm.OnHeaderChangedEventHandler)Delegate.Remove(this.IDoHeaderChanged, value);
+				this._IDoHeaderChanged -= value;
 			}
 		}
 
@@ -423,9 +431,9 @@ namespace i2TradePlus
 						((SortGrid)control).Redraw();
 					}
 				}
-				if (this.IDoHeaderChanged != null)
+				if (this._IDoHeaderChanged != null)
 				{
-					this.IDoHeaderChanged();
+					this._IDoHeaderChanged();
 				}
 			}
 			catch (Exception ex)
@@ -467,9 +475,9 @@ namespace i2TradePlus
 			this.timerLoading.Enabled = false;
 			if (this.FormState != ClientBaseForm.ClientBaseFormState.Closing)
 			{
-				if (this.IDoLoadData != null)
+				if (this._IDoLoadData != null)
 				{
-					this.IDoLoadData();
+					this._IDoLoadData();
 				}
 			}
 		}
@@ -505,9 +513,9 @@ namespace i2TradePlus
 					this.SetFontToControl(Settings.Default.Default_Font);
 					this.isRaiseEventIDoFontChanged = true;
 					this.FormState = ClientBaseForm.ClientBaseFormState.Showed;
-					if (this.IDoShownDelay != null)
+					if (this._IDoShownDelay != null)
 					{
-						this.IDoShownDelay();
+						this._IDoShownDelay();
 					}
 				}
 				else if (this.FormState != ClientBaseForm.ClientBaseFormState.Opening)
@@ -526,7 +534,7 @@ namespace i2TradePlus
 						this.isRaiseEventIDoFontChanged = true;
 						this.IsWidthChanged = true;
 					}
-					if (this.IDoReActivated != null)
+					if (this._IDoReActivated != null)
 					{
 						Rectangle workingArea = ((frmMain)base.Parent).GetWorkingArea();
 						if (!this.IsWidthChanged)
@@ -545,7 +553,7 @@ namespace i2TradePlus
 						{
 							base.Height = workingArea.Height;
 						}
-						this.IDoReActivated();
+						this._IDoReActivated();
 					}
 				}
 				this.isAllowRender = true;
@@ -580,11 +588,11 @@ namespace i2TradePlus
 					{
 						base.Height = workingArea.Height;
 					}
-					if (this.IDoCustomSizeChanged != null)
+					if (this._IDoCustomSizeChanged != null)
 					{
 						if (this.IsWidthChanged || this.IsHeightChanged)
 						{
-							this.IDoCustomSizeChanged();
+							this._IDoCustomSizeChanged();
 						}
 					}
 				}
@@ -670,11 +678,11 @@ namespace i2TradePlus
 							}
 						}
 					}
-					if (this.isRaiseEventIDoFontChanged && this.IDoFontChanged != null)
+					if (this.isRaiseEventIDoFontChanged && this._IDoFontChanged != null)
 					{
 						this.IsWidthChanged = true;
 						this.IsHeightChanged = true;
-						this.IDoFontChanged();
+						this._IDoFontChanged();
 					}
 				}
 				catch (Exception ex)
@@ -762,18 +770,18 @@ namespace i2TradePlus
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public void ReceiveKeyupMainForm(KeyEventArgs e)
 		{
-			if (this.IDoMainFormKeyUp != null)
+			if (this._IDoMainFormKeyUp != null)
 			{
-				this.IDoMainFormKeyUp(e);
+				this._IDoMainFormKeyUp(e);
 			}
 		}
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public void SetSymbolLink(object sender, SymbolLinkSource source, string newStock)
 		{
-			if (this.IDoSymbolLinked != null)
+			if (this._IDoSymbolLinked != null)
 			{
-				this.IDoSymbolLinked(sender, source, newStock);
+				this._IDoSymbolLinked(sender, source, newStock);
 			}
 		}
 

@@ -34,59 +34,63 @@ namespace i2TradePlus.MyDataSet
 
 			private DataColumn columnAlertSound;
 
+			public ApplicationInfoDS.InfoRowChangeEventHandler _InfoRowChanging;
 			public event ApplicationInfoDS.InfoRowChangeEventHandler InfoRowChanging
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.InfoRowChanging = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Combine(this.InfoRowChanging, value);
+					this._InfoRowChanging += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.InfoRowChanging = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Remove(this.InfoRowChanging, value);
+					this._InfoRowChanging -= value;
 				}
 			}
 
+			public ApplicationInfoDS.InfoRowChangeEventHandler _InfoRowChanged;
 			public event ApplicationInfoDS.InfoRowChangeEventHandler InfoRowChanged
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.InfoRowChanged = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Combine(this.InfoRowChanged, value);
+					this._InfoRowChanged += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.InfoRowChanged = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Remove(this.InfoRowChanged, value);
+					this._InfoRowChanged -= value;
 				}
 			}
 
+			public ApplicationInfoDS.InfoRowChangeEventHandler _InfoRowDeleting;
 			public event ApplicationInfoDS.InfoRowChangeEventHandler InfoRowDeleting
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.InfoRowDeleting = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Combine(this.InfoRowDeleting, value);
+					this._InfoRowDeleting += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.InfoRowDeleting = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Remove(this.InfoRowDeleting, value);
+					this._InfoRowDeleting -= value;
 				}
 			}
 
+            public ApplicationInfoDS.InfoRowChangeEventHandler _InfoRowDeleted;
 			public event ApplicationInfoDS.InfoRowChangeEventHandler InfoRowDeleted
 			{
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				add
 				{
-					this.InfoRowDeleted = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Combine(this.InfoRowDeleted, value);
+					this._InfoRowDeleted += value;
 				}
 				[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 				remove
 				{
-					this.InfoRowDeleted = (ApplicationInfoDS.InfoRowChangeEventHandler)Delegate.Remove(this.InfoRowDeleted, value);
+					this._InfoRowDeleted -= value;
 				}
 			}
 
@@ -309,9 +313,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanged(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanged(e);
-				if (this.InfoRowChanged != null)
+				if (this._InfoRowChanged != null)
 				{
-					this.InfoRowChanged(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
+					this._InfoRowChanged(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
 				}
 			}
 
@@ -320,9 +324,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowChanging(DataRowChangeEventArgs e)
 			{
 				base.OnRowChanging(e);
-				if (this.InfoRowChanging != null)
+				if (this._InfoRowChanging != null)
 				{
-					this.InfoRowChanging(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
+					this._InfoRowChanging(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
 				}
 			}
 
@@ -331,9 +335,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleted(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleted(e);
-				if (this.InfoRowDeleted != null)
+				if (this._InfoRowDeleted != null)
 				{
-					this.InfoRowDeleted(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
+					this._InfoRowDeleted(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
 				}
 			}
 
@@ -342,9 +346,9 @@ namespace i2TradePlus.MyDataSet
 			protected override void OnRowDeleting(DataRowChangeEventArgs e)
 			{
 				base.OnRowDeleting(e);
-				if (this.InfoRowDeleting != null)
+				if (this._InfoRowDeleting != null)
 				{
-					this.InfoRowDeleting(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
+					this._InfoRowDeleting(this, new ApplicationInfoDS.InfoRowChangeEvent((ApplicationInfoDS.InfoRow)e.Row, e.Action));
 				}
 			}
 

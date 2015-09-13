@@ -24,78 +24,83 @@ namespace i2TradePlus.WebProxy
 
 		private int timeOut = 15000;
 
-		private WebProxy proxy = null;
+		//private WebProxy proxy = null;
 
-		[CompilerGenerated]
-		private static RemoteCertificateValidationCallback <>9__CachedAnonymousMethodDelegate1;
+        [CompilerGenerated]
+        //private static RemoteCertificateValidationCallback <>9__CachedAnonymousMethodDelegate1;
 
+        public Https.OnErrorHandler _OnError;
 		public event Https.OnErrorHandler OnError
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnError = (Https.OnErrorHandler)Delegate.Combine(this.OnError, value);
+				this._OnError += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnError = (Https.OnErrorHandler)Delegate.Remove(this.OnError, value);
+				this._OnError -= value;
 			}
 		}
 
+        public Https.OnTransferHandler _OnTransfer;
 		public event Https.OnTransferHandler OnTransfer
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnTransfer = (Https.OnTransferHandler)Delegate.Combine(this.OnTransfer, value);
+				this._OnTransfer += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnTransfer = (Https.OnTransferHandler)Delegate.Remove(this.OnTransfer, value);
+				this._OnTransfer -= value;
 			}
 		}
 
-		public event Https.OnEndTransferHandler OnEndTransfer
-		{
-			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
-			add
-			{
-				this.OnEndTransfer = (Https.OnEndTransferHandler)Delegate.Combine(this.OnEndTransfer, value);
-			}
-			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
-			remove
-			{
-				this.OnEndTransfer = (Https.OnEndTransferHandler)Delegate.Remove(this.OnEndTransfer, value);
-			}
-		}
+        public Https.OnEndTransferHandler _OnEndTransfer;
+        public event Https.OnEndTransferHandler OnEndTransfer
+        {
+            [MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
+            add
+            {
+                this._OnEndTransfer += value;
+            }
+            [MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
+            remove
+            {
+                this._OnEndTransfer -= value;
+            }
+        }
 
+        public Https.OnStartTransferHandler _OnStartTransfer;
 		public event Https.OnStartTransferHandler OnStartTransfer
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnStartTransfer = (Https.OnStartTransferHandler)Delegate.Combine(this.OnStartTransfer, value);
+				this._OnStartTransfer += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnStartTransfer = (Https.OnStartTransferHandler)Delegate.Remove(this.OnStartTransfer, value);
+				this._OnStartTransfer -= value;
 			}
 		}
 
+        public Https.OnSSLServerAuthenticationHandler _OnSSLServerAuthentication;
 		public event Https.OnSSLServerAuthenticationHandler OnSSLServerAuthentication
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnSSLServerAuthentication = (Https.OnSSLServerAuthenticationHandler)Delegate.Combine(this.OnSSLServerAuthentication, value);
+				this._OnSSLServerAuthentication += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnSSLServerAuthentication = (Https.OnSSLServerAuthenticationHandler)Delegate.Remove(this.OnSSLServerAuthentication, value);
+				this._OnSSLServerAuthentication -= value;
 			}
 		}
 
@@ -136,9 +141,9 @@ namespace i2TradePlus.WebProxy
 			string result;
 			try
 			{
-				if (this.OnStartTransfer != null)
+				if (this._OnStartTransfer != null)
 				{
-					this.OnStartTransfer(1);
+					this._OnStartTransfer(1);
 				}
 				HttpWebResponse httpWebResponse = (HttpWebResponse)webRequest.GetResponse();
 				Stream responseStream = httpWebResponse.GetResponseStream();
@@ -151,25 +156,25 @@ namespace i2TradePlus.WebProxy
 					string text2 = new string(array, 0, i);
 					text += text2;
 					i = streamReader.Read(array, 0, this.ReadBufferSize);
-					if (this.OnTransfer != null)
+					if (this._OnTransfer != null)
 					{
-						this.OnTransfer(text2);
+						this._OnTransfer(text2);
 					}
 				}
 				streamReader.Close();
 				responseStream.Close();
 				httpWebResponse.Close();
-				if (this.OnEndTransfer != null)
+				if (this._OnEndTransfer != null)
 				{
-					this.OnEndTransfer(1);
+					this._OnEndTransfer(1);
 				}
 				result = text;
 			}
 			catch (Exception ex)
 			{
-				if (this.OnError != null)
+				if (this._OnError != null)
 				{
-					this.OnError(ex);
+					this._OnError(ex);
 				}
 				throw ex;
 			}
@@ -190,12 +195,12 @@ namespace i2TradePlus.WebProxy
 				httpWebRequest.ProtocolVersion = HttpVersion.Version11;
 				if (ApplicationInfo.IsUseProxy)
 				{
-					if (this.proxy == null)
-					{
-						this.proxy = new WebProxy(Settings.Default.ProxyHost, Settings.Default.ProxyPort);
-						this.proxy.Credentials = new NetworkCredential(Settings.Default.ProxyUsername, ApplicationInfo.ProxyPassword);
-					}
-					httpWebRequest.Proxy = this.proxy;
+                    //if (this.proxy == null)
+                    //{
+                    //    this.proxy = new WebProxy(Settings.Default.ProxyHost, Settings.Default.ProxyPort);
+                    //    this.proxy.Credentials = new NetworkCredential(Settings.Default.ProxyUsername, ApplicationInfo.ProxyPassword);
+                    //}
+                    //httpWebRequest.Proxy = this.proxy;
 				}
 				result = httpWebRequest;
 			}
@@ -210,9 +215,9 @@ namespace i2TradePlus.WebProxy
 		public bool CertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
 		{
 			HttpsSSLServerAuthenticationEventArgs httpsSSLServerAuthenticationEventArgs = new HttpsSSLServerAuthenticationEventArgs();
-			if (this.OnSSLServerAuthentication != null)
+			if (this._OnSSLServerAuthentication != null)
 			{
-				this.OnSSLServerAuthentication(httpsSSLServerAuthenticationEventArgs);
+				this._OnSSLServerAuthentication(httpsSSLServerAuthenticationEventArgs);
 			}
 			return httpsSSLServerAuthenticationEventArgs.Accept;
 		}
