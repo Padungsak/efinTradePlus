@@ -74,12 +74,12 @@ namespace i2TradePlus
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-				this.OnLink += value;
+				this._OnLink += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this.OnLink -= value;
+				this._OnLink -= value;
 			}
 		}
 

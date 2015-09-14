@@ -218,8 +218,8 @@ namespace i2TradePlus
 
 		private Button btnAutoTrade;
 
-        internal static frmMain.OnMessageRecievedEventHendler _OnMessageReceived;
-		internal static event frmMain.OnMessageRecievedEventHendler OnMessageReceived
+        public static frmMain.OnMessageRecievedEventHendler _OnMessageReceived;
+        public static event frmMain.OnMessageRecievedEventHendler OnMessageReceived
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
@@ -233,8 +233,8 @@ namespace i2TradePlus
 			}
 		}
 
-		internal static  frmMain.OnMessageTfexRecievedEventHendler _OnMessageTfexReceived;
-		internal static event frmMain.OnMessageTfexRecievedEventHendler OnMessageTfexReceived
+        public static frmMain.OnMessageTfexRecievedEventHendler _OnMessageTfexReceived;
+        public static event frmMain.OnMessageTfexRecievedEventHendler OnMessageTfexReceived
 		{
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
@@ -554,8 +554,9 @@ namespace i2TradePlus
 			{
 				goto IL_BC;
 			}
-            IL_BC:
+            
 			e.SuppressKeyPress = true;
+            IL_BC:
 			try
 			{
 				//IL_BC:
@@ -3037,11 +3038,13 @@ namespace i2TradePlus
 							dataSet.Clear();
 						}
 					}
+
 					if (ApplicationInfo.AutoTradeType > 0)
 					{
 						ApplicationInfo.IsAutoTradeAccepted = (ApplicationInfo.WebAlertService.StopOrderCheckDisclaimer(ApplicationInfo.UserLoginID) == ApplicationInfo.UserLoginID);
-					}
-					data = string.Empty;
+					}                
+
+                    data = string.Empty;
 					if (ApplicationInfo.IsSupportTfex)
 					{
 						this.SectorBox.DisplayType = 3;

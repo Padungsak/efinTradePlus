@@ -202,6 +202,8 @@ namespace i2TradePlus
 			{
 				this._registerResult = ApplicationInfo.WebAlertService.StopOrderRegister(ApplicationInfo.UserLoginID, true);
 				ApplicationInfo.IsAutoTradeAccepted = (this._registerResult == ApplicationInfo.UserLoginID);
+                //<PS> Enable stop order feature
+                ApplicationInfo.IsAutoTradeAccepted = true;
 			}
 			catch (Exception ex)
 			{

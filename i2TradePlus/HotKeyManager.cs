@@ -152,7 +152,7 @@ namespace i2TradePlus
 			{
 			}
 		}
-
+            
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		public static void ClearTemplateHotkey()
 		{

@@ -323,12 +323,12 @@ namespace i2TradePlus
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			add
 			{
-                ApplicationInfo._OnPincodeChanged = value;
+                ApplicationInfo._OnPincodeChanged += value;
 			}
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-                ApplicationInfo._OnPincodeChanged = value;
+                ApplicationInfo._OnPincodeChanged -= value;
 			}
 		}
 

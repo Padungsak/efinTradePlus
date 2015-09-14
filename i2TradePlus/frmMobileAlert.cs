@@ -223,7 +223,7 @@ namespace i2TradePlus
 			[MethodImpl(MethodImplOptions.Synchronized | MethodImplOptions.NoInlining)]
 			remove
 			{
-				this._OnAlertClick += value;
+				this._OnAlertClick -= value;
 			}
 		}
 
