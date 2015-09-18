@@ -2806,8 +2806,14 @@ namespace i2TradePlus
 			}
 		}
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void bgwReloadCredit_DoWork(object sender, DoWorkEventArgs e)
+        {
+            ReloadCredit();
+        }
+
 		[MethodImpl(MethodImplOptions.NoInlining)]
-		private void bgwReloadCredit_DoWork(object sender, DoWorkEventArgs e)
+        private void ReloadCredit()
 		{
 			try
 			{
@@ -6046,65 +6052,82 @@ namespace i2TradePlus
 				}
 				if (this.cbStock.Text.Trim() != string.Empty)
 				{
-					StockList.StockInformation stockInformation = ApplicationInfo.StockInfo[this.cbStock.Text.Trim()];
-					if (stockInformation.Number > 0)
-					{
-						this._stockInfo = stockInformation;
-						TemplateManager.Instance.SendSymbolLink(this, SymbolLinkSource.StockSymbol, this._stockInfo.Symbol);
-						ApplicationInfo.CurrentSymbol = this._stockInfo.Symbol;
-						if (this.cbPrice.Text == string.Empty)
-						{
-							if (Settings.Default.BSBoxDefaultPrice == 1)
-							{
-								this.cbPrice.Text = ((this._stockInfo.LastSalePrice > 0m) ? Utilities.PriceFormat(this._stockInfo.LastSalePrice) : Utilities.PriceFormat(this._stockInfo.PriorPrice));
-							}
-							else if (Settings.Default.BSBoxDefaultPrice == 2)
-							{
-								if (this._showSide == "B" || this._showSide == "C")
-								{
-									this.cbPrice.Text = Utilities.PriceFormat(this._stockInfo.OfferPrice1);
-								}
-								else if (this._showSide == "S" || this._showSide == "H")
-								{
-									this.cbPrice.Text = Utilities.PriceFormat(this._stockInfo.BidPrice1);
-								}
-							}
-						}
-						if (this.tbVolume.Text == string.Empty)
-						{
-							if (Settings.Default.BSBoxDefaultVolumeActive && Settings.Default.BSBoxDefaultVolume > 0L)
-							{
-								this.tbVolume.Text = Utilities.VolumeFormat(Settings.Default.BSBoxDefaultVolume, true);
-							}
-						}
-						if (Settings.Default.MainBottomStyle == 2 || Settings.Default.MainBottomStyle == 4)
-						{
-							this.tbVolume.Focus();
-						}
-						else if (Settings.Default.BSBoxEntryTTF)
-						{
-							this.chbNVDR.Focus();
-						}
-						else
-						{
-							this.tbVolume.Focus();
-						}
-					}
-					else
-					{
-						this.cbStock.Text = this._stockInfo.Symbol;
-						this.cbStock.Focus();
-						this.cbStock.SelectAll();
-					}
-				}
-				e.SuppressKeyPress = true;
-				IL_377:;
-			}
-			catch (Exception ex)
-			{
-				this.ShowError("cbStock_KeyDown", ex);
-			}
-		}
+                    StockList.StockInformation stockInformation = ApplicationInfo.StockInfo[this.cbStock.Text.Trim()];
+                    if (stockInformation.Number > 0)
+                    {
+                        this._stockInfo = stockInformation;
+                        TemplateManager.Instance.SendSymbolLink(this, SymbolLinkSource.StockSymbol, this._stockInfo.Symbol);
+                        ApplicationInfo.CurrentSymbol = this._stockInfo.Symbol;
+                        
+                        if (Settings.Default.BSBoxDefaultPrice == 1)
+                        {
+                            decimal priceBuff = this._stockInfo.LastSalePrice > 0m ? this._stockInfo.LastSalePrice : this._stockInfo.PriorPrice;
+                            this.cbPrice.Text = Utilities.PriceFormat(priceBuff);
+
+                            //Do volumn calcualation
+                            if (this._showSide == "B" || this._showSide == "C")
+                            {
+                                this.tbVolume.Text = Utilities.VolumeFormat(ConvertPricetoVolumn(Convert.ToDecimal(priceBuff)), true);
+                            }
+                            else if (this._showSide == "S" || this._showSide == "H")
+                            {
+                                this.ReloadCredit();
+                                this.tbVolume.Text = Utilities.VolumeFormat(this.GetOnHand(), true);
+                            }
+
+                        }
+                        else if (Settings.Default.BSBoxDefaultPrice == 2)
+                        {
+                            if (this._showSide == "B" || this._showSide == "C")
+                            {
+                                this.cbPrice.Text = Utilities.PriceFormat(this._stockInfo.OfferPrice1);
+                                //Do volumn calcualation
+                                this.tbVolume.Text = Utilities.VolumeFormat(ConvertPricetoVolumn(Convert.ToDecimal(this._stockInfo.OfferPrice1)), true);
+                            }
+                            else if (this._showSide == "S" || this._showSide == "H")
+                            {
+                                this.cbPrice.Text = Utilities.PriceFormat(this._stockInfo.BidPrice1);
+                                //Do volumn calcualation
+                                this.ReloadCredit();
+                                this.tbVolume.Text = Utilities.VolumeFormat(this.GetOnHand(), true);
+                            }
+                        }
+     
+
+                        if (Settings.Default.MainBottomStyle == 2 || Settings.Default.MainBottomStyle == 4)
+                        {
+                            this.btnSendOrder.Focus();
+                        }
+                        else if (Settings.Default.BSBoxEntryTTF)
+                        {
+                            this.chbNVDR.Focus();
+                        }
+                        else
+                        {
+                            this.tbVolume.Focus();
+                        }
+                    }
+                    else
+                    {
+                        this.cbStock.Text = this._stockInfo.Symbol;
+                        this.cbStock.Focus();
+                        this.cbStock.SelectAll();
+                    }
+                }
+                e.SuppressKeyPress = true;
+            IL_377: ;
+            }
+            catch (Exception ex)
+            {
+                this.ShowError("cbStock_KeyDown", ex);
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private decimal ConvertPricetoVolumn(decimal price)
+        {
+            return  Math.Round((Settings.Default.BSBoxDefaultVolume / price)/100)*100;
+        }
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void cbStock_KeyPress(object sender, KeyPressEventArgs e)

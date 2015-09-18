@@ -362,7 +362,7 @@ namespace i2TradePlus.Controls
 			this.lbDefVolume.Name = "lbDefVolume";
 			this.lbDefVolume.Size = new Size(51, 16);
 			this.lbDefVolume.TabIndex = 28;
-			this.lbDefVolume.Text = "Volume";
+			this.lbDefVolume.Text = "Conversion price";
 			this.chkBSInputTTF.AutoSize = true;
 			this.chkBSInputTTF.Location = new Point(9, 42);
 			this.chkBSInputTTF.Name = "chkBSInputTTF";
