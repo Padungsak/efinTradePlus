@@ -794,7 +794,7 @@ namespace i2TradePlus
 								}
 							}
                             //<PS> Enable stop order feature
-                            ApplicationInfo.AutoTradeType = 15;
+                            ApplicationInfo.AutoTradeType = 63;
 						}
 						if (dataSet.Tables.Contains("CONFIG"))
 						{

@@ -130,7 +130,9 @@ namespace i2TradePlus
 
 		private Label label8;
 
-		private ComboBox cb1Condition;
+        private ComboBox cb1Condition;
+        
+        private ComboBox cbLACondition;
 
 		private Button btnTypeMM;
 
@@ -163,6 +165,10 @@ namespace i2TradePlus
 		private ExpandGrid gridPzMain;
 
 		private Button btnTypePZ;
+
+        private Panel panTypeLA;
+
+        private Button btnTypeLA;
 
 		private ComboBox cbExpire;
 
@@ -287,8 +293,11 @@ namespace i2TradePlus
 			this.tb2Volume = new TextBox();
 			this.label4 = new Label();
 			this.btnTypePZ = new Button();
+            this.btnTypeLA = new Button();
 			this.panType1 = new Panel();
-			this.cb1Condition = new ComboBox();
+            this.panTypeLA = new Panel();
+            this.cbLACondition = new ComboBox();
+            this.cb1Condition = new ComboBox();
 			this.lb1Value = new Label();
 			this.cb1Value = new ComboBox();
 			this.lbStopOrderField = new Label();
@@ -317,6 +326,7 @@ namespace i2TradePlus
 			this.panelDCA.SuspendLayout();
 			this.panType2.SuspendLayout();
 			this.panType1.SuspendLayout();
+            this.panTypeLA.SuspendLayout();
 			this.tStripMenu.SuspendLayout();
 			this.panel1.SuspendLayout();
 			base.SuspendLayout();
@@ -465,7 +475,9 @@ namespace i2TradePlus
 			this.panelTop.Controls.Add(this.panelDCA);
 			this.panelTop.Controls.Add(this.panType2);
 			this.panelTop.Controls.Add(this.btnTypePZ);
+            this.panelTop.Controls.Add(this.btnTypeLA);
 			this.panelTop.Controls.Add(this.panType1);
+            this.panelTop.Controls.Add(this.panTypeLA);
 			this.panelTop.Controls.Add(this.btnTypeDCA);
 			this.panelTop.Controls.Add(this.btnTypeMM);
 			this.panelTop.Controls.Add(this.btnClear);
@@ -1218,19 +1230,73 @@ namespace i2TradePlus
 			this.toolTip1.SetToolTip(this.btnTypePZ, "Pricing Zone");
 			this.btnTypePZ.UseVisualStyleBackColor = false;
 			this.btnTypePZ.Click += new EventHandler(this.btnTypePZ_Click);
-			this.panType1.BackColor = Color.FromArgb(30, 30, 30);
-			this.panType1.Controls.Add(this.cb1Condition);
-			this.panType1.Controls.Add(this.lb1Value);
-			this.panType1.Controls.Add(this.cb1Value);
-			this.panType1.Controls.Add(this.cb1Price);
-			this.panType1.Controls.Add(this.lbStopOrderField);
-			this.panType1.Controls.Add(this.lbVolume);
-			this.panType1.Controls.Add(this.tb1Volume);
-			this.panType1.Controls.Add(this.lbPrice);
-			this.panType1.Location = new Point(6, 31);
-			this.panType1.Name = "panType1";
-			this.panType1.Size = new Size(674, 60);
-			this.panType1.TabIndex = 110;
+
+            this.panTypeLA.BackColor = Color.FromArgb(30, 30, 30);
+            this.panTypeLA.Controls.Add(this.cbLACondition);
+            this.panTypeLA.Controls.Add(this.lb1Value);
+            this.panTypeLA.Controls.Add(this.cb1Value);
+            this.panTypeLA.Controls.Add(this.cb1Price);
+            this.panTypeLA.Controls.Add(this.lbStopOrderField);
+            this.panTypeLA.Controls.Add(this.lbVolume);
+            this.panTypeLA.Controls.Add(this.tb1Volume);
+            this.panTypeLA.Controls.Add(this.lbPrice);
+            this.panTypeLA.Location = new Point(6, 31);
+            this.panTypeLA.Name = "panTypeLA";
+            this.panTypeLA.Size = new Size(674, 60);
+            this.panTypeLA.TabIndex = 110;
+            this.cbLACondition.AllowDrop = true;
+            this.cbLACondition.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            this.cbLACondition.BackColor = Color.FromArgb(224, 224, 224);
+            this.cbLACondition.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cbLACondition.FlatStyle = FlatStyle.Popup;
+            this.cbLACondition.ForeColor = Color.Black;
+            this.cbLACondition.FormattingEnabled = true;
+            this.cbLACondition.Items.AddRange(new object[]
+			{
+				"Last >=",
+				"Last <="
+			});
+            this.cbLACondition.Location = new Point(15, 30);
+            this.cbLACondition.Name = "cbLACondition";
+            this.cbLACondition.Size = new Size(138, 21);
+            this.cbLACondition.TabIndex = 141;
+            this.cbLACondition.SelectedIndexChanged += new EventHandler(this.cbLAField_SelectedIndexChanged);
+            this.cbLACondition.Leave += new EventHandler(this.controlOrder_Leave);
+            this.cbLACondition.Enter += new EventHandler(this.controlOrder_Enter);
+            //this.cbLACondition.KeyDown += new KeyEventHandler(this.cbLACondition_KeyDown);
+
+            this.btnTypeLA.AutoEllipsis = true;
+            this.btnTypeLA.Cursor = Cursors.Hand;
+            this.btnTypeLA.FlatAppearance.BorderColor = Color.DimGray;
+            this.btnTypeLA.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 0);
+            this.btnTypeLA.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 192, 192);
+            this.btnTypeLA.FlatStyle = FlatStyle.Flat;
+            this.btnTypeLA.ForeColor = Color.WhiteSmoke;
+            this.btnTypeLA.Location = new Point(683, 6);
+            this.btnTypeLA.MaximumSize = new Size(58, 23);
+            this.btnTypeLA.Name = "btnTypeLA";
+            this.btnTypeLA.Size = new Size(31, 22);
+            this.btnTypeLA.TabIndex = 140;
+            this.btnTypeLA.TabStop = false;
+            this.btnTypeLA.Text = "LA";
+            this.toolTip1.SetToolTip(this.btnTypeLA, "Local AUto trade");
+            this.btnTypeLA.UseVisualStyleBackColor = false;
+            this.btnTypeLA.Click += new EventHandler(this.btnTypeLA_Click);
+
+
+            this.panType1.BackColor = Color.FromArgb(30, 30, 30);
+            this.panType1.Controls.Add(this.cb1Condition);
+            this.panType1.Controls.Add(this.lb1Value);
+            this.panType1.Controls.Add(this.cb1Value);
+            this.panType1.Controls.Add(this.cb1Price);
+            this.panType1.Controls.Add(this.lbStopOrderField);
+            this.panType1.Controls.Add(this.lbVolume);
+            this.panType1.Controls.Add(this.tb1Volume);
+            this.panType1.Controls.Add(this.lbPrice);
+            this.panType1.Location = new Point(6, 31);
+            this.panType1.Name = "panType1";
+            this.panType1.Size = new Size(674, 60);
+            this.panType1.TabIndex = 110;
 			this.cb1Condition.AllowDrop = true;
 			this.cb1Condition.AutoCompleteSource = AutoCompleteSource.CustomSource;
 			this.cb1Condition.BackColor = Color.FromArgb(224, 224, 224);
@@ -1745,6 +1811,8 @@ namespace i2TradePlus
 			this.panType2.PerformLayout();
 			this.panType1.ResumeLayout(false);
 			this.panType1.PerformLayout();
+            this.panTypeLA.ResumeLayout(false);
+            this.panTypeLA.PerformLayout();
 			this.tStripMenu.ResumeLayout(false);
 			this.tStripMenu.PerformLayout();
 			this.panel1.ResumeLayout(false);
@@ -1790,6 +1858,7 @@ namespace i2TradePlus
 				this.btnTypeMM.Visible = ApplicationInfo.IsAutoTradeSupport(16);
 				this.btnTypeDCA.Visible = ApplicationInfo.IsAutoTradeSupport(4);
 				this.btnTypePZ.Visible = ApplicationInfo.IsAutoTradeSupport(8);
+                this.btnTypeLA.Visible = ApplicationInfo.IsAutoTradeSupport(32);
 				this.cb1Price.Text = "MP";
 				this.cb2PriceLast.Text = "MP";
 				this.cb2PriceSMA.Text = "MP";
@@ -1957,25 +2026,32 @@ namespace i2TradePlus
 						this._frmPzInfo.Bounds = new Rectangle(0, 0, this.panelPZ.Width, this.panelPZ.Height);
 					}
 				}
-				else if (this._typeId == "ALG1")
-				{
-					this.panType1.SetBounds(5, this.btnBuy.Bottom + 5, this.panelTop.Width - 10, this.cb1Condition.Bottom + 10);
-					this.panelTop.Height = this.panType1.Bottom + 50;
-					this.lb1Stock.Left = this.btnSell.Right + 10;
-					this.cb1Stock.Left = this.lb1Stock.Right + 5;
-				}
-				else if (this._typeId == "ALG2")
-				{
-					this.panType2.SetBounds(5, this.btnBuy.Bottom + 5, this.panelTop.Width - 10, this.cb2OperCutloss.Bottom + 10);
-					this.panelTop.Height = this.panType2.Bottom + 50;
-					this.lb1Stock.Left = 10;
-					this.cb1Stock.Left = this.lb1Stock.Right + 5;
-				}
-				else if (this._typeId == "ALGMM")
-				{
-					this.panelTop.Height = this.btnSell.Bottom + 10;
-				}
-				if (this._typeId == "ALG1" || this._typeId == "ALG2")
+                else if (this._typeId == "LA")
+                {
+                    this.panTypeLA.SetBounds(5, this.btnBuy.Bottom + 5, this.panelTop.Width - 10, this.cbLACondition.Bottom + 10);
+                    this.panelTop.Height = this.panTypeLA.Bottom + 50;
+                    this.lb1Stock.Left = this.btnSell.Right + 10;
+                    this.cb1Stock.Left = this.lb1Stock.Right + 5;
+                }
+                else if (this._typeId == "ALG1")
+                {
+                    this.panType1.SetBounds(5, this.btnBuy.Bottom + 5, this.panelTop.Width - 10, this.cb1Condition.Bottom + 10);
+                    this.panelTop.Height = this.panType1.Bottom + 50;
+                    this.lb1Stock.Left = this.btnSell.Right + 10;
+                    this.cb1Stock.Left = this.lb1Stock.Right + 5;
+                }
+                else if (this._typeId == "ALG2")
+                {
+                    this.panType2.SetBounds(5, this.btnBuy.Bottom + 5, this.panelTop.Width - 10, this.cb2OperCutloss.Bottom + 10);
+                    this.panelTop.Height = this.panType2.Bottom + 50;
+                    this.lb1Stock.Left = 10;
+                    this.cb1Stock.Left = this.lb1Stock.Right + 5;
+                }
+                else if (this._typeId == "ALGMM")
+                {
+                    this.panelTop.Height = this.btnSell.Bottom + 10;
+                }
+                if (this._typeId == "ALG1" || this._typeId == "ALG2" )
 				{
 					this.btnClear.Location = new Point(this.panelTop.Width - this.btnClear.Width - 10, this.panelTop.Bottom - this.btnClear.Height - 10);
 					this.btnSendOrder.Location = new Point(this.btnClear.Left - this.btnSendOrder.Width - 10, this.btnClear.Top);
@@ -1984,11 +2060,26 @@ namespace i2TradePlus
 					this.cbExpire.Location = new Point(this.lbPin.Left - this.cbExpire.Width - 10, this.btnClear.Top + 1);
 					this.lbExpire.Location = new Point(this.cbExpire.Left - this.lbExpire.Width - 5, this.btnClear.Top + 4);
 				}
+
+                if(this._typeId == "LA")
+                {
+                    this.btnClear.Location = new Point(this.panelTop.Width - this.btnClear.Width - 10, this.panelTop.Bottom - this.btnClear.Height - 10);
+					this.btnSendOrder.Location = new Point(this.btnClear.Left - this.btnSendOrder.Width - 10, this.btnClear.Top);
+					this.tbPin.Location = new Point(this.btnSendOrder.Left - this.tbPin.Width - 15, this.btnClear.Top + 2);
+					this.lbPin.Location = new Point(this.tbPin.Left - this.lbPin.Width - 5, this.btnClear.Top + 4);
+                }
+
 				int num = this.panelTop.Width;
+                if (ApplicationInfo.IsAutoTradeSupport(32))
+                {
+                    this.btnTypeLA.Location = new Point(this.panelTop.Width - this.btnTypeLA.Width - 5, 5);
+                    num = this.btnTypeLA.Left;
+                }
+
 				if (ApplicationInfo.IsAutoTradeSupport(8))
 				{
-					this.btnTypePZ.Location = new Point(this.panelTop.Width - this.btnTypePZ.Width - 5, 5);
-					num = this.btnTypePZ.Left;
+                    this.btnTypePZ.Location = new Point(num - this.btnTypePZ.Width - 5, 5);
+                    num = this.btnTypePZ.Left;
 				}
 				if (ApplicationInfo.IsAutoTradeSupport(4))
 				{
@@ -2643,6 +2734,12 @@ namespace i2TradePlus
 			this.SetAutoTradeType("ALG4");
 		}
 
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void btnTypeLA_Click(object sender, EventArgs e)
+        {
+            this.SetAutoTradeType("LA");
+        }
+
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void SetAutoTradeType(string newTypeId)
 		{
@@ -2653,7 +2750,9 @@ namespace i2TradePlus
 				this.btnType2.BackColor = Color.Transparent;
 				this.btnTypeDCA.BackColor = Color.Transparent;
 				this.btnTypeMM.BackColor = Color.Transparent;
-				this.btnTypePZ.BackColor = Color.Transparent;
+                this.btnTypePZ.BackColor = Color.Transparent;
+                this.btnTypeLA.BackColor = Color.Transparent;
+                this.panTypeLA.Visible = (this._typeId == "LA");
 				this.panType1.Visible = (this._typeId == "ALG1");
 				this.panType2.Visible = (this._typeId == "ALG2");
 				this.panelDCA.Visible = (this._typeId == "ALGDC");
@@ -2700,8 +2799,6 @@ namespace i2TradePlus
 					this.btnSendOrder.Show();
 					this.tbPin.Show();
 					this.lbPin.Show();
-					this.lbExpire.Show();
-					this.cbExpire.Show();
 				}
 				else if (this._typeId == "ALGDC")
 				{
@@ -2713,6 +2810,21 @@ namespace i2TradePlus
 					this.btnTypePZ.BackColor = Color.DodgerBlue;
 					this.panel1.Hide();
 				}
+                else if (this._typeId == "LA")
+                {
+                    this.btnTypeLA.BackColor = Color.DodgerBlue;
+                    this.intzaOrder.GetColumn("mm_src_ordno").Visible = false;
+                    this.panel1.Show();
+                    this.btnBuy.Show();
+                    this.btnSell.Show();
+                    this.lb1Stock.Show();
+                    this.cb1Stock.Show();
+                    this.btnClear.Show();
+                    this.btnSendOrder.Show();
+                    this.tbPin.Show();
+                    this.lbPin.Show();
+                    this.SetSide(string.Empty);
+                }
 				else if (this._typeId == "ALGMM")
 				{
 					this.btnTypeMM.BackColor = Color.DodgerBlue;
@@ -3212,6 +3324,13 @@ namespace i2TradePlus
 				this.ShowError("SetValueItems", ex);
 			}
 		}
+
+        [MethodImpl(MethodImplOptions.NoInlining)]
+        private void cbLAField_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.SetValueItems(this.cb1Value, this.lb1Value, this.cbLACondition.Text);
+        }
+
 
 		[MethodImpl(MethodImplOptions.NoInlining)]
 		private void btnBuy_Click(object sender, EventArgs e)
