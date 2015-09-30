@@ -478,6 +478,8 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="i2TradePlus\ApplicationInfo.cs" />
+    <Compile Include="i2TradePlus\AutoTradeItem.cs" />
+    <Compile Include="i2TradePlus\AutoTradeManager.cs" />
     <Compile Include="i2TradePlus\BroadcastMessageFactory.cs" />
     <Compile Include="i2TradePlus\BusinessService.cs">
       <SubType>Component</SubType>
