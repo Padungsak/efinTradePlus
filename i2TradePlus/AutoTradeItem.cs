@@ -15,7 +15,7 @@ namespace i2TradePlus
         private string stockName;
         private string fieldType;
         private int operatorType;
-        private decimal price;
+        private decimal value;
         private string ordSide;
         private string ordPrice;
         private long ordVolume;
@@ -29,6 +29,7 @@ namespace i2TradePlus
         private decimal firstOfferVol;
         private decimal secondBidVol;
         private decimal secondOfferVol;
+        private string message = string.Empty;
 
         public int RefNo
         {
@@ -83,17 +84,17 @@ namespace i2TradePlus
                 this.operatorType = value;
             }
         }
-        public decimal Price
+        public decimal Value
         {
             [MethodImpl(MethodImplOptions.NoInlining)]
             get
             {
-                return this.price;
+                return this.value;
             }
             [MethodImpl(MethodImplOptions.NoInlining)]
             set
             {
-                this.price = value;
+                this.value = value;
             }
         }
         public string OrdSide
@@ -275,6 +276,20 @@ namespace i2TradePlus
             }
         }
 
+        public string Message
+        {
+            [MethodImpl(MethodImplOptions.NoInlining)]
+            get
+            {
+                return this.message;
+            }
+            [MethodImpl(MethodImplOptions.NoInlining)]
+            set
+            {
+                this.message = value;
+            }
+        }
+
         [MethodImpl(MethodImplOptions.NoInlining)]
 		public LocalAutoTradeItem()
 		{
@@ -286,7 +301,7 @@ namespace i2TradePlus
             this.stockName = item.stockName;
             this.fieldType = item.fieldType;
             this.operatorType = item.operatorType;
-            this.price = item.price;
+            this.Value = item.Value;
             this.ordSide = item.ordSide;
             this.ordVolume = item.ordVolume;
             this.ordPrice = item.ordPrice;
@@ -300,6 +315,7 @@ namespace i2TradePlus
             this.firstOfferVol = item.firstOfferVol;
             this.secondBidVol = item.secondBidVol;
             this.secondOfferVol = item.secondOfferVol;
+            this.message = item.message;
 		}
 	}
 }

@@ -129,12 +129,34 @@ namespace i2TradePlus
                      if (newOrderRet.OrderNo > 0L)
                      {
                          ApplicationInfo.AddOrderNoToAutoRefreshList(newOrderRet.OrderNo.ToString(), newOrderRet.IsFwOfflineOrder ? 3 : 1);
-                         UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_SUCCESSFULL);   
+                         string addedMessage = string.Empty;
+                         if (_currentAutoItem.OrdSide == "B")
+                         {
+                             addedMessage = "Buy " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
+                         }
+                         else
+                         {
+                             addedMessage = "Sell " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
+
+                         }
+                         UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_SUCCESSFULL, addedMessage);
                      }
                      else
                      {
+                         string addedMessage = string.Empty;
+                         if (_currentAutoItem.OrdSide == "B")
+                         {
+                             addedMessage = "Buy " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
+                         }
+                         else
+                         {
+                             addedMessage = "Sell " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
+
+                         }
+                         UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_FAIL, addedMessage);
+
                          //Indeicate some error message
-                         UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_FAIL);
+                         //UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_FAIL, newOrderRet.ResultMessage);
                      }
 
 
@@ -271,6 +293,10 @@ namespace i2TradePlus
                     {
                         if (!this.bgwAutoSendOrder.IsBusy)
                         {
+                            if (item.ConditionType == LocalAutoTradeItem.AutoTradeCondition.FOLLOW_BIGLOT)
+                            {
+                                item.OrdPrice = msgLS.LastPrice.ToString();
+                            }
                             _currentAutoItem = item;
                             this.bgwAutoSendOrder.RunWorkerAsync();
                         }
@@ -278,7 +304,6 @@ namespace i2TradePlus
                 }
             }
         }
-
 
         [MethodImpl(MethodImplOptions.NoInlining)]
         public bool IsConditionMeet(LSAccumulate msgLS, LocalAutoTradeItem autoItem, StockList.StockInformation realtimeStockInfo)
@@ -296,6 +321,20 @@ namespace i2TradePlus
         [MethodImpl(MethodImplOptions.NoInlining)]
         public bool CheckBiglotCondition(LSAccumulate msgLS, LocalAutoTradeItem autoItem, StockList.StockInformation realtimeStockInfo)
         {
+            if (autoItem.OrdSide == "S")
+            {
+                if ((msgLS.Side == "S") && (autoItem.Value < (msgLS.Volume * realtimeStockInfo.BoardLot) ))
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                if ((msgLS.Side == "B") && (autoItem.Value < (msgLS.Volume * realtimeStockInfo.BoardLot)))
+                {
+                    return true;
+                }
+            }
             return false;
         }
 
@@ -310,7 +349,7 @@ namespace i2TradePlus
                         {
                             if (msgLS.Side == "S")
                             {
-                                decimal priceToCompare = autoItem.Price;
+                                decimal priceToCompare = autoItem.Value;
 
                                 if (msgLS.LastPrice == priceToCompare)
                                 {
@@ -392,7 +431,7 @@ namespace i2TradePlus
         }
 
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private void UpdateExecutedItem(int refNo, string newStatus)
+        private void UpdateExecutedItem(int refNo, string newStatus, string message)
         {
             foreach (LocalAutoTradeItem item in this._itemList)
             {
@@ -400,6 +439,7 @@ namespace i2TradePlus
                 {
                     item.Status = newStatus;
                     item.Mtime = DateTime.Now;
+                    item.Message = message;
                     return;
                 }
             }

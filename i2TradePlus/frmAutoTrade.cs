@@ -1725,8 +1725,8 @@ namespace i2TradePlus
             columnItem33.FontColor = Color.LightGray;
             columnItem33.IsExpand = false;
             columnItem33.MyStyle = FontStyle.Regular;
-            columnItem33.Name = "error";
-            columnItem33.Text = "Error";
+            columnItem33.Name = "message";
+            columnItem33.Text = "Message";
             columnItem33.ValueFormat = FormatType.Text;
             columnItem33.Visible = true;
             columnItem33.Width = 70;
@@ -2351,7 +2351,7 @@ namespace i2TradePlus
                 recordItem.Fields("condition").Text = this.GetConditionString(dr["field_type"].ToString().Trim(), operType, value, checkPrice);
                 recordItem.Fields("order_no").Text = ((dr["order_number"].ToString() == "0") ? "" : dr["order_number"].ToString());
                 recordItem.Fields("mm_src_ordno").Text = dr["mm_src_ordno"].ToString();
-                recordItem.Fields("error").Text = dr["message"].ToString().Trim();
+                recordItem.Fields("message").Text = dr["message"].ToString().Trim();
                 recordItem.Fields("ref_no").FontColor = Color.White;
                 if (text == "B")
                 {
@@ -2382,7 +2382,7 @@ namespace i2TradePlus
                 recordItem.Fields("status").FontColor = Color.Cyan;
                 recordItem.Fields("order_no").FontColor = MyColor.UnChgColor;
                 recordItem.Fields("mm_src_ordno").FontColor = MyColor.UnChgColor;
-                recordItem.Fields("error").FontColor = Color.Red;
+                recordItem.Fields("message").FontColor = Color.Red;
                 recordItem.Fields("condition").FontColor = MyColor.UnChgColor;
                 if (text2 == "W" || text2 == "P" || text2 == "PM")
                 {
@@ -2477,7 +2477,7 @@ namespace i2TradePlus
                         }
                         recordItem.Fields("condition").Text = this.GetConditionString(current["field_type"].ToString().Trim(), operType, value, checkPrice);
                         recordItem.Fields("order_no").Text = ((current["order_number"].ToString() == "0") ? "" : current["order_number"].ToString());
-                        recordItem.Fields("error").Text = current["message"].ToString().Trim();
+                        recordItem.Fields("message").Text = current["message"].ToString().Trim();
                         recordItem.Fields("ref_no").FontColor = Color.White;
                         if (text == "B")
                         {
@@ -2507,7 +2507,7 @@ namespace i2TradePlus
                         recordItem.Fields("matched_time").FontColor = Color.LightGray;
                         recordItem.Fields("status").FontColor = Color.Cyan;
                         recordItem.Fields("order_no").FontColor = Color.Yellow;
-                        recordItem.Fields("error").FontColor = Color.Red;
+                        recordItem.Fields("message").FontColor = Color.Red;
                         recordItem.Fields("condition").FontColor = MyColor.UnChgColor;
                         recordItem.Changed = true;
                     }
@@ -2527,12 +2527,12 @@ namespace i2TradePlus
                         }
                         subRecordItem.Fields("condition").Text = this.GetConditionString(current["field_type"].ToString().Trim(), operType, value, checkPrice);
                         subRecordItem.Fields("order_no").Text = ((current["order_number"].ToString() == "0") ? "" : current["order_number"].ToString());
-                        subRecordItem.Fields("error").Text = current["message"].ToString().Trim();
+                        subRecordItem.Fields("message").Text = current["message"].ToString().Trim();
                         subRecordItem.Fields("sent_time").FontColor = Color.LightGray;
                         subRecordItem.Fields("matched_time").FontColor = Color.LightGray;
                         subRecordItem.Fields("status").FontColor = Color.Cyan;
                         subRecordItem.Fields("order_no").FontColor = Color.Yellow;
-                        subRecordItem.Fields("error").FontColor = Color.Red;
+                        subRecordItem.Fields("message").FontColor = Color.Red;
                         subRecordItem.Fields("condition").FontColor = MyColor.UnChgColor;
                     }
                     if (text2 == "W" || text2 == "P")
@@ -3237,6 +3237,8 @@ namespace i2TradePlus
         [MethodImpl(MethodImplOptions.NoInlining)]
         private void cb1Field_SelectedIndexChanged(object sender, EventArgs e)
         {
+            this.lbPrice.Show();
+            this.cb1Price.Show();
             this.SetValueItems(this.cb1Value, this.lb1Value, this.cb1Condition.Text);
         }
 
@@ -3267,6 +3269,12 @@ namespace i2TradePlus
                     {
                         control.Items.Add(j.ToString());
                     }
+                }
+                else if(indicatorName.ToLower().IndexOf("biglot") > -1)
+                {
+                    label.Text = "Lot";
+                    this.lbPrice.Hide();
+                    this.cb1Price.Hide();
                 }
                 else
                 {
@@ -4863,7 +4871,7 @@ namespace i2TradePlus
 
             decimal comparePrice;
             decimal.TryParse(this.cb1Value.Text, out comparePrice);
-            _localAutoTradeItem.Price = comparePrice;
+            _localAutoTradeItem.Value = comparePrice;
 
             _localAutoTradeItem.OrdPrice = this.cb1Price.Text.Trim();
             if (!this.IsValidPrice(_localAutoTradeItem.OrdPrice, true, this.cb1Price))
@@ -4879,23 +4887,47 @@ namespace i2TradePlus
 
             _localAutoTradeItem.Time = DateTime.Now;
 
-            string orderParam = string.Concat(new string[]
-                                    {
-                                        "Auto Trade :",
-                                        " Account : ",
-                                        ApplicationInfo.AccInfo.CurrentAccount,
-                                        "\n",
-                                        Utilities.GetOrderSideName(this._ordSide),
-                                        "  ‘",
-                                        _localAutoTradeItem.StockName,
-                                        "’",
-                                        "  Volume ",
-                                        FormatUtil.VolumeFormat(_localAutoTradeItem.OrdVolume, true),
-                                        "  Price ",
-                                        _localAutoTradeItem.OrdPrice,
-                                        "\nCondition : ",
-                                        _localAutoTradeItem.FieldType + " " + AutoTradeConstant.GetOperatorSymbol(_localAutoTradeItem.OperatorType) + " " + _localAutoTradeItem.Price
-                                    });
+            string orderParam = string.Empty ;
+
+            if (this.cb1Condition.Text.ToLower().IndexOf("biglot") > 0)
+            {
+                orderParam = string.Concat(new string[]
+                                        {
+                                            "Auto Trade :",
+                                            " Account : ",
+                                            ApplicationInfo.AccInfo.CurrentAccount,
+                                            "\n",
+                                            Utilities.GetOrderSideName(this._ordSide),
+                                            "  ‘",
+                                            _localAutoTradeItem.StockName,
+                                            "’",
+                                            "  Volume ",
+                                            FormatUtil.VolumeFormat(_localAutoTradeItem.OrdVolume, true),
+                                           "\n",
+                                           "Follow Biglot with volume ",
+                                            this.cb1Value.Text
+                                        });
+            }
+            else
+            {
+                orderParam = string.Concat(new string[]
+                                        {
+                                            "Auto Trade :",
+                                            " Account : ",
+                                            ApplicationInfo.AccInfo.CurrentAccount,
+                                            "\n",
+                                            Utilities.GetOrderSideName(this._ordSide),
+                                            "  ‘",
+                                            _localAutoTradeItem.StockName,
+                                            "’",
+                                            "  Volume ",
+                                            FormatUtil.VolumeFormat(_localAutoTradeItem.OrdVolume, true),
+                                            "  Price ",
+                                            _localAutoTradeItem.OrdPrice,
+                                            "\nCondition : ",
+                                            _localAutoTradeItem.FieldType + " " + AutoTradeConstant.GetOperatorSymbol(_localAutoTradeItem.OperatorType) + " " + _localAutoTradeItem.Value
+                                        });
+            }
             this.ShowOrderFormConfirm("Confirm to send?", orderParam, frmOrderFormConfirm.OpenStyle.ConfirmSendNew);
         }
 
@@ -4919,10 +4951,14 @@ namespace i2TradePlus
                     recordItem.Fields("volume").Text = itemList[listIndex].OrdVolume;
 
                     recordItem.Fields("status").Text = AutoTradeConstant.GetSatusString(itemList[listIndex].Status);
-                    recordItem.Fields("price").Text = itemList[listIndex].Price;
+                    if (itemList[listIndex].ConditionType != LocalAutoTradeItem.AutoTradeCondition.FOLLOW_BIGLOT)
+                    {
+                        recordItem.Fields("price").Text = itemList[listIndex].Value;
+                    }
                     recordItem.Fields("sent_time").Text = itemList[listIndex].Time.ToString("h:mm:ss tt");
                     recordItem.Fields("matched_time").Text = itemList[listIndex].Mtime.ToString("h:mm:ss tt");
-                    recordItem.Fields("condition").Text = this.GetLocalConditionString(itemList[listIndex].ConditionType, itemList[listIndex].FieldType, (int)itemList[listIndex].OperatorType, itemList[listIndex].Price);
+                    recordItem.Fields("condition").Text = this.GetLocalConditionString(itemList[listIndex].ConditionType, itemList[listIndex].FieldType, (int)itemList[listIndex].OperatorType, itemList[listIndex].Value);
+                    recordItem.Fields("message").Text = itemList[listIndex].Message;
 
                     string text = itemList[listIndex].OrdSide;
                     recordItem.Fields("ref_no").FontColor = Color.White;
@@ -4956,7 +4992,7 @@ namespace i2TradePlus
                     recordItem.Fields("condition").FontColor = MyColor.UnChgColor;
 
                     string statusTmp = itemList[listIndex].Status;
-                    if (statusTmp == "W" || statusTmp == "P" || statusTmp == "PM")
+                    if (statusTmp == "W")
                     {
                         recordItem.Fields("checkbox").Text = "0";
                     }
@@ -5068,7 +5104,7 @@ namespace i2TradePlus
             }
             else if (LocalAutoTradeItem.AutoTradeCondition.FOLLOW_BIGLOT == conditionType)
             {
-                return fieldType + " " + AutoTradeConstant.GetOperatorSymbol(operType) + " " + value + "(Follow Biglot)";
+                return "Volume " + AutoTradeConstant.GetOperatorSymbol(operType) + " " + value + "(Follow Biglot)";
             }
             return null;
         }
