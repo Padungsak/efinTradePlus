@@ -126,37 +126,27 @@ namespace i2TradePlus
                                                                                                      0,
                                                                                                      "",
                                                                                                      false);
+                     string addedMessage = string.Empty;
+                     if (_currentAutoItem.OrdSide == "B")
+                     {
+                         addedMessage = "Buy " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
+                     }
+                     else
+                     {
+                         addedMessage = "Sell " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
+
+                     } 
+
                      if (newOrderRet.OrderNo > 0L)
                      {
-                         ApplicationInfo.AddOrderNoToAutoRefreshList(newOrderRet.OrderNo.ToString(), newOrderRet.IsFwOfflineOrder ? 3 : 1);
-                         string addedMessage = string.Empty;
-                         if (_currentAutoItem.OrdSide == "B")
-                         {
-                             addedMessage = "Buy " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
-                         }
-                         else
-                         {
-                             addedMessage = "Sell " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
-
-                         }
+                         ApplicationInfo.AddOrderNoToAutoRefreshList(newOrderRet.OrderNo.ToString(), newOrderRet.IsFwOfflineOrder ? 3 : 1);          
                          UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_SUCCESSFULL, addedMessage);
                      }
                      else
                      {
-                         string addedMessage = string.Empty;
-                         if (_currentAutoItem.OrdSide == "B")
-                         {
-                             addedMessage = "Buy " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
-                         }
-                         else
-                         {
-                             addedMessage = "Sell " + _currentAutoItem.StockName + " Price " + _currentAutoItem.OrdPrice + " Volume " + _currentAutoItem.OrdVolume;
-
-                         }
-                         UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_FAIL, addedMessage);
-
                          //Indeicate some error message
-                         //UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_FAIL, newOrderRet.ResultMessage);
+                         addedMessage += " ERROR: " + newOrderRet.ResultMessage;
+                         UpdateExecutedItem(_currentAutoItem.RefNo, AutoTradeConstant.STATUS_FAIL, addedMessage);
                      }
 
 
@@ -178,7 +168,7 @@ namespace i2TradePlus
                 {
                     if (this._OnEndAutoTrade != null)
                     {
-                        System.Threading.Thread.Sleep(2000);           
+                        System.Threading.Thread.Sleep(3000);           
                         this._OnEndAutoTrade();
                     }
                 }
